@@ -1,0 +1,6 @@
+//MPD-File
+#ifndef(pack_C1) #declare global_pack_C1=yes; object {CAP_DIS_CERAMIC_25MM_50MM("1uf",)translate<0,-0,0> rotate<0,0.000000,0>rotate<0,-270.000000,0> rotate<0,0,180> translate<6.490000,-1.500000,19.280000>}#end		//ceramic disc capacitator C1 1uf C025-025X050
+#ifndef(pack_JP2) #declare global_pack_JP2=yes; object {CON_PH_1X3()translate<0,-0,0> rotate<0,0.000000,0>rotate<0,-270.000000,0> rotate<0,0,180> translate<11.500000,-1.500000,5.900000>}#end		//Stiftleiste 2,54mm Raster 3Pin 1Reihe (pinhead.lib) JP2  1X03
+#ifndef(pack_JP3) #declare global_pack_JP3=yes; object {CON_PH_1X3()translate<0,-0,0> rotate<0,0.000000,0>rotate<0,-90.000000,0> rotate<0,0,180> translate<16.600000,-1.500000,5.900000>}#end		//Stiftleiste 2,54mm Raster 3Pin 1Reihe (pinhead.lib) JP3  1X03
+#ifndef(pack_LED1) #declare global_pack_LED1=yes; object {DIODE_DIS_LED_5MM(Gray25,0.500000,0.000000,)translate<0,0,0> rotate<0,0.000000,0>rotate<0,0.000000,0> rotate<0,0,0> translate<12.990000,0.000000,13.300000>}#end		//Diskrete 5MM LED LED1  LED5MM
+#ifndef(pack_LED2) #declare global_pack_LED2=yes; object {DIODE_SMD_LED_CHIP_0805(Gray25,0.500000,0.000000,)translate<0,0,0> rotate<0,90.000000,0>rotate<0,-270.000000,0> rotate<0,0,0> translate<12.710000,0.000000,23.200000>translate<0,0.035000,0> }#end		//SMD-LED im 0805 LED2  CHIP-LED0805

@@ -1,0 +1,3 @@
+//MPD-File
+#ifndef(pack_JP1) #declare global_pack_JP1=yes; object {CON_PH_1X3()translate<0,-0,0> rotate<0,0.000000,0>rotate<0,-180.000000,0> rotate<0,0,180> translate<8.700000,-1.500000,2.800000>}#end		//Stiftleiste 2,54mm Raster 3Pin 1Reihe (pinhead.lib) JP1  1X03
+#ifndef(pack_R1) #declare global_pack_R1=yes; object {RES_SMD_CHIP_0805("0R0",)translate<0,0,0> rotate<0,0.000000,0>rotate<0,-90.000000,0> rotate<0,0,0> translate<2.880000,0.000000,7.760000>translate<0,0.035000,0> }#end		//SMD Widerstand 0805 R1  M0805
