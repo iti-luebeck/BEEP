@@ -60,6 +60,13 @@
 <wire x1="27.3" y1="0" x2="27.2" y2="29.7" width="0" layer="20"/>
 <wire x1="27.2" y1="29.7" x2="-0.1" y2="29.7" width="0" layer="20"/>
 <wire x1="-0.1" y1="29.7" x2="0" y2="0" width="0" layer="20"/>
+<text x="11.7" y="9.5" size="1.778" layer="26" rot="MR0">MFP</text>
+<text x="11.8" y="6.9" size="1.778" layer="26" rot="MR0">GND</text>
+<text x="11.7" y="4.2" size="1.778" layer="26" rot="MR0">VDD</text>
+<text x="11.7" y="1.8" size="1.778" layer="26" rot="MR0">VLED</text>
+<text x="16.2" y="11.1" size="1.778" layer="26" rot="MR180">VOR</text>
+<text x="15.9" y="8.8" size="1.778" layer="26" rot="MR180">VOG</text>
+<text x="15.9" y="6.3" size="1.778" layer="26" rot="MR180">VOB</text>
 </plain>
 <libraries>
 <library name="BEEP">

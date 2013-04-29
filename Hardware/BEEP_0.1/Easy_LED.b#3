@@ -60,6 +60,13 @@
 <wire x1="44.9" y1="0" x2="44.9" y2="28.5" width="0" layer="20"/>
 <wire x1="44.9" y1="28.5" x2="0" y2="28.5" width="0" layer="20"/>
 <wire x1="0" y1="28.5" x2="0" y2="0" width="0" layer="20"/>
+<text x="39.1" y="20.8" size="1.778" layer="22" rot="MR180" align="center-left">0</text>
+<text x="39.1" y="3.1" size="1.778" layer="22" rot="MR180" align="center-left">7</text>
+<text x="6.8" y="20" size="1.778" layer="22" rot="MR180" align="center-left">A</text>
+<text x="6.9" y="17.4" size="1.778" layer="22" rot="MR180" align="center-left">B</text>
+<text x="7" y="15.1" size="1.778" layer="22" rot="MR180" align="center-left">C</text>
+<text x="6.9" y="23.6" size="1.778" layer="22" rot="MR180" align="center-left">GND</text>
+<text x="6.9" y="26.2" size="1.778" layer="22" rot="MR180" align="center-left">VCC</text>
 </plain>
 <libraries>
 <library name="pinhead">
@@ -1589,13 +1596,25 @@ design rules under a new name.</description>
 <elements>
 <element name="IC1" library="BEEP" package="SOP18" value="" x="31.91" y="11.55" rot="R270"/>
 <element name="IC2" library="BEEP" package="SO16" value="74HC238D" x="18.88" y="13.49" rot="R270"/>
-<element name="JP2" library="pinhead" package="1X03" value="" x="4.61" y="17.3" rot="MR90"/>
-<element name="JP3" library="pinhead" package="1X03" value="" x="4.61" y="7.14" rot="MR90"/>
-<element name="R25" library="rcl" package="0207/7" value="" x="11.83" y="5.44" rot="MR270"/>
-<element name="R26" library="rcl" package="M0805" value="" x="8.72" y="7.14" rot="R90"/>
+<element name="JP2" library="pinhead" package="1X03" value="" x="4.61" y="17.3" smashed="yes" rot="MR90">
+<attribute name="VALUE" x="1.435" y="13.49" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="JP3" library="pinhead" package="1X03" value="" x="4.61" y="7.14" smashed="yes" rot="MR90">
+<attribute name="VALUE" x="1.435" y="3.33" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="R25" library="rcl" package="0207/7" value="" x="11.83" y="5.44" smashed="yes" rot="MR270">
+<attribute name="NAME" x="14.233" y="7.38" size="1.27" layer="26" ratio="10" rot="MR270"/>
+<attribute name="VALUE" x="12.3888" y="7.726" size="1.27" layer="28" ratio="10" rot="MR270"/>
+</element>
+<element name="R26" library="rcl" package="M0805" value="" x="8.72" y="7.14" smashed="yes" rot="R90">
+<attribute name="NAME" x="11.25" y="5.37" size="1.27" layer="25" rot="R90"/>
+<attribute name="VALUE" x="11.26" y="5.87" size="1.27" layer="27" rot="R90"/>
+</element>
 <element name="R27" library="rcl" package="M0805" value="" x="8.69" y="12.22" rot="R270"/>
 <element name="PWR" library="pinhead" package="1X02" value="" x="4.61" y="24.92" rot="MR270"/>
-<element name="JP1" library="pinhead" package="1X08" value="" x="42.3" y="11.9" rot="MR270"/>
+<element name="JP1" library="pinhead" package="1X08" value="" x="42.3" y="11.9" smashed="yes" rot="MR270">
+<attribute name="VALUE" x="45.475" y="22.06" size="1.27" layer="28" rot="MR270"/>
+</element>
 </elements>
 <signals>
 <signal name="N$7">

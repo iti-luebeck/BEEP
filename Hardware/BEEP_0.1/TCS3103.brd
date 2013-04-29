@@ -1313,7 +1313,7 @@ MELF 0.10 W</description>
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="default">
+<designrules name="default *">
 <description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
 &lt;p&gt;
 Die Standard-Design-Rules sind so gewählt, dass sie für 
@@ -1331,8 +1331,8 @@ design rules under a new name.</description>
 <param name="layerSetup" value="(1*16)"/>
 <param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
 <param name="mtIsolate" value="1.5mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
-<param name="mdWireWire" value="8mil"/>
-<param name="mdWirePad" value="8mil"/>
+<param name="mdWireWire" value="10mil"/>
+<param name="mdWirePad" value="10mil"/>
 <param name="mdWireVia" value="8mil"/>
 <param name="mdPadPad" value="8mil"/>
 <param name="mdPadVia" value="8mil"/>
@@ -1700,6 +1700,27 @@ design rules under a new name.</description>
 <wire x1="5.89" y1="15.24" x2="5.95" y2="15.3" width="0.8128" layer="1"/>
 </signal>
 </signals>
+<errors>
+<approved hash="5,1,bc1495358cb51f6a"/>
+<approved hash="5,1,f6afc0a84cd5d42b"/>
+<approved hash="5,1,dc19a6cdcbc4506c"/>
+<approved hash="5,1,663484a216e27605"/>
+<approved hash="5,1,c685c0c8e36515dd"/>
+<approved hash="5,1,bc14953b30eb53bf"/>
+<approved hash="5,1,ad2295358cb90c50"/>
+<approved hash="5,1,e3a690a03de3d42f"/>
+<approved hash="5,1,e3a690a04ced23af"/>
+<approved hash="5,1,ad22953ba4391f50"/>
+<approved hash="5,1,d655ef1ac5fd6fd5"/>
+<approved hash="5,1,3cdb357d2b0b040f"/>
+<approved hash="5,1,62cbbb9ac5e4bc4c"/>
+<approved hash="5,1,783b55816f1a0403"/>
+<approved hash="5,1,bf07b651abfb07d3"/>
+<approved hash="5,1,2a8babffd4cb6fd5"/>
+<approved hash="5,1,a9a72b077bcf8588"/>
+<approved hash="5,1,4f6756d07bd58f93"/>
+<approved hash="5,1,62cfaca8d4d2bc4c"/>
+</errors>
 </board>
 </drawing>
 </eagle>

@@ -1491,8 +1491,8 @@ design rules under a new name.</description>
 </autorouter>
 <elements>
 <element name="IC1" library="BEEP" package="TCS3103" value="TCS3103" x="13.98" y="16.78" smashed="yes">
-<attribute name="NAME" x="13.08" y="18.08" size="1.016" layer="25"/>
-<attribute name="VALUE" x="11.28" y="14.38" size="1.016" layer="27"/>
+<attribute name="NAME" x="13.08" y="14.28" size="1.016" layer="25"/>
+<attribute name="VALUE" x="11.38" y="18.18" size="1.016" layer="27"/>
 </element>
 <element name="LED1" library="led" package="LED3MM" value="" x="23.18" y="12" smashed="yes">
 <attribute name="NAME" x="17.585" y="12.081" size="1.016" layer="25" ratio="10"/>
@@ -1503,27 +1503,27 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="12.035" y="27.711" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
 <element name="LED3" library="led" package="LED3MM" value="" x="4.62" y="11.96" smashed="yes" rot="R180">
-<attribute name="NAME" x="10.315" y="12.679" size="1.016" layer="25" ratio="10" rot="R180"/>
+<attribute name="NAME" x="10.615" y="12.379" size="1.016" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="2.715" y="13.611" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
 <element name="R1" library="rcl" package="M0805" value="" x="4.65" y="26.39" smashed="yes" rot="R180">
-<attribute name="NAME" x="3.12" y="27.02" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="0.82" y="26.52" size="1.016" layer="25" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="5.92" y="28.93" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R2" library="rcl" package="M0805" value="" x="4.65" y="23.44" smashed="yes" rot="R180">
-<attribute name="NAME" x="3.02" y="23.97" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="0.72" y="23.47" size="1.016" layer="25" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="5.92" y="25.98" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R3" library="rcl" package="M0805" value="" x="4.65" y="20.13" smashed="yes">
-<attribute name="NAME" x="0.78" y="19.6" size="1.016" layer="25"/>
+<attribute name="NAME" x="0.58" y="20.2" size="1.016" layer="25" align="center-left"/>
 <attribute name="VALUE" x="3.38" y="17.59" size="1.27" layer="27"/>
 </element>
 <element name="JP1" library="pinhead" package="2X04" value="" x="14.38" y="6.72" smashed="yes" rot="MR270">
 <attribute name="VALUE" x="18.825" y="10.53" size="1.27" layer="28" rot="MR270"/>
 </element>
 <element name="C1" library="rcl" package="C0805" value="100n" x="8.9" y="17.8" smashed="yes" rot="R270">
-<attribute name="NAME" x="10.07" y="17.97" size="1.016" layer="25" rot="R270"/>
-<attribute name="VALUE" x="9.96" y="21.37" size="1.016" layer="27" rot="R270"/>
+<attribute name="NAME" x="7.87" y="21.67" size="1.016" layer="25" rot="R270"/>
+<attribute name="VALUE" x="9.96" y="21.57" size="1.016" layer="27" rot="R270"/>
 </element>
 <element name="U$2" library="holes" package="3,2" value="" x="24.1" y="4.1"/>
 <element name="U$3" library="holes" package="3,2" value="" x="4.2" y="4.1"/>

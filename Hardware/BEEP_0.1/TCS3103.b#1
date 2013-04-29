@@ -60,7 +60,7 @@
 <wire x1="28.2" y1="0" x2="28.2" y2="30" width="0" layer="20"/>
 <wire x1="28.2" y1="30" x2="0" y2="30" width="0" layer="20"/>
 <wire x1="0" y1="30" x2="0" y2="0" width="0" layer="20"/>
-<text x="11.8" y="10.5" size="1.016" layer="26" rot="MR180" align="center-right">MFP</text>
+<text x="11.7" y="10.5" size="1.016" layer="26" rot="MR180" align="center-right">MFP</text>
 <text x="17.1" y="2.9" size="1.016" layer="26" rot="MR180" align="center-left">GND</text>
 <text x="11.7" y="5.5" size="1.016" layer="26" rot="MR180" align="center-right">VDD</text>
 <text x="11.7" y="3" size="1.016" layer="26" rot="MR180" align="center-right">VLED</text>

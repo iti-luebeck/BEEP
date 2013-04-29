@@ -78,6 +78,16 @@
 <text x="46" y="24.8" size="1.778" layer="26" rot="MR0">ADC6</text>
 <text x="36.5" y="0.7" size="1.778" layer="26" rot="MR0">RESET</text>
 <text x="26.3" y="5.1" size="1.778" layer="26" rot="MR270">PB5</text>
+<text x="23.6" y="5.1" size="1.778" layer="26" rot="MR270">PB4</text>
+<text x="21" y="5.1" size="1.778" layer="26" rot="MR270">PB3</text>
+<text x="18.6" y="5" size="1.778" layer="26" rot="MR270">PB2</text>
+<text x="16" y="5" size="1.778" layer="26" rot="MR270">PB1</text>
+<text x="13.5" y="5" size="1.778" layer="26" rot="MR270">PB0</text>
+<text x="10.7" y="5.1" size="1.778" layer="26" rot="MR270">PD7</text>
+<text x="8.1" y="5.1" size="1.778" layer="26" rot="MR270">PD6</text>
+<text x="5.5" y="5.1" size="1.778" layer="26" rot="MR270">PD5</text>
+<text x="16.2" y="44" size="1.778" layer="26" rot="MR90">VCC</text>
+<text x="9.1" y="43.9" size="1.778" layer="26" rot="MR90">GND</text>
 </plain>
 <libraries>
 <library name="atmega8">
@@ -2025,14 +2035,15 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="31.33" y="44.655" size="1.27" layer="28" rot="MR0"/>
 </element>
 <element name="JP4" library="pinhead" package="1X06" value="" x="18.92" y="6.61" smashed="yes" rot="MR180">
-<attribute name="NAME" x="11.2238" y="4.7812" size="1.27" layer="26" ratio="10" rot="MR180"/>
 <attribute name="VALUE" x="11.3" y="9.785" size="1.27" layer="28" rot="MR180"/>
 </element>
 <element name="JP5" library="pinhead" package="1X03" value="" x="7.3" y="6.6" smashed="yes" rot="MR180">
-<attribute name="NAME" x="3.4138" y="4.7712" size="1.27" layer="26" ratio="10" rot="MR180"/>
 <attribute name="VALUE" x="3.49" y="9.775" size="1.27" layer="28" rot="MR180"/>
 </element>
-<element name="POWER" library="pinhead" package="2X03" value="" x="14.4" y="46.1" rot="MR270"/>
+<element name="POWER" library="pinhead" package="2X03" value="" x="13.6" y="46.5" smashed="yes" rot="MR270">
+<attribute name="NAME" x="10.09" y="51.825" size="1.27" layer="26" ratio="10" rot="MR180"/>
+<attribute name="VALUE" x="18.045" y="50.31" size="1.27" layer="28" rot="MR270"/>
+</element>
 <element name="H1" library="holes" package="3,2" value="" x="4.2" y="48.8"/>
 <element name="H2" library="holes" package="3,2" value="" x="44.6" y="48.9"/>
 <element name="H3" library="holes" package="3,2" value="" x="44.8" y="4.1"/>
@@ -2083,8 +2094,8 @@ design rules under a new name.</description>
 <wire x1="17.09175" y1="37.058246875" x2="17.09175" y2="37.09175" width="0.4064" layer="1"/>
 <wire x1="17.09175" y1="37.09175" x2="18" y2="38.1" width="0.8128" layer="1"/>
 <wire x1="18" y1="38.1" x2="18" y2="49.2" width="0.8128" layer="1"/>
-<wire x1="18" y1="49.2" x2="16.7" y2="50.5" width="0.8128" layer="1"/>
-<wire x1="16.7" y1="50.5" x2="14.99" y2="50.5" width="0.8128" layer="1"/>
+<wire x1="18" y1="49.2" x2="16.6" y2="50.6" width="0.8128" layer="1"/>
+<wire x1="16.6" y1="50.6" x2="13.89" y2="50.6" width="0.8128" layer="1"/>
 <contactref element="POWER" pad="2"/>
 <contactref element="POWER" pad="6"/>
 <contactref element="POWER" pad="4"/>
@@ -2094,18 +2105,17 @@ design rules under a new name.</description>
 <vertex x="48.8" y="0"/>
 <vertex x="0" y="0"/>
 </polygon>
-<wire x1="13.13" y1="43.56" x2="13.13" y2="43.43" width="0.4064" layer="1"/>
-<wire x1="13.13" y1="43.56" x2="13.13" y2="46.1" width="0.8128" layer="1"/>
-<wire x1="13.13" y1="46.1" x2="13.13" y2="48.64" width="0.8128" layer="1"/>
-<wire x1="14.99" y1="50.5" x2="13.13" y2="48.64" width="0.8128" layer="1"/>
+<wire x1="12.33" y1="43.96" x2="12.33" y2="46.5" width="0.8128" layer="1"/>
+<wire x1="12.33" y1="46.5" x2="12.33" y2="49.04" width="0.8128" layer="1"/>
+<wire x1="13.89" y1="50.6" x2="12.33" y2="49.04" width="0.8128" layer="1"/>
 <wire x1="29.4494" y1="10.7412" x2="33.9706" y2="10.7412" width="0.8128" layer="1"/>
 <wire x1="33.9706" y1="10.7412" x2="37.2212" y2="10.7412" width="0.8128" layer="1"/>
 <wire x1="37.2212" y1="10.7412" x2="40.02" y2="13.64" width="0.8128" layer="1"/>
 <wire x1="31.066053125" y1="25.66605" x2="26" y2="25.66605" width="0.4064" layer="1"/>
 <wire x1="26" y1="25.66605" x2="26" y2="25.7" width="0.4064" layer="1"/>
 <wire x1="29.4494" y1="10.7412" x2="29.4412" y2="10.7412" width="0.8128" layer="1"/>
-<wire x1="9.69" y1="36.07" x2="9.69" y2="40.12" width="0.8128" layer="1"/>
-<wire x1="9.69" y1="40.12" x2="13.13" y2="43.56" width="0.8128" layer="1"/>
+<wire x1="9.69" y1="36.07" x2="9.69" y2="41.32" width="0.8128" layer="1"/>
+<wire x1="9.69" y1="41.32" x2="12.33" y2="43.96" width="0.8128" layer="1"/>
 <wire x1="9.69" y1="36.07" x2="9.69" y2="36.31" width="0.4064" layer="1"/>
 <wire x1="9.69" y1="36.31" x2="7.5" y2="38.5" width="0.8128" layer="1"/>
 <wire x1="7.5" y1="38.5" x2="4.2" y2="38.5" width="0.8128" layer="1"/>
@@ -2128,7 +2138,6 @@ design rules under a new name.</description>
 <wire x1="21.4" y1="8" x2="20.3" y2="9.1" width="0.4064" layer="1"/>
 <wire x1="20.3" y1="9.1" x2="20.3" y2="9.6" width="0.4064" layer="1"/>
 <wire x1="20.3" y1="9.6" x2="20.23" y2="9.67" width="0.4064" layer="1"/>
-<wire x1="19.1" y1="31.5" x2="19" y2="31.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VCC">
 <contactref element="IC1" pad="18"/>
@@ -2161,10 +2170,10 @@ design rules under a new name.</description>
 <contactref element="POWER" pad="1"/>
 <contactref element="POWER" pad="5"/>
 <contactref element="POWER" pad="3"/>
-<wire x1="16.47" y1="39.123503125" x2="16.47" y2="42.76" width="0.8128" layer="1"/>
-<wire x1="16.47" y1="42.76" x2="15.67" y2="43.56" width="0.84328125" layer="1"/>
-<wire x1="15.67" y1="43.56" x2="15.67" y2="46.1" width="0.8128" layer="1"/>
-<wire x1="15.67" y1="46.1" x2="15.67" y2="48.64" width="0.8128" layer="1"/>
+<wire x1="16.47" y1="39.123503125" x2="16.47" y2="42.36" width="0.8128" layer="1"/>
+<wire x1="16.47" y1="42.36" x2="14.87" y2="43.96" width="0.84328125" layer="1"/>
+<wire x1="14.87" y1="43.96" x2="14.87" y2="46.5" width="0.8128" layer="1"/>
+<wire x1="14.87" y1="46.5" x2="14.87" y2="49.04" width="0.8128" layer="1"/>
 <wire x1="22.8311125" y1="25.440459375" x2="22.859540625" y2="25.440459375" width="0.4064" layer="1"/>
 <wire x1="22.859540625" y1="25.440459375" x2="26.226053125" y2="22.073946875" width="0.4064" layer="1"/>
 <wire x1="27.47395" y1="22.073946875" x2="26.226053125" y2="22.073946875" width="0.4064" layer="1"/>

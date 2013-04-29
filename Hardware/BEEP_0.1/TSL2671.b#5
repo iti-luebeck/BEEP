@@ -60,11 +60,11 @@
 <wire x1="22.6" y1="0" x2="22.6" y2="29.9" width="0" layer="20"/>
 <wire x1="22.6" y1="29.9" x2="0" y2="29.9" width="0" layer="20"/>
 <wire x1="0" y1="29.9" x2="0" y2="0" width="0" layer="20"/>
-<text x="9.7" y="8.4" size="1" layer="26" rot="MR45" align="center-left">GND</text>
-<text x="10.2" y="4" size="1" layer="26" rot="MR45" align="center-left">VDD</text>
-<text x="10" y="6.3" size="1" layer="26" rot="MR45" align="center-left">SCL</text>
+<text x="9.8" y="8.6" size="1" layer="26" rot="MR45" align="center-left">GND</text>
+<text x="9.9" y="4.1" size="1" layer="26" rot="MR45" align="center-left">VDD</text>
+<text x="9.9" y="6.5" size="1" layer="26" rot="MR45" align="center-left">SCL</text>
 <text x="18.2" y="4.1" size="1" layer="26" rot="MR135" align="center-left">LDR</text>
-<text x="18.2" y="9.2" size="1" layer="26" rot="MR135" align="center-left">INT</text>
+<text x="18.2" y="9.1" size="1" layer="26" rot="MR135" align="center-left">INT</text>
 <text x="18.3" y="6.5" size="1" layer="26" rot="MR135" align="center-left">SDA</text>
 </plain>
 <libraries>
@@ -1463,17 +1463,20 @@ design rules under a new name.</description>
 <elements>
 <element name="IC1" library="BEEP" package="TSL2671" value="TSL2671" x="12.81" y="19.28"/>
 <element name="LED1" library="led" package="LED5MM" value="" x="12.99" y="13.3" smashed="yes">
-<attribute name="NAME" x="16.165" y="13.1334" size="1.27" layer="25" ratio="10" align="center-left"/>
+<attribute name="NAME" x="16.165" y="13.1334" size="1" layer="25" ratio="10" align="center-left"/>
 <attribute name="VALUE" x="16.1904" y="11.4966" size="1.27" layer="27" ratio="10"/>
 </element>
 <element name="LED2" library="led" package="CHIP-LED0805" value="" x="12.71" y="23.2" smashed="yes" rot="R270">
-<attribute name="NAME" x="12.64" y="24.67" size="1.27" layer="25" align="center"/>
+<attribute name="NAME" x="12.64" y="24.67" size="1" layer="25" align="center"/>
 <attribute name="VALUE" x="11.44" y="20.66" size="1.27" layer="27"/>
 </element>
-<element name="C1" library="rcl" package="C025-025X050" value="1uf" x="6.49" y="19.28" rot="MR270"/>
+<element name="C1" library="rcl" package="C025-025X050" value="1uf" x="6.49" y="19.28" smashed="yes" rot="MR270">
+<attribute name="NAME" x="4.966" y="20.566" size="1" layer="26" ratio="10" rot="MR270"/>
+<attribute name="VALUE" x="9.084" y="20.466" size="1" layer="28" ratio="10" rot="MR270"/>
+</element>
 <element name="C2" library="rcl" package="C1005" value="1uf" x="8.66" y="12.46" smashed="yes" rot="R270">
-<attribute name="NAME" x="7.995" y="15.995" size="1.27" layer="25" rot="R270"/>
-<attribute name="VALUE" x="6.755" y="13.095" size="1.27" layer="27" rot="R270"/>
+<attribute name="NAME" x="7.395" y="12.495" size="1" layer="25" rot="R90" align="center"/>
+<attribute name="VALUE" x="8.555" y="14.195" size="1" layer="27" rot="R90" align="center-left"/>
 </element>
 <element name="JP2" library="pinhead" package="1X03" value="" x="11.5" y="5.9" smashed="yes" rot="MR270">
 <attribute name="VALUE" x="14.675" y="9.71" size="1.27" layer="28" rot="MR270"/>
