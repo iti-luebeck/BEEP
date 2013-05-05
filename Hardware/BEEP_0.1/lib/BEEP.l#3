@@ -194,12 +194,12 @@ PCA9548A Datasheet</description>
 <text x="-2" y="1.5" size="0.8128" layer="27">&gt;VALUE</text>
 </package>
 <package name="5050LED">
-<smd name="P$1" x="-2.7" y="0" dx="1" dy="3" layer="1" rot="R90"/>
-<smd name="P$2" x="2.7" y="0" dx="1" dy="3" layer="1" rot="R90"/>
-<smd name="P$3" x="2.7" y="-1.8" dx="1.4" dy="3" layer="1" rot="R90"/>
-<smd name="P$4" x="-2.7" y="-1.8" dx="1.4" dy="3" layer="1" rot="R90"/>
-<smd name="P$5" x="-2.7" y="1.8" dx="1.4" dy="3" layer="1" rot="R90"/>
-<smd name="P$6" x="2.7" y="1.8" dx="1.4" dy="3" layer="1" rot="R90"/>
+<smd name="G1" x="-2.7" y="0" dx="1" dy="3" layer="1" rot="R90"/>
+<smd name="G2" x="2.7" y="0" dx="1" dy="3" layer="1" rot="R90"/>
+<smd name="B2" x="2.7" y="-1.8" dx="1.4" dy="3" layer="1" rot="R90"/>
+<smd name="B1" x="-2.7" y="-1.8" dx="1.4" dy="3" layer="1" rot="R90"/>
+<smd name="R1" x="-2.7" y="1.8" dx="1.4" dy="3" layer="1" rot="R90"/>
+<smd name="R2" x="2.7" y="1.8" dx="1.4" dy="3" layer="1" rot="R90"/>
 <wire x1="-2.5" y1="-2.5" x2="2.5" y2="-2.5" width="0.127" layer="21"/>
 <wire x1="2.5" y1="-2.5" x2="2.5" y2="2.5" width="0.127" layer="21"/>
 <wire x1="2.5" y1="2.5" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
@@ -846,12 +846,12 @@ Source: http://www.seoulsemicon.co.kr .. F50360.pdf</description>
 </device>
 <device name="5050" package="5050LED">
 <connects>
-<connect gate="G$1" pin="BA" pad="P$1"/>
-<connect gate="G$1" pin="BC" pad="P$2"/>
-<connect gate="G$1" pin="GA" pad="P$3"/>
-<connect gate="G$1" pin="GC" pad="P$4"/>
-<connect gate="G$1" pin="RA" pad="P$5"/>
-<connect gate="G$1" pin="RC" pad="P$6"/>
+<connect gate="G$1" pin="BA" pad="B1"/>
+<connect gate="G$1" pin="BC" pad="B2"/>
+<connect gate="G$1" pin="GA" pad="G1"/>
+<connect gate="G$1" pin="GC" pad="G2"/>
+<connect gate="G$1" pin="RA" pad="R1"/>
+<connect gate="G$1" pin="RC" pad="R2"/>
 </connects>
 <technologies>
 <technology name=""/>

@@ -1,0 +1,6 @@
+DISPLAY ALL;
+RATSNEST;
+DISPLAY None;
+DISPLAY Bottom Top Pads Vias Dimension Holes tCName;
+PRINT MIRROR BLACK CAPTION FILE %N.pdf
+DISPLAY Bottom Top Pads Vias Unrouted Dimension tPlace bPlace tOrigins bOrigins tNames bNames tValues bValues tKeepout bKeepout tRestrict bRestrict vRestrict tCName bCName tDocu bDocu Holes tCName;

@@ -630,9 +630,9 @@ Source: http://www.holtek.com.tw/pdf/consumer/3_18ev110.pdf</description>
 <pin name="Y5" x="10.16" y="-5.08" length="middle" direction="out" rot="R180"/>
 <pin name="Y6" x="10.16" y="-7.62" length="middle" direction="out" rot="R180"/>
 <pin name="Y7" x="10.16" y="-10.16" length="middle" direction="out" rot="R180"/>
-<pin name="G2B" x="-15.24" y="-10.16" length="middle" direction="in" function="dot"/>
-<pin name="G2A" x="-15.24" y="-7.62" length="middle" direction="in" function="dot"/>
-<pin name="G1" x="-15.24" y="-5.08" length="middle" direction="in"/>
+<pin name="G2B" x="-15.24" y="-7.62" length="middle" direction="in" function="dot"/>
+<pin name="G2A" x="-15.24" y="-5.08" length="middle" direction="in" function="dot"/>
+<pin name="G1" x="-15.24" y="-10.16" length="middle" direction="in"/>
 <pin name="C" x="-15.24" y="0" length="middle" direction="in"/>
 <pin name="B" x="-15.24" y="2.54" length="middle" direction="in"/>
 <pin name="A" x="-15.24" y="5.08" length="middle" direction="in"/>
@@ -839,6 +839,19 @@ Source: http://www.seoulsemicon.co.kr .. F50360.pdf</description>
 <connect gate="G$1" pin="GC" pad="GC"/>
 <connect gate="G$1" pin="RA" pad="RA"/>
 <connect gate="G$1" pin="RC" pad="RC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="5050" package="5050LED">
+<connects>
+<connect gate="G$1" pin="BA" pad="P$1"/>
+<connect gate="G$1" pin="BC" pad="P$2"/>
+<connect gate="G$1" pin="GA" pad="P$3"/>
+<connect gate="G$1" pin="GC" pad="P$4"/>
+<connect gate="G$1" pin="RA" pad="P$5"/>
+<connect gate="G$1" pin="RC" pad="P$6"/>
 </connects>
 <technologies>
 <technology name=""/>

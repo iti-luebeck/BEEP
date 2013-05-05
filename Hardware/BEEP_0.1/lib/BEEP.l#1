@@ -204,7 +204,7 @@ PCA9548A Datasheet</description>
 <wire x1="2.5" y1="-2.5" x2="2.5" y2="2.5" width="0.127" layer="21"/>
 <wire x1="2.5" y1="2.5" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
 <wire x1="-2.5" y1="2.5" x2="-2.5" y2="-2.5" width="0.127" layer="21"/>
-<text x="-3.4" y="-4.3" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-3.4" y="-4.3" size="1.27" layer="25">&gt;NAME</text>
 </package>
 <package name="F50360">
 <description>&lt;b&gt;Full color Z-Power LED RGB&lt;/b&gt;&lt;p&gt;
@@ -862,29 +862,29 @@ Source: http://www.seoulsemicon.co.kr .. F50360.pdf</description>
 <deviceset name="ULN2803A" prefix="IC" uservalue="yes">
 <description>&lt;b&gt;DRIVER ARRAY&lt;/b&gt;</description>
 <gates>
-<gate name="G$1" symbol="2801A" x="0" y="0"/>
+<gate name="IC" symbol="2801A" x="0" y="0"/>
 </gates>
 <devices>
 <device name="DIL18" package="DIL18">
 <connects>
-<connect gate="G$1" pin="CD+" pad="10"/>
-<connect gate="G$1" pin="GND" pad="9"/>
-<connect gate="G$1" pin="I1" pad="1"/>
-<connect gate="G$1" pin="I2" pad="2"/>
-<connect gate="G$1" pin="I3" pad="3"/>
-<connect gate="G$1" pin="I4" pad="4"/>
-<connect gate="G$1" pin="I5" pad="5"/>
-<connect gate="G$1" pin="I6" pad="6"/>
-<connect gate="G$1" pin="I7" pad="7"/>
-<connect gate="G$1" pin="I8" pad="8"/>
-<connect gate="G$1" pin="O1" pad="18"/>
-<connect gate="G$1" pin="O2" pad="17"/>
-<connect gate="G$1" pin="O3" pad="16"/>
-<connect gate="G$1" pin="O4" pad="15"/>
-<connect gate="G$1" pin="O5" pad="14"/>
-<connect gate="G$1" pin="O6" pad="13"/>
-<connect gate="G$1" pin="O7" pad="12"/>
-<connect gate="G$1" pin="O8" pad="11"/>
+<connect gate="IC" pin="CD+" pad="10"/>
+<connect gate="IC" pin="GND" pad="9"/>
+<connect gate="IC" pin="I1" pad="1"/>
+<connect gate="IC" pin="I2" pad="2"/>
+<connect gate="IC" pin="I3" pad="3"/>
+<connect gate="IC" pin="I4" pad="4"/>
+<connect gate="IC" pin="I5" pad="5"/>
+<connect gate="IC" pin="I6" pad="6"/>
+<connect gate="IC" pin="I7" pad="7"/>
+<connect gate="IC" pin="I8" pad="8"/>
+<connect gate="IC" pin="O1" pad="18"/>
+<connect gate="IC" pin="O2" pad="17"/>
+<connect gate="IC" pin="O3" pad="16"/>
+<connect gate="IC" pin="O4" pad="15"/>
+<connect gate="IC" pin="O5" pad="14"/>
+<connect gate="IC" pin="O6" pad="13"/>
+<connect gate="IC" pin="O7" pad="12"/>
+<connect gate="IC" pin="O8" pad="11"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -892,24 +892,24 @@ Source: http://www.seoulsemicon.co.kr .. F50360.pdf</description>
 </device>
 <device name="SOP18" package="SOP18">
 <connects>
-<connect gate="G$1" pin="CD+" pad="10"/>
-<connect gate="G$1" pin="GND" pad="9"/>
-<connect gate="G$1" pin="I1" pad="1"/>
-<connect gate="G$1" pin="I2" pad="2"/>
-<connect gate="G$1" pin="I3" pad="3"/>
-<connect gate="G$1" pin="I4" pad="4"/>
-<connect gate="G$1" pin="I5" pad="5"/>
-<connect gate="G$1" pin="I6" pad="6"/>
-<connect gate="G$1" pin="I7" pad="7"/>
-<connect gate="G$1" pin="I8" pad="8"/>
-<connect gate="G$1" pin="O1" pad="18"/>
-<connect gate="G$1" pin="O2" pad="17"/>
-<connect gate="G$1" pin="O3" pad="16"/>
-<connect gate="G$1" pin="O4" pad="15"/>
-<connect gate="G$1" pin="O5" pad="14"/>
-<connect gate="G$1" pin="O6" pad="13"/>
-<connect gate="G$1" pin="O7" pad="12"/>
-<connect gate="G$1" pin="O8" pad="11"/>
+<connect gate="IC" pin="CD+" pad="10"/>
+<connect gate="IC" pin="GND" pad="9"/>
+<connect gate="IC" pin="I1" pad="1"/>
+<connect gate="IC" pin="I2" pad="2"/>
+<connect gate="IC" pin="I3" pad="3"/>
+<connect gate="IC" pin="I4" pad="4"/>
+<connect gate="IC" pin="I5" pad="5"/>
+<connect gate="IC" pin="I6" pad="6"/>
+<connect gate="IC" pin="I7" pad="7"/>
+<connect gate="IC" pin="I8" pad="8"/>
+<connect gate="IC" pin="O1" pad="18"/>
+<connect gate="IC" pin="O2" pad="17"/>
+<connect gate="IC" pin="O3" pad="16"/>
+<connect gate="IC" pin="O4" pad="15"/>
+<connect gate="IC" pin="O5" pad="14"/>
+<connect gate="IC" pin="O6" pad="13"/>
+<connect gate="IC" pin="O7" pad="12"/>
+<connect gate="IC" pin="O8" pad="11"/>
 </connects>
 <technologies>
 <technology name=""/>

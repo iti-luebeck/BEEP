@@ -8303,13 +8303,13 @@ Source: 008-0260-0_E.pdf</description>
 <parts>
 <part name="IC1" library="atmega8" deviceset="ATMEGA48/88/168" device="-AU"/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
-<part name="R1" library="rcl" deviceset="R-EU_" device="M0805"/>
+<part name="R1" library="rcl" deviceset="R-EU_" device="M0805" value="10k"/>
 <part name="C1" library="rcl" deviceset="C-EU" device="C0805"/>
 <part name="C2" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C3" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C4" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C5" library="rcl" deviceset="C-EU" device="050-025X075"/>
-<part name="Q1" library="crystal" deviceset="CRYSTAL" device="HC33U-V"/>
+<part name="C3" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C4" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C5" library="rcl" deviceset="C-EU" device="050-025X075" value="100n"/>
+<part name="Q1" library="crystal" deviceset="CRYSTAL" device="HC49S" value="20Mhz"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="P+2" library="supply1" deviceset="VCC" device=""/>
@@ -8318,16 +8318,16 @@ Source: 008-0260-0_E.pdf</description>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="VCC" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
-<part name="R2" library="rcl" deviceset="R-EU_" device="0207/7"/>
-<part name="R3" library="rcl" deviceset="R-EU_" device="0207/7"/>
-<part name="R4" library="rcl" deviceset="R-EU_" device="0207/7"/>
-<part name="JP1" library="pinhead" deviceset="PINHD-2X3" device=""/>
+<part name="R2" library="rcl" deviceset="R-EU_" device="0207/7" value="1k"/>
+<part name="R3" library="rcl" deviceset="R-EU_" device="0207/7" value="1k"/>
+<part name="R4" library="rcl" deviceset="R-EU_" device="0207/7" value="1k"/>
+<part name="SPI" library="pinhead" deviceset="PINHD-2X3" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="JP2" library="pinhead" deviceset="PINHD-1X9" device=""/>
 <part name="JP3" library="pinhead" deviceset="PINHD-1X5" device=""/>
 <part name="JP4" library="pinhead" deviceset="PINHD-1X6" device=""/>
 <part name="JP5" library="pinhead" deviceset="PINHD-1X3" device=""/>
-<part name="JP6" library="pinhead" deviceset="PINHD-2X3" device=""/>
+<part name="POWER" library="pinhead" deviceset="PINHD-2X3" device=""/>
 <part name="P+4" library="supply1" deviceset="VCC" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 </parts>
@@ -8356,13 +8356,13 @@ Source: 008-0260-0_E.pdf</description>
 <instance part="R2" gate="G$1" x="106.68" y="25.4"/>
 <instance part="R3" gate="G$1" x="106.68" y="22.86"/>
 <instance part="R4" gate="G$1" x="106.68" y="20.32"/>
-<instance part="JP1" gate="A" x="149.86" y="50.8"/>
+<instance part="SPI" gate="A" x="149.86" y="50.8"/>
 <instance part="GND6" gate="1" x="167.64" y="43.18"/>
 <instance part="JP2" gate="A" x="119.38" y="76.2"/>
 <instance part="JP3" gate="A" x="119.38" y="50.8"/>
 <instance part="JP4" gate="A" x="139.7" y="25.4"/>
 <instance part="JP5" gate="A" x="119.38" y="38.1"/>
-<instance part="JP6" gate="A" x="71.12" y="137.16" rot="R270"/>
+<instance part="POWER" gate="A" x="71.12" y="137.16" rot="R270"/>
 <instance part="P+4" gate="VCC" x="58.42" y="144.78"/>
 <instance part="GND5" gate="1" x="58.42" y="127"/>
 </instances>
@@ -8432,7 +8432,7 @@ Source: 008-0260-0_E.pdf</description>
 <wire x1="172.72" y1="91.44" x2="172.72" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="6"/>
+<pinref part="SPI" gate="A" pin="6"/>
 <wire x1="154.94" y1="48.26" x2="167.64" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 <wire x1="167.64" y1="48.26" x2="167.64" y2="45.72" width="0.1524" layer="91"/>
@@ -8440,12 +8440,12 @@ Source: 008-0260-0_E.pdf</description>
 <segment>
 <pinref part="GND5" gate="1" pin="GND"/>
 <wire x1="58.42" y1="132.08" x2="58.42" y2="129.54" width="0.1524" layer="91"/>
-<pinref part="JP6" gate="A" pin="2"/>
+<pinref part="POWER" gate="A" pin="2"/>
 <wire x1="73.66" y1="132.08" x2="71.12" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="JP6" gate="A" pin="4"/>
+<pinref part="POWER" gate="A" pin="4"/>
 <junction x="71.12" y="132.08"/>
 <wire x1="71.12" y1="132.08" x2="68.58" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="JP6" gate="A" pin="6"/>
+<pinref part="POWER" gate="A" pin="6"/>
 <wire x1="58.42" y1="132.08" x2="68.58" y2="132.08" width="0.1524" layer="91"/>
 <junction x="68.58" y="132.08"/>
 </segment>
@@ -8489,12 +8489,12 @@ Source: 008-0260-0_E.pdf</description>
 <segment>
 <pinref part="P+4" gate="VCC" pin="VCC"/>
 <wire x1="58.42" y1="139.7" x2="58.42" y2="142.24" width="0.1524" layer="91"/>
-<pinref part="JP6" gate="A" pin="1"/>
+<pinref part="POWER" gate="A" pin="1"/>
 <wire x1="73.66" y1="139.7" x2="71.12" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="JP6" gate="A" pin="3"/>
+<pinref part="POWER" gate="A" pin="3"/>
 <junction x="71.12" y="139.7"/>
 <wire x1="71.12" y1="139.7" x2="68.58" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="JP6" gate="A" pin="5"/>
+<pinref part="POWER" gate="A" pin="5"/>
 <wire x1="58.42" y1="139.7" x2="68.58" y2="139.7" width="0.1524" layer="91"/>
 <junction x="68.58" y="139.7"/>
 </segment>
@@ -8571,7 +8571,7 @@ Source: 008-0260-0_E.pdf</description>
 <wire x1="111.76" y1="25.4" x2="137.16" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="1"/>
+<pinref part="SPI" gate="A" pin="1"/>
 <wire x1="147.32" y1="53.34" x2="137.16" y2="53.34" width="0.1524" layer="91"/>
 <label x="137.16" y="53.34" size="1.778" layer="95"/>
 </segment>
@@ -8584,7 +8584,7 @@ Source: 008-0260-0_E.pdf</description>
 <wire x1="111.76" y1="22.86" x2="137.16" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="3"/>
+<pinref part="SPI" gate="A" pin="3"/>
 <wire x1="147.32" y1="50.8" x2="137.16" y2="50.8" width="0.1524" layer="91"/>
 <label x="137.16" y="50.8" size="1.778" layer="95"/>
 </segment>
@@ -8597,14 +8597,14 @@ Source: 008-0260-0_E.pdf</description>
 <wire x1="111.76" y1="20.32" x2="137.16" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="5"/>
+<pinref part="SPI" gate="A" pin="5"/>
 <wire x1="147.32" y1="48.26" x2="137.16" y2="48.26" width="0.1524" layer="91"/>
 <label x="137.16" y="48.26" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SS" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="4"/>
+<pinref part="SPI" gate="A" pin="4"/>
 <wire x1="154.94" y1="50.8" x2="165.1" y2="50.8" width="0.1524" layer="91"/>
 <label x="160.02" y="50.8" size="1.778" layer="95"/>
 </segment>
@@ -8778,6 +8778,9 @@ Source: 008-0260-0_E.pdf</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,27.94,27.94,IC1,AGND,GND,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>

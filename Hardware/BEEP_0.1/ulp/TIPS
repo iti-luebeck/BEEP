@@ -1,0 +1,5 @@
+1. Inkscape:
+    * Vermeide cutouts für Polygone 
+    * Export nach a.ps
+2. pstoedit -f dxf a.ps a.dxf
+3. import mit import_dxf_polygons_v4.ulp
