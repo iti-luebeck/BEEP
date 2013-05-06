@@ -1,3 +1,6 @@
+#Eagle Backups
 *.b#*
 *.s#*
 *.l#*
+#eagle settings (computer specific)
+eagle.epf
