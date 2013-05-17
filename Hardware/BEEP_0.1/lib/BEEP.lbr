@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -153,16 +153,17 @@ PCA9548A Datasheet</description>
 <text x="-3.04" y="3.31" size="1.27" layer="25">&gt;Name</text>
 </package>
 <package name="HSDL-9100">
-<smd name="LED_A" x="-3.65" y="1.1" dx="1.6" dy="0.6" layer="1"/>
-<smd name="LED_K" x="-3.65" y="-1.1" dx="1.6" dy="0.6" layer="1"/>
-<smd name="DET_A" x="3.65" y="-1.1" dx="1.6" dy="0.6" layer="1"/>
-<smd name="DET_K" x="3.65" y="1.1" dx="1.6" dy="0.6" layer="1"/>
-<wire x1="3.55" y1="1.375" x2="-3.55" y2="1.375" width="0.127" layer="21"/>
-<wire x1="-3.55" y1="1.375" x2="-3.55" y2="-1.375" width="0.127" layer="21"/>
-<wire x1="-3.55" y1="-1.375" x2="3.55" y2="-1.375" width="0.127" layer="21"/>
-<wire x1="3.55" y1="-1.375" x2="3.55" y2="1.375" width="0.127" layer="21"/>
+<smd name="LED_A" x="-3.65" y="0.55" dx="1.6" dy="0.6" layer="1"/>
+<smd name="LED_K" x="-3.65" y="-0.55" dx="1.6" dy="0.6" layer="1"/>
+<smd name="DET_A" x="3.65" y="-0.55" dx="1.6" dy="0.6" layer="1"/>
+<smd name="DET_K" x="3.65" y="0.55" dx="1.6" dy="0.6" layer="1"/>
+<wire x1="3.55" y1="1.175" x2="-3.55" y2="1.175" width="0.127" layer="21"/>
+<wire x1="-3.55" y1="1.175" x2="-3.55" y2="-1.175" width="0.127" layer="21"/>
+<wire x1="-3.55" y1="-1.175" x2="3.55" y2="-1.175" width="0.127" layer="21"/>
+<wire x1="3.55" y1="-1.175" x2="3.55" y2="1.175" width="0.127" layer="21"/>
 <text x="-2.8" y="-3.2" size="1.27" layer="25">&gt;Name</text>
 <text x="-3.5" y="2" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-0.9" y1="-1.1" x2="-0.9" y2="1.1" width="0.127" layer="21"/>
 </package>
 <package name="TCS32X0">
 <smd name="OUT" x="0.635" y="2.325" dx="0.5" dy="2.5" layer="1"/>

@@ -10883,10 +10883,9 @@ DIN A4, landscape with location and doc. field</description>
 <pinref part="S1" gate="1" pin="P1"/>
 <wire x1="25.4" y1="99.06" x2="20.32" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="99.06" x2="20.32" y2="104.14" width="0.1524" layer="91"/>
-<pinref part="S1" gate="1" pin="S1"/>
-<wire x1="25.4" y1="99.06" x2="30.48" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="99.06" x2="30.48" y2="104.14" width="0.1524" layer="91"/>
-<junction x="25.4" y="99.06"/>
+<pinref part="S1" gate="1" pin="P"/>
+<wire x1="20.32" y1="104.14" x2="20.32" y2="106.68" width="0.1524" layer="91"/>
+<junction x="20.32" y="104.14"/>
 </segment>
 <segment>
 <pinref part="ISP" gate="1" pin="6"/>
@@ -10980,10 +10979,8 @@ DIN A4, landscape with location and doc. field</description>
 <junction x="40.64" y="106.68"/>
 <wire x1="40.64" y1="114.3" x2="35.56" y2="114.3" width="0.1524" layer="91"/>
 <label x="35.56" y="114.3" size="1.778" layer="95"/>
-<pinref part="S1" gate="1" pin="P"/>
-<wire x1="20.32" y1="106.68" x2="20.32" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="114.3" x2="30.48" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="114.3" x2="30.48" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="S1" gate="1" pin="S1"/>
+<wire x1="30.48" y1="104.14" x2="30.48" y2="106.68" width="0.1524" layer="91"/>
 <junction x="30.48" y="106.68"/>
 </segment>
 <segment>

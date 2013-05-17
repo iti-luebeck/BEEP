@@ -61,16 +61,17 @@
 <library name="BEEP">
 <packages>
 <package name="HSDL-9100">
-<smd name="LED_A" x="-3.65" y="1.1" dx="1.6" dy="0.6" layer="1"/>
-<smd name="LED_K" x="-3.65" y="-1.1" dx="1.6" dy="0.6" layer="1"/>
-<smd name="DET_A" x="3.65" y="-1.1" dx="1.6" dy="0.6" layer="1"/>
-<smd name="DET_K" x="3.65" y="1.1" dx="1.6" dy="0.6" layer="1"/>
-<wire x1="3.55" y1="1.375" x2="-3.55" y2="1.375" width="0.127" layer="21"/>
-<wire x1="-3.55" y1="1.375" x2="-3.55" y2="-1.375" width="0.127" layer="21"/>
-<wire x1="-3.55" y1="-1.375" x2="3.55" y2="-1.375" width="0.127" layer="21"/>
-<wire x1="3.55" y1="-1.375" x2="3.55" y2="1.375" width="0.127" layer="21"/>
+<smd name="LED_A" x="-3.65" y="0.55" dx="1.6" dy="0.6" layer="1"/>
+<smd name="LED_K" x="-3.65" y="-0.55" dx="1.6" dy="0.6" layer="1"/>
+<smd name="DET_A" x="3.65" y="-0.55" dx="1.6" dy="0.6" layer="1"/>
+<smd name="DET_K" x="3.65" y="0.55" dx="1.6" dy="0.6" layer="1"/>
+<wire x1="3.55" y1="1.175" x2="-3.55" y2="1.175" width="0.127" layer="21"/>
+<wire x1="-3.55" y1="1.175" x2="-3.55" y2="-1.175" width="0.127" layer="21"/>
+<wire x1="-3.55" y1="-1.175" x2="3.55" y2="-1.175" width="0.127" layer="21"/>
+<wire x1="3.55" y1="-1.175" x2="3.55" y2="1.175" width="0.127" layer="21"/>
 <text x="-2.8" y="-3.2" size="1.27" layer="25">&gt;Name</text>
 <text x="-3.5" y="2" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-0.9" y1="-1.1" x2="-0.9" y2="1.1" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
