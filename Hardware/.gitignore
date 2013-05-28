@@ -4,3 +4,5 @@
 *.l#*
 #eagle settings (computer specific)
 eagle.epf
+#Inventor Backups
+OldVersions/
