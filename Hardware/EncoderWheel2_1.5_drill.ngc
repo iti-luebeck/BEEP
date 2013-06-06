@@ -1,0 +1,109 @@
+;PYCAM-META-DATA: Filename: C:\Users\hanse\Desktop\Beep\Hardware\GetriebeB\EncoderWheel2_.stl
+;PYCAM-META-DATA: Timestamp: 2013-06-05 18:32:27.611000
+;PYCAM-META-DATA: Version: 0.5.1
+;Estimated machine time: 3 minutes
+G40 (disable tool radius compensation)
+G49 (disable tool length compensation)
+G80 (cancel modal motion)
+G54 (select coordinate system 1)
+G90 (disable incremental moves)
+G21 (metric)
+G61 (exact path mode)
+F200.00000
+S1000.00000
+;PYCAM_TOOLPATH_SETTINGS: START
+;[Bounds]
+;maxz = 1.9
+;maxx = 21.27
+;maxy = 21.27
+;minx = 0.73
+;miny = 0.73
+;minz = 0.0
+;
+;[Tool]
+;torus_radius = 0.25
+;speed = 1000.0
+;shape = CylindricalCutter
+;tool_radius = 0.73
+;feedrate = 200.0
+;
+;[Process]
+;generator = ContourFollow
+;pocketing_type = none
+;engrave_offset = 0.0
+;milling_style = conventional
+;path_direction = x
+;step_down = 5.0
+;postprocessor = SimpleCutter
+;material_allowance = 0.0
+;
+;PYCAM_TOOLPATH_SETTINGS: END
+T1 M6
+G0 Z5.0000
+M3 (start spindle)
+G04 P3 (wait for 3 seconds)
+ X19.7500 Y13.8517
+
+G1 Z0.0000
+ X19.7530 Y13.8511
+G0 Z5.0000
+ X14.7507 Y19.4040
+G1 Z0.0000
+ X14.7500 Y19.4011
+G0 Z5.0000
+ X17.8443 Y17.1606
+G1 Z0.0000
+ X17.8455 Y17.1578
+G0 Z5.0000
+ X20.1505 Y10.0470
+G1 Z0.0000
+ X20.1534 Y10.0462
+G0 Z5.0000
+ X18.9689 Y6.4086
+G1 Z0.0000
+ X18.9718 Y6.4076
+G0 Z5.0000
+ X16.4163 Y3.5564
+G1 Z0.0000
+ X16.4156 Y3.5535
+G0 Z5.0000
+ X12.9214 Y1.9998
+G1 Z0.0000
+ X12.9205 Y1.9969
+G0 Z5.0000
+ X11.0087 Y20.2000
+G1 Z0.0000
+ X11.0082 Y20.1970
+G0 Z5.0000
+ X7.2651 Y19.3995
+G1 Z0.0000
+ X7.2651 Y19.3995
+G0 Z5.0000
+ X9.0959 Y2.0023
+G1 Z0.0000
+ X9.0958 Y1.9992
+G0 Z5.0000
+ X4.1689 Y17.1625
+G1 Z0.0000
+ X4.1708 Y17.1601
+G0 Z5.0000
+ X2.2577 Y13.8476
+G1 Z0.0000
+ X2.2588 Y13.8448
+G0 Z5.0000
+ X1.8525 Y10.0468
+G1 Z0.0000
+ X1.8553 Y10.0456
+G0 Z5.0000
+ X3.0341 Y6.4086
+G1 Z0.0000
+ X3.0369 Y6.4076
+G0 Z5.0000
+ X5.6008 Y3.5546
+G1 Z0.0000
+ X5.5994 Y3.5519
+G0 Z5.0000
+M5 (stop spindle)
+G04 P3 (wait for 3 seconds)
+G0 Z5.0000
+M2 (end program)
