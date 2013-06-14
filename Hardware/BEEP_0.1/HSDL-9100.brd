@@ -66,7 +66,7 @@
 <text x="5.3" y="4.7" size="1.4224" layer="26" rot="MR90">LED</text>
 <text x="10.4" y="4.6" size="1.4224" layer="26" rot="MR90">PD</text>
 <text x="15.1" y="9.4" size="0.8128" layer="100">HSDL-9100
-v0.1.1</text>
+v0.2</text>
 <polygon width="0.4064" layer="41">
 <vertex x="21.3" y="15.4"/>
 <vertex x="14.9" y="15.4"/>
