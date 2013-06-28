@@ -1326,6 +1326,12 @@ Source: http://www.seoulsemicon.co.kr .. F50360.pdf</description>
 <rectangle x1="53.022" y1="79.814" x2="53.53" y2="80.322" layer="21" rot="R90"/>
 <rectangle x1="50.482" y1="82.354" x2="50.99" y2="82.862" layer="21" rot="R90"/>
 <rectangle x1="53.022" y1="82.354" x2="53.53" y2="82.862" layer="21" rot="R90"/>
+<rectangle x1="23.95" y1="-7.7" x2="37.8" y2="9.5" layer="40"/>
+<rectangle x1="23.95" y1="-7.7" x2="37.8" y2="9.5" layer="39"/>
+<circle x="43.5" y="5" radius="1.45" width="0.127" layer="21"/>
+<circle x="18" y="59.5" radius="1.45" width="0.127" layer="21"/>
+<rectangle x1="43.9" y1="34.6" x2="53.9" y2="44.4" layer="39"/>
+<rectangle x1="53.9" y1="36.1" x2="62.9" y2="42.9" layer="39"/>
 </package>
 <package name="GY-81">
 <wire x1="7.62" y1="-5.715" x2="8.255" y2="-5.08" width="0.1524" layer="21"/>
