@@ -1,5 +1,6 @@
-1. Inkscape:
-    * Vermeide cutouts für Polygone 
-    * Export nach a.ps
-2. pstoedit -f dxf a.ps a.dxf
-3. import mit import_dxf_polygons_v4.ulp
+1a. Inkscape:
+     * Vermeide cutouts für Polygone 
+     * Export nach a.pdf
+1b. Inventor export nach dxf/dwg, 1:1 Druck in pdf
+2.  pstoedit -f dxf a.pdf a.dxf
+3.  import mit import_dxf_polygons_v4.ulp
