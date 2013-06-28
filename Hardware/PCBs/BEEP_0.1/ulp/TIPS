@@ -2,5 +2,5 @@
      * Vermeide cutouts für Polygone 
      * Export nach a.pdf
 1b. Inventor export nach dxf/dwg, 1:1 Druck in pdf
-2.  pstoedit -f dxf -mm a.pdf a.dxf
+2.  pstoedit -f "dxf: -mm -polyaslines" a.pdf a.dxf
 3.  import mit import_dxf_polygons_v4.ulp
