@@ -12602,6 +12602,9 @@ DDEController.pdf</description>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
 <pinref part="R5" gate="G$1" pin="2"/>
+<pinref part="U3" gate="G$1" pin="PA0"/>
+<wire x1="129.54" y1="160.02" x2="175.26" y2="160.02" width="0.1524" layer="91"/>
+<junction x="175.26" y="160.02"/>
 </segment>
 </net>
 <net name="BATT_WARN_0" class="0">
