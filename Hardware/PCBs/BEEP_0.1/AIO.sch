@@ -10793,6 +10793,7 @@ DDEController.pdf</description>
 <part name="C11" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
 <part name="C12" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
 <part name="U3" library="atmel-xmega" deviceset="ATXMEGA64D3" device="-AU"/>
+<part name="JP1" library="pinhead" deviceset="PINHD-1X2" device="" value="I2C"/>
 </parts>
 <sheets>
 <sheet>
@@ -11036,6 +11037,7 @@ DDEController.pdf</description>
 <instance part="C11" gate="G$1" x="40.64" y="312.42" rot="R180"/>
 <instance part="C12" gate="G$1" x="38.1" y="363.22" rot="R180"/>
 <instance part="U3" gate="G$1" x="111.76" y="116.84"/>
+<instance part="JP1" gate="G$1" x="254" y="93.98"/>
 </instances>
 <busses>
 </busses>
@@ -11916,6 +11918,11 @@ DDEController.pdf</description>
 <wire x1="93.98" y1="111.76" x2="88.9" y2="111.76" width="0.1524" layer="91"/>
 <label x="88.9" y="111.76" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="2"/>
+<wire x1="251.46" y1="93.98" x2="243.84" y2="93.98" width="0.1524" layer="91"/>
+<label x="243.84" y="93.98" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="SDA" class="0">
 <segment>
@@ -11936,6 +11943,11 @@ DDEController.pdf</description>
 <pinref part="U3" gate="G$1" pin="PE0"/>
 <wire x1="93.98" y1="114.3" x2="88.9" y2="114.3" width="0.1524" layer="91"/>
 <label x="88.9" y="114.3" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="1"/>
+<wire x1="251.46" y1="96.52" x2="243.84" y2="96.52" width="0.1524" layer="91"/>
+<label x="243.84" y="96.52" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="PDI_DATA" class="0">
