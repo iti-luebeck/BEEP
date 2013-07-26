@@ -1,0 +1,11 @@
+<stack>
+  <name>beep_framework</name>
+  <version>0.1</version>
+  <description brief="Central communication stack providing access to all devices">Stack providing node to communicate with all devices of Beep. Providing topics containing sensor data and topics to send commands to actuators.</description>
+  <author>Marvin Lindenberg</author>
+  <maintainer></maintainer>
+  <license></license>
+  <copyright></copyright>
+
+  <build_depends>genmsg</build_depends>
+</stack>

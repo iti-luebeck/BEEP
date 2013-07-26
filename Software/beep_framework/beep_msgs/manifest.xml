@@ -1,15 +1,15 @@
 <package>
-  <description brief="ir_distance">
+  <description brief="beep_msgs">
 
-     ir_distance
+     beep_msgs
 
   </description>
   <author>pi</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/ir_distance</url>
+  <url>http://ros.org/wiki/beep_msgs</url>
   <depend package="std_msgs"/>
-  <depend package="rospy"/>
+  <depend package="sensor_msgs"/>
 
 </package>
 
