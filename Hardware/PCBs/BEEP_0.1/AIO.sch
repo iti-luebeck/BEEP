@@ -1546,6 +1546,49 @@ Source: http://www.irf.com/product-info/datasheets/data/irf7389.pdf</description
 <rectangle x1="1.3446" y1="2.3618" x2="2.4654" y2="2.7174" layer="51" rot="R90"/>
 <circle x="-1.5875" y="-1.27" radius="0.3175" width="0.127" layer="21"/>
 </package>
+<package name="SSOP16">
+<description>&lt;b&gt;Small Shrink Outline Package&lt;/b&gt; SSOP 16 (5.3mm x 6.2mm)&lt;p&gt;
+Source: www.austriamicrosystems.com .. AS5040DataSheetRev12.pdf</description>
+<wire x1="-3.068" y1="3.015" x2="3.068" y2="3.015" width="0.2032" layer="51"/>
+<wire x1="3.068" y1="3.015" x2="3.068" y2="-3.015" width="0.2032" layer="21"/>
+<wire x1="3.068" y1="-3.015" x2="-3.068" y2="-3.015" width="0.2032" layer="51"/>
+<wire x1="-3.068" y1="-3.015" x2="-3.068" y2="3.015" width="0.2032" layer="21"/>
+<circle x="-1.885" y="-2.365" radius="0.39" width="0.2032" layer="21"/>
+<smd name="1" x="-2.275" y="-3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="2" x="-1.625" y="-3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="3" x="-0.975" y="-3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="4" x="-0.325" y="-3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="5" x="0.325" y="-3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="6" x="0.975" y="-3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="7" x="1.625" y="-3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="8" x="2.275" y="-3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="9" x="2.275" y="3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="10" x="1.625" y="3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="11" x="0.975" y="3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="12" x="0.325" y="3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="13" x="-0.325" y="3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="14" x="-0.975" y="3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="15" x="-1.625" y="3.795" dx="0.46" dy="1.43" layer="1"/>
+<smd name="16" x="-2.275" y="3.795" dx="0.46" dy="1.43" layer="1"/>
+<text x="-3.81" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="1.905" y="-2.54" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-2.4375" y1="-4.185" x2="-2.1125" y2="-3.1125" layer="51"/>
+<rectangle x1="-1.7875" y1="-4.185" x2="-1.4625" y2="-3.1125" layer="51"/>
+<rectangle x1="-1.1375" y1="-4.185" x2="-0.8125" y2="-3.1125" layer="51"/>
+<rectangle x1="-0.4875" y1="-4.185" x2="-0.1625" y2="-3.1125" layer="51"/>
+<rectangle x1="0.1625" y1="-4.185" x2="0.4875" y2="-3.1125" layer="51"/>
+<rectangle x1="0.8125" y1="-4.185" x2="1.1375" y2="-3.1125" layer="51"/>
+<rectangle x1="1.4625" y1="-4.185" x2="1.7875" y2="-3.1125" layer="51"/>
+<rectangle x1="2.1125" y1="-4.185" x2="2.4375" y2="-3.1125" layer="51"/>
+<rectangle x1="2.1125" y1="3.1125" x2="2.4375" y2="4.185" layer="51"/>
+<rectangle x1="1.4625" y1="3.1125" x2="1.7875" y2="4.185" layer="51"/>
+<rectangle x1="0.8125" y1="3.1125" x2="1.1375" y2="4.185" layer="51"/>
+<rectangle x1="0.1625" y1="3.1125" x2="0.4875" y2="4.185" layer="51"/>
+<rectangle x1="-0.4875" y1="3.1125" x2="-0.1625" y2="4.185" layer="51"/>
+<rectangle x1="-1.1375" y1="3.1125" x2="-0.8125" y2="4.185" layer="51"/>
+<rectangle x1="-1.7875" y1="3.1125" x2="-1.4625" y2="4.185" layer="51"/>
+<rectangle x1="-2.4375" y1="3.1125" x2="-2.1125" y2="4.185" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="N-MOSFET">
@@ -1922,7 +1965,30 @@ Source: http://www.irf.com/product-info/datasheets/data/irf7389.pdf</description
 <gate name="A" symbol="74HC238" x="20.32" y="0"/>
 </gates>
 <devices>
-<device name="D" package="SO16">
+<device name="SO16" package="SO16">
+<connects>
+<connect gate="A" pin="A" pad="1"/>
+<connect gate="A" pin="B" pad="2"/>
+<connect gate="A" pin="C" pad="3"/>
+<connect gate="A" pin="G1" pad="6"/>
+<connect gate="A" pin="G2A" pad="4"/>
+<connect gate="A" pin="G2B" pad="5"/>
+<connect gate="A" pin="GND" pad="8"/>
+<connect gate="A" pin="VCC" pad="16"/>
+<connect gate="A" pin="Y0" pad="15"/>
+<connect gate="A" pin="Y1" pad="14"/>
+<connect gate="A" pin="Y2" pad="13"/>
+<connect gate="A" pin="Y3" pad="12"/>
+<connect gate="A" pin="Y4" pad="11"/>
+<connect gate="A" pin="Y5" pad="10"/>
+<connect gate="A" pin="Y6" pad="9"/>
+<connect gate="A" pin="Y7" pad="7"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SSOP" package="SSOP16">
 <connects>
 <connect gate="A" pin="A" pad="1"/>
 <connect gate="A" pin="B" pad="2"/>
@@ -16971,10 +17037,10 @@ RJ45 Jack connectors&lt;br&gt;
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="C10" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
-<part name="IC3" library="BEEP" deviceset="74HC238" device="D"/>
+<part name="IC3" library="BEEP" deviceset="74HC238" device="SSOP" value="74HC238SSOP"/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
 <part name="+3V3" library="supply1" deviceset="+3V3" device=""/>
-<part name="IC4" library="BEEP" deviceset="74HC238" device="D"/>
+<part name="IC4" library="BEEP" deviceset="74HC238" device="SSOP" value="74HC238SSOP"/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="+3V4" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
@@ -17004,6 +17070,14 @@ RJ45 Jack connectors&lt;br&gt;
 <part name="GND42" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="+7V" device=""/>
 <part name="S2" library="switch-omron" deviceset="10-XX" device=""/>
+<part name="U$9" library="BEEP" deviceset="DMN2075U" device=""/>
+<part name="U$10" library="BEEP" deviceset="DMN2075U" device=""/>
+<part name="U$11" library="BEEP" deviceset="DMN2075U" device=""/>
+<part name="U$12" library="BEEP" deviceset="DMN2075U" device=""/>
+<part name="U$13" library="BEEP" deviceset="DMN2075U" device=""/>
+<part name="U$14" library="BEEP" deviceset="DMN2075U" device=""/>
+<part name="U$15" library="BEEP" deviceset="DMN2075U" device=""/>
+<part name="U$16" library="BEEP" deviceset="DMN2075U" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17265,6 +17339,14 @@ RJ45 Jack connectors&lt;br&gt;
 <instance part="GND42" gate="1" x="477.52" y="292.1"/>
 <instance part="SUPPLY2" gate="G$1" x="515.62" y="327.66"/>
 <instance part="S2" gate="1" x="541.02" y="307.34" rot="R270"/>
+<instance part="U$9" gate="G$1" x="535.94" y="406.4"/>
+<instance part="U$10" gate="G$1" x="535.94" y="393.7"/>
+<instance part="U$11" gate="G$1" x="535.94" y="381"/>
+<instance part="U$12" gate="G$1" x="535.94" y="368.3"/>
+<instance part="U$13" gate="G$1" x="535.94" y="355.6"/>
+<instance part="U$14" gate="G$1" x="535.94" y="342.9"/>
+<instance part="U$15" gate="G$1" x="546.1" y="340.36"/>
+<instance part="U$16" gate="G$1" x="546.1" y="355.6"/>
 </instances>
 <busses>
 </busses>
