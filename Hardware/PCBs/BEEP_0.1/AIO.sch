@@ -19019,9 +19019,9 @@ RJ45 Jack connectors&lt;br&gt;
 <label x="50.8" y="304.8" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="93.98" y1="86.36" x2="88.9" y2="86.36" width="0.1524" layer="91" style="longdash"/>
-<label x="88.9" y="86.36" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="U3" gate="G$1" pin="PF2"/>
+<wire x1="93.98" y1="91.44" x2="88.9" y2="91.44" width="0.1524" layer="91" style="longdash"/>
+<label x="88.9" y="91.44" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U3" gate="G$1" pin="PF0"/>
 </segment>
 </net>
 <net name="IR_LED_MK1" class="0">
@@ -19043,9 +19043,9 @@ RJ45 Jack connectors&lt;br&gt;
 <label x="50.8" y="299.72" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="93.98" y1="91.44" x2="88.9" y2="91.44" width="0.1524" layer="91" style="longdash"/>
-<label x="88.9" y="91.44" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="U3" gate="G$1" pin="PF0"/>
+<wire x1="93.98" y1="86.36" x2="88.9" y2="86.36" width="0.1524" layer="91" style="longdash"/>
+<label x="88.9" y="86.36" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U3" gate="G$1" pin="PF2"/>
 </segment>
 </net>
 <net name="RGB_LED_MK2" class="0">
