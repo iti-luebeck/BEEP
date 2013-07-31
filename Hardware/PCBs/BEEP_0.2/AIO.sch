@@ -19234,7 +19234,7 @@ RJ45 Jack connectors&lt;br&gt;
 <junction x="457.2" y="292.1"/>
 </segment>
 </net>
-<net name="N$18" class="0">
+<net name="POWER_OFF" class="0">
 <segment>
 <pinref part="R8" gate="G$1" pin="2"/>
 <wire x1="497.84" y1="299.72" x2="497.84" y2="309.88" width="0.1524" layer="91"/>
@@ -19247,6 +19247,13 @@ RJ45 Jack connectors&lt;br&gt;
 <pinref part="S1" gate="1" pin="S"/>
 <wire x1="492.76" y1="287.02" x2="492.76" y2="284.48" width="0.1524" layer="91"/>
 <junction x="492.76" y="284.48"/>
+<wire x1="497.84" y1="299.72" x2="502.92" y2="299.72" width="0.1524" layer="91"/>
+<label x="502.92" y="299.72" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="PC7"/>
+<wire x1="129.54" y1="96.52" x2="134.62" y2="96.52" width="0.1524" layer="91"/>
+<label x="134.62" y="96.52" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$22" class="0">
