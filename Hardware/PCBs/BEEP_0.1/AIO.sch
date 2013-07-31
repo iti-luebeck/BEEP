@@ -17091,7 +17091,6 @@ RJ45 Jack connectors&lt;br&gt;
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X5" device=""/>
 <part name="X11" library="con-amp" deviceset="FSIDE-8" device=""/>
-<part name="X14" library="con-amp" deviceset="FSIDE-8" device=""/>
 <part name="X15" library="con-amp" deviceset="FSIDE-8" device=""/>
 <part name="X16" library="con-amp" deviceset="FSIDE-8" device=""/>
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
@@ -17104,7 +17103,6 @@ RJ45 Jack connectors&lt;br&gt;
 <part name="GND41" library="supply1" deviceset="GND" device=""/>
 <part name="GND42" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="+7V" device=""/>
-<part name="S2" library="switch-omron" deviceset="10-XX" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="+7V" device=""/>
 <part name="GND43" library="supply1" deviceset="GND" device=""/>
 <part name="IC5" library="BEEP" deviceset="TS34119" device="SMD"/>
@@ -17116,6 +17114,7 @@ RJ45 Jack connectors&lt;br&gt;
 <part name="C14" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
 <part name="C15" library="rcl" deviceset="C-EU" device="C0603" value="1uF"/>
 <part name="X1" library="Con-amp-micromatch" deviceset="MICROMATCH-4" device=""/>
+<part name="X2" library="con-amp" deviceset="FSIDE-8" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17345,14 +17344,6 @@ RJ45 Jack connectors&lt;br&gt;
 <instance part="X11" gate="-6" x="175.26" y="347.98"/>
 <instance part="X11" gate="-7" x="175.26" y="345.44"/>
 <instance part="X11" gate="-8" x="175.26" y="342.9"/>
-<instance part="X14" gate="-1" x="228.6" y="363.22"/>
-<instance part="X14" gate="-2" x="228.6" y="360.68"/>
-<instance part="X14" gate="-3" x="228.6" y="358.14"/>
-<instance part="X14" gate="-4" x="228.6" y="355.6"/>
-<instance part="X14" gate="-5" x="228.6" y="353.06"/>
-<instance part="X14" gate="-6" x="228.6" y="350.52"/>
-<instance part="X14" gate="-7" x="228.6" y="347.98"/>
-<instance part="X14" gate="-8" x="228.6" y="345.44"/>
 <instance part="X15" gate="-1" x="175.26" y="330.2"/>
 <instance part="X15" gate="-2" x="175.26" y="327.66"/>
 <instance part="X15" gate="-3" x="175.26" y="325.12"/>
@@ -17379,7 +17370,6 @@ RJ45 Jack connectors&lt;br&gt;
 <instance part="GND41" gate="1" x="457.2" y="279.4"/>
 <instance part="GND42" gate="1" x="474.98" y="292.1"/>
 <instance part="SUPPLY2" gate="G$1" x="515.62" y="327.66"/>
-<instance part="S2" gate="1" x="541.02" y="307.34" rot="R270"/>
 <instance part="SUPPLY5" gate="G$1" x="408.94" y="327.66"/>
 <instance part="GND43" gate="1" x="408.94" y="299.72"/>
 <instance part="IC5" gate="G$1" x="401.32" y="78.74"/>
@@ -17394,6 +17384,14 @@ RJ45 Jack connectors&lt;br&gt;
 <instance part="X1" gate="-2" x="381" y="43.18"/>
 <instance part="X1" gate="-3" x="381" y="40.64"/>
 <instance part="X1" gate="-4" x="381" y="38.1"/>
+<instance part="X2" gate="-1" x="228.6" y="360.68"/>
+<instance part="X2" gate="-2" x="228.6" y="358.14"/>
+<instance part="X2" gate="-3" x="228.6" y="355.6"/>
+<instance part="X2" gate="-4" x="228.6" y="353.06"/>
+<instance part="X2" gate="-5" x="228.6" y="350.52"/>
+<instance part="X2" gate="-6" x="228.6" y="347.98"/>
+<instance part="X2" gate="-7" x="228.6" y="345.44"/>
+<instance part="X2" gate="-8" x="228.6" y="342.9"/>
 </instances>
 <busses>
 </busses>
@@ -17604,7 +17602,7 @@ RJ45 Jack connectors&lt;br&gt;
 <pinref part="GND11" gate="1" pin="GND"/>
 <wire x1="198.12" y1="353.06" x2="198.12" y2="355.6" width="0.1524" layer="91"/>
 <wire x1="226.06" y1="355.6" x2="198.12" y2="355.6" width="0.1524" layer="91"/>
-<pinref part="X14" gate="-4" pin="1"/>
+<pinref part="X2" gate="-3" pin="1"/>
 </segment>
 <segment>
 <pinref part="GND12" gate="1" pin="GND"/>
@@ -17828,7 +17826,7 @@ RJ45 Jack connectors&lt;br&gt;
 <wire x1="226.06" y1="360.68" x2="223.52" y2="360.68" width="0.1524" layer="91"/>
 <wire x1="223.52" y1="360.68" x2="223.52" y2="363.22" width="0.1524" layer="91"/>
 <pinref part="P+15" gate="1" pin="+5V"/>
-<pinref part="X14" gate="-2" pin="1"/>
+<pinref part="X2" gate="-1" pin="1"/>
 </segment>
 <segment>
 <wire x1="226.06" y1="330.2" x2="223.52" y2="330.2" width="0.1524" layer="91"/>
@@ -18541,8 +18539,9 @@ RJ45 Jack connectors&lt;br&gt;
 </net>
 <net name="BATT_GND" class="0">
 <segment>
-<wire x1="370.84" y1="304.8" x2="373.38" y2="304.8" width="0.1524" layer="91"/>
-<label x="373.38" y="304.8" size="1.27" layer="95" xref="yes"/>
+<label x="378.46" y="304.8" size="1.27" layer="95" xref="yes"/>
+<pinref part="U$5" gate="G$1" pin="D"/>
+<wire x1="370.84" y1="304.8" x2="378.46" y2="304.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="JP13" gate="G$1" pin="2"/>
@@ -18632,7 +18631,7 @@ RJ45 Jack connectors&lt;br&gt;
 <segment>
 <wire x1="226.06" y1="350.52" x2="220.98" y2="350.52" width="0.1524" layer="91"/>
 <label x="220.98" y="350.52" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="X14" gate="-6" pin="1"/>
+<pinref part="X2" gate="-5" pin="1"/>
 </segment>
 </net>
 <net name="LED_A2_OUT" class="0">
@@ -18669,7 +18668,7 @@ RJ45 Jack connectors&lt;br&gt;
 <segment>
 <wire x1="226.06" y1="347.98" x2="220.98" y2="347.98" width="0.1524" layer="91"/>
 <label x="220.98" y="347.98" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="X14" gate="-7" pin="1"/>
+<pinref part="X2" gate="-6" pin="1"/>
 </segment>
 <segment>
 <wire x1="226.06" y1="317.5" x2="220.98" y2="317.5" width="0.1524" layer="91"/>
@@ -18716,7 +18715,7 @@ RJ45 Jack connectors&lt;br&gt;
 <segment>
 <wire x1="226.06" y1="345.44" x2="220.98" y2="345.44" width="0.1524" layer="91"/>
 <label x="220.98" y="345.44" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="X14" gate="-8" pin="1"/>
+<pinref part="X2" gate="-7" pin="1"/>
 </segment>
 <segment>
 <wire x1="226.06" y1="314.96" x2="220.98" y2="314.96" width="0.1524" layer="91"/>
@@ -18763,6 +18762,7 @@ RJ45 Jack connectors&lt;br&gt;
 <segment>
 <wire x1="226.06" y1="342.9" x2="220.98" y2="342.9" width="0.1524" layer="91"/>
 <label x="220.98" y="342.9" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="X2" gate="-8" pin="1"/>
 </segment>
 <segment>
 <wire x1="226.06" y1="312.42" x2="220.98" y2="312.42" width="0.1524" layer="91"/>
@@ -18898,7 +18898,7 @@ RJ45 Jack connectors&lt;br&gt;
 <segment>
 <wire x1="226.06" y1="353.06" x2="220.98" y2="353.06" width="0.1524" layer="91"/>
 <label x="220.98" y="353.06" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="X14" gate="-5" pin="1"/>
+<pinref part="X2" gate="-4" pin="1"/>
 </segment>
 <segment>
 <pinref part="IC2" gate="IC" pin="O7"/>
@@ -18982,7 +18982,7 @@ RJ45 Jack connectors&lt;br&gt;
 <segment>
 <wire x1="226.06" y1="358.14" x2="220.98" y2="358.14" width="0.1524" layer="91"/>
 <label x="220.98" y="358.14" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="X14" gate="-3" pin="1"/>
+<pinref part="X2" gate="-2" pin="1"/>
 </segment>
 <segment>
 <wire x1="129.54" y1="124.46" x2="134.62" y2="124.46" width="0.1524" layer="91"/>
@@ -19361,6 +19361,11 @@ RJ45 Jack connectors&lt;br&gt;
 <wire x1="381" y1="86.36" x2="381" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="381" y1="91.44" x2="373.38" y2="91.44" width="0.1524" layer="91"/>
 <label x="373.38" y="91.44" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="PF6"/>
+<wire x1="93.98" y1="76.2" x2="88.9" y2="76.2" width="0.1524" layer="91"/>
+<label x="88.9" y="76.2" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
