@@ -3995,9 +3995,9 @@ DIN A4, landscape with location and doc. field</description>
 <pinref part="X1" gate="-1" pin="S"/>
 </segment>
 <segment>
-<pinref part="LED1" gate="G$1" pin="RA"/>
-<wire x1="53.34" y1="83.82" x2="45.72" y2="83.82" width="0.1524" layer="91"/>
-<label x="45.72" y="83.82" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="LED1" gate="G$1" pin="BA"/>
+<wire x1="53.34" y1="93.98" x2="45.72" y2="93.98" width="0.1524" layer="91"/>
+<label x="45.72" y="93.98" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="RGB_ANODE_2" class="0">
@@ -4019,9 +4019,9 @@ DIN A4, landscape with location and doc. field</description>
 <pinref part="X1" gate="-2" pin="S"/>
 </segment>
 <segment>
-<pinref part="LED1" gate="G$1" pin="BA"/>
-<wire x1="53.34" y1="93.98" x2="45.72" y2="93.98" width="0.1524" layer="91"/>
-<label x="45.72" y="93.98" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="LED1" gate="G$1" pin="RA"/>
+<wire x1="53.34" y1="83.82" x2="45.72" y2="83.82" width="0.1524" layer="91"/>
+<label x="45.72" y="83.82" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="IR_LED_K" class="0">
