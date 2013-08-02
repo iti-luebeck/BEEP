@@ -3914,7 +3914,7 @@ DIN A4, landscape with location and doc. field</description>
 <part name="R2" library="rcl" deviceset="R-EU_" device="R0603"/>
 <part name="X1" library="con-amp-micromatch" deviceset="MICROMATCH-8" device=""/>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
-<part name="U$1" library="BEEP" deviceset="HSDL-9100" device=""/>
+<part name="IC1" library="BEEP" deviceset="HSDL-9100" device=""/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="P+2" library="supply1" deviceset="+5V" device=""/>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
@@ -3938,7 +3938,7 @@ DIN A4, landscape with location and doc. field</description>
 <instance part="X1" gate="-7" x="236.22" y="93.98" rot="R180"/>
 <instance part="X1" gate="-8" x="236.22" y="96.52" rot="R180"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
-<instance part="U$1" gate="G$1" x="124.46" y="88.9"/>
+<instance part="IC1" gate="G$1" x="124.46" y="88.9"/>
 <instance part="P+1" gate="1" x="139.7" y="101.6"/>
 <instance part="P+2" gate="1" x="223.52" y="104.14"/>
 <instance part="P+3" gate="1" x="109.22" y="111.76"/>
@@ -3973,7 +3973,7 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="142.24" y1="86.36" x2="147.32" y2="86.36" width="0.1524" layer="91"/>
 <junction x="142.24" y="86.36"/>
 <label x="147.32" y="86.36" size="1.778" layer="95" xref="yes"/>
-<pinref part="U$1" gate="G$1" pin="DET_A"/>
+<pinref part="IC1" gate="G$1" pin="DET_A"/>
 </segment>
 <segment>
 <wire x1="231.14" y1="93.98" x2="218.44" y2="93.98" width="0.1524" layer="91"/>
@@ -3985,7 +3985,7 @@ DIN A4, landscape with location and doc. field</description>
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="109.22" y1="91.44" x2="109.22" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="LED_A"/>
+<pinref part="IC1" gate="G$1" pin="LED_A"/>
 </segment>
 </net>
 <net name="RGB_ANODE_1" class="0">
@@ -4026,7 +4026,7 @@ DIN A4, landscape with location and doc. field</description>
 </net>
 <net name="IR_LED_K" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="LED_K"/>
+<pinref part="IC1" gate="G$1" pin="LED_K"/>
 <wire x1="109.22" y1="86.36" x2="106.68" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="86.36" x2="106.68" y2="71.12" width="0.1524" layer="91"/>
 <label x="106.68" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -4045,7 +4045,7 @@ DIN A4, landscape with location and doc. field</description>
 </segment>
 <segment>
 <wire x1="139.7" y1="91.44" x2="139.7" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="DET_K"/>
+<pinref part="IC1" gate="G$1" pin="DET_K"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
 </segment>
 <segment>
