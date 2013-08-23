@@ -18042,6 +18042,7 @@ Source: 008-0260-0_E.pdf</description>
 <part name="C17" library="rcl" deviceset="C-EU" device="C0603" value="22pF"/>
 <part name="GND37" library="supply1" deviceset="GND" device=""/>
 <part name="R31" library="rcl" deviceset="R-EU_" device="R0603" value="0R"/>
+<part name="R32" library="rcl" deviceset="R-EU_" device="R0603" value="100R"/>
 </parts>
 <sheets>
 <sheet>
@@ -18352,6 +18353,7 @@ XMega revisionen
 <instance part="C17" gate="G$1" x="73.66" y="119.38" rot="R90"/>
 <instance part="GND37" gate="1" x="60.96" y="116.84"/>
 <instance part="R31" gate="G$1" x="525.78" y="340.36"/>
+<instance part="R32" gate="G$1" x="213.36" y="132.08"/>
 </instances>
 <busses>
 </busses>
@@ -18980,9 +18982,9 @@ XMega revisionen
 <label x="403.86" y="152.4" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<label x="88.9" y="109.22" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="U1" gate="G$1" pin="PE2"/>
-<wire x1="93.98" y1="109.22" x2="88.9" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="109.22" x2="134.62" y2="109.22" width="0.1524" layer="91" style="longdash"/>
+<label x="134.62" y="109.22" size="1.27" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PC2"/>
 </segment>
 </net>
 <net name="MOTOR_B_IN2" class="0">
@@ -19028,9 +19030,9 @@ XMega revisionen
 <label x="403.86" y="172.72" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<label x="88.9" y="106.68" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="U1" gate="G$1" pin="PE3"/>
-<wire x1="93.98" y1="106.68" x2="88.9" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="106.68" x2="134.62" y2="106.68" width="0.1524" layer="91" style="longdash"/>
+<label x="134.62" y="106.68" size="1.27" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PC3"/>
 </segment>
 </net>
 <net name="MOTOR_A_IN1" class="0">
@@ -19291,14 +19293,14 @@ XMega revisionen
 <label x="502.92" y="381" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="PE1"/>
-<wire x1="93.98" y1="111.76" x2="88.9" y2="111.76" width="0.1524" layer="91"/>
-<label x="88.9" y="111.76" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <wire x1="241.3" y1="93.98" x2="228.6" y2="93.98" width="0.1524" layer="91"/>
 <label x="228.6" y="93.98" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="X10" gate="-3" pin="1"/>
+</segment>
+<segment>
+<wire x1="129.54" y1="111.76" x2="134.62" y2="111.76" width="0.1524" layer="91" style="longdash"/>
+<label x="134.62" y="111.76" size="1.27" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PC1"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -19317,14 +19319,14 @@ XMega revisionen
 <label x="502.92" y="383.54" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="PE0"/>
-<wire x1="93.98" y1="114.3" x2="88.9" y2="114.3" width="0.1524" layer="91"/>
-<label x="88.9" y="114.3" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <wire x1="241.3" y1="91.44" x2="228.6" y2="91.44" width="0.1524" layer="91"/>
 <label x="228.6" y="91.44" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="X10" gate="-4" pin="1"/>
+</segment>
+<segment>
+<wire x1="129.54" y1="114.3" x2="134.62" y2="114.3" width="0.1524" layer="91" style="longdash"/>
+<label x="134.62" y="114.3" size="1.27" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PC0"/>
 </segment>
 </net>
 <net name="PDI_DATA" class="0">
@@ -19479,9 +19481,9 @@ XMega revisionen
 <label x="33.02" y="388.62" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="129.54" y1="109.22" x2="134.62" y2="109.22" width="0.1524" layer="91" style="longdash"/>
-<label x="134.62" y="109.22" size="1.27" layer="95" xref="yes"/>
-<pinref part="U1" gate="G$1" pin="PC2"/>
+<label x="88.9" y="109.22" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PE2"/>
+<wire x1="93.98" y1="109.22" x2="88.9" y2="109.22" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LED_A1" class="0">
@@ -19491,9 +19493,9 @@ XMega revisionen
 <label x="33.02" y="396.24" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="129.54" y1="111.76" x2="134.62" y2="111.76" width="0.1524" layer="91" style="longdash"/>
-<label x="134.62" y="111.76" size="1.27" layer="95" xref="yes"/>
-<pinref part="U1" gate="G$1" pin="PC1"/>
+<pinref part="U1" gate="G$1" pin="PE1"/>
+<wire x1="93.98" y1="111.76" x2="88.9" y2="111.76" width="0.1524" layer="91"/>
+<label x="88.9" y="111.76" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="LED_A0" class="0">
@@ -19503,9 +19505,9 @@ XMega revisionen
 <label x="33.02" y="403.86" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="129.54" y1="114.3" x2="134.62" y2="114.3" width="0.1524" layer="91" style="longdash"/>
-<label x="134.62" y="114.3" size="1.27" layer="95" xref="yes"/>
-<pinref part="U1" gate="G$1" pin="PC0"/>
+<pinref part="U1" gate="G$1" pin="PE0"/>
+<wire x1="93.98" y1="114.3" x2="88.9" y2="114.3" width="0.1524" layer="91"/>
+<label x="88.9" y="114.3" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="BATT_GND" class="0">
@@ -19779,14 +19781,14 @@ XMega revisionen
 </net>
 <net name="COLOR_SENSOR_PWM_LED" class="0">
 <segment>
-<pinref part="Q5" gate="G$1" pin="G"/>
-<wire x1="220.98" y1="132.08" x2="218.44" y2="132.08" width="0.1524" layer="91"/>
-<label x="218.44" y="132.08" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="200.66" y="132.08" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="208.28" y1="132.08" x2="200.66" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="R32" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<wire x1="129.54" y1="106.68" x2="134.62" y2="106.68" width="0.1524" layer="91" style="longdash"/>
-<label x="134.62" y="106.68" size="1.27" layer="95" xref="yes"/>
-<pinref part="U1" gate="G$1" pin="PC3"/>
+<label x="88.9" y="106.68" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PE3"/>
+<wire x1="93.98" y1="106.68" x2="88.9" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="IR_LED_K0" class="0">
@@ -20369,6 +20371,13 @@ XMega revisionen
 <pinref part="C16" gate="G$1" pin="2"/>
 <wire x1="86.36" y1="124.46" x2="78.74" y2="124.46" width="0.1524" layer="91"/>
 <junction x="86.36" y="124.46"/>
+</segment>
+</net>
+<net name="N$25" class="0">
+<segment>
+<pinref part="Q5" gate="G$1" pin="G"/>
+<wire x1="220.98" y1="132.08" x2="218.44" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="R32" gate="G$1" pin="2"/>
 </segment>
 </net>
 </nets>
