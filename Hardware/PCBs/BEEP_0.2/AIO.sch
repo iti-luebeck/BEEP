@@ -1131,12 +1131,11 @@
 <wire x1="56" y1="0" x2="56" y2="85" width="0.127" layer="21"/>
 <wire x1="56" y1="85" x2="0" y2="85" width="0.127" layer="21"/>
 <wire x1="0" y1="85" x2="0" y2="0" width="0.127" layer="21"/>
-<wire x1="54.5" y1="84" x2="49.5" y2="84" width="0.127" layer="21"/>
-<wire x1="49.5" y1="84" x2="49.5" y2="50.7" width="0.127" layer="21"/>
-<wire x1="49.5" y1="50.7" x2="54.5" y2="50.7" width="0.127" layer="21"/>
-<wire x1="54.5" y1="50.7" x2="54.5" y2="84" width="0.127" layer="21"/>
-<rectangle x1="2" y1="-1" x2="17.4" y2="20.8" layer="40"/>
-<rectangle x1="2" y1="-1" x2="17.4" y2="20.8" layer="39"/>
+<wire x1="54.5" y1="87.556" x2="49.5" y2="87.556" width="0.127" layer="21"/>
+<wire x1="49.5" y1="87.556" x2="49.5" y2="48.572" width="0.127" layer="21"/>
+<wire x1="49.5" y1="48.572" x2="54.5" y2="48.572" width="0.127" layer="21"/>
+<wire x1="54.5" y1="48.572" x2="54.5" y2="87.556" width="0.127" layer="21"/>
+<rectangle x1="2" y1="-1" x2="17.4" y2="20.8" layer="42"/>
 <wire x1="2" y1="-1" x2="17.4" y2="-1" width="0.127" layer="21"/>
 <wire x1="17.4" y1="-1" x2="17.4" y2="20.8" width="0.127" layer="21"/>
 <wire x1="17.4" y1="20.8" x2="2" y2="20.8" width="0.127" layer="21"/>
@@ -1285,14 +1284,11 @@
 <rectangle x1="53.022" y1="79.814" x2="53.53" y2="80.322" layer="21" rot="R90"/>
 <rectangle x1="50.482" y1="82.354" x2="50.99" y2="82.862" layer="21" rot="R90"/>
 <rectangle x1="53.022" y1="82.354" x2="53.53" y2="82.862" layer="21" rot="R90"/>
-<rectangle x1="23.95" y1="-7.7" x2="37.8" y2="9.5" layer="40"/>
-<rectangle x1="23.95" y1="-7.7" x2="37.8" y2="9.5" layer="39"/>
+<rectangle x1="23.95" y1="-7.7" x2="37.8" y2="9.5" layer="42"/>
 <circle x="43.5" y="5" radius="1.45" width="0.127" layer="21"/>
 <circle x="18" y="59.5" radius="1.45" width="0.127" layer="21"/>
 <rectangle x1="43.9" y1="34.6" x2="53.9" y2="44.4" layer="40"/>
 <rectangle x1="53.9" y1="36.1" x2="62.9" y2="42.9" layer="40"/>
-<rectangle x1="43.9" y1="34.6" x2="53.9" y2="44.4" layer="39"/>
-<rectangle x1="53.9" y1="36.1" x2="62.9" y2="42.9" layer="39"/>
 <text x="48.26" y="78.74" size="1.27" layer="26" rot="MR90">&gt;NAME</text>
 </package>
 <package name="GY-81">
