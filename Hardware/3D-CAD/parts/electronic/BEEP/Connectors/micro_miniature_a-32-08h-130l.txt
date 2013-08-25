@@ -1,0 +1,10 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"10-24092010-064279";"";
+"TraceParts.ClassPath";"ASSMANN:/ROOT/C31/C31.T01/C31.T01.T02/10-24092010-064279";"";
+"TraceParts.InstanceId";"10-24092010-064279W5EBJVUY4LG4CIQORNDR8WBL";"";
+"REFERENCE";"A-32-08H-130L";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"SUPPLIER";"ASSMANN WSW components";"";
+"DESIGN";"Micro-Miniature Steckverbinder, Buchse, gewinkelt 8 polig, Raster 1,27mm, DIP, mit Verriegelung";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartVersion";"1.0.9";"";

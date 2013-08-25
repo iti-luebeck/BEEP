@@ -1,0 +1,13 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"10-15062010-166507";"";
+"TraceParts.ClassPath";"RS_COMPONENTS:/ROOT/C31/C31.T01/C31.T01.T02/10-15062010-166507";"";
+"TraceParts.PartVersion";"1.1.3";"";
+"TraceParts.InstanceId";"10-15062010-1665071MRFA8SU4XCKDAQJLMMUVZ3FB";"";
+"REFERENCE";"826646-2";"";
+"DESIGN";"Pin header 2w s/r straight gold Mod II";"";
+"SUPPLIER";"Tyco Electronics";"";
+"RS_STOCK_NUMBER";"6689511P";"";
+"TraceParts.PartStatus";"Published";"";
+"REVISION";"O";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TIMESTAMP";"24/6/2010 11:40:47";"";

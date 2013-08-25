@@ -1,0 +1,10 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"10-12082011-098680";"";
+"TraceParts.ClassPath";"CAD_3M:/ROOT/C31/C31.T01/C31.T01.T02/10-12082011-098680";"";
+"TraceParts.InstanceId";"10-12082011-098680CHCZKSNNYFSD41TET9ZQ10VN8";"";
+"REFERENCE";"8526-4500PL-01";"";
+"DESIGN";"3M(TM) Polarized Boardmount Socket, 8500 Series,  .100" Dual Row Board Mount Socket, Centerbump Pol, Vertical, Solder Tails, 8526-4500PL-01";"";
+"SUPPLIER";"3M";"";
+"TraceParts.PartStatus";"Published";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartVersion";"1.0.5";"";
