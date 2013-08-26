@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="582.89276"
+   height="227.74911"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Neues Dokument 1">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3778">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3780" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3782" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3778"
+       id="linearGradient3784"
+       x1="578.82251"
+       y1="102.81879"
+       x2="703.56616"
+       y2="102.81879"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="536.31078"
+     inkscape:cy="405.3948"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="1016"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-90.703732,-25.755273)">
+    <text
+       xml:space="preserve"
+       style="font-size:239.36283875px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Plasmatica Ext;-inkscape-font-specification:Plasmatica Ext"
+       x="78.314835"
+       y="253.50439"
+       id="text2985"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2987"
+         x="78.314835"
+         y="253.50439">BEEP</tspan></text>
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;stroke:none;stroke-width:7.87300014;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 605.55832,25.755273 -0.4375,7.875 c 16.7836,1.039821 32.70193,8.791419 43.87946,24.495544 10.61639,14.91572 16.7177,37.1582 16.65179,60.598213 l 7.9375,0.90625 C 673.84007,94.316757 667.25658,70.168397 655.43778,53.563317 643.13314,36.275641 625.00849,26.952483 605.55832,25.755273 z m -1.34375,23.906254 -0.4375,7.96875 c 12.34481,3.09066 23.3733,10.4329 30.94196,22.08929 7.06436,10.87973 10.82892,25.632563 11.68304,36.879463 l 8,0.875 c -0.63179,-13.21719 -4.98873,-29.560133 -13.08929,-42.035713 -8.62723,-13.2867 -21.68893,-22.47297 -37.09821,-25.77679 z m -1.25,22.90625 -0.46875,8.34375 c 6.92079,3.16016 12.70473,5.67029 16.66071,10.99554 4.20508,5.66057 6.43848,14.385473 7.90179,22.504463 l 8.125,0.90625 c -1.50379,-10.03785 -4.23309,-20.719823 -9.71429,-28.098213 -5.29427,-7.12676 -13.15658,-10.91292 -22.50446,-14.65179 z"
+       id="path2989"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsccscccsccscccsccsc" />
+  </g>
+</svg>
