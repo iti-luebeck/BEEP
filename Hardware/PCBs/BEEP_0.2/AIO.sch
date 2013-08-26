@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3498,7 +3498,7 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 <rectangle x1="2.3622" y1="-1.5494" x2="3.2121" y2="1.5507" layer="51"/>
 <rectangle x1="-0.5001" y1="-1" x2="0.5001" y2="1" layer="35"/>
 </package>
-<package name="M0805@1">
+<package name="M0805">
 <description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
 MELF 0.10 W</description>
 <wire x1="-1.973" y1="0.983" x2="1.973" y2="0.983" width="0.0508" layer="39"/>
@@ -4818,22 +4818,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <rectangle x1="-0.8382" y1="-0.4699" x2="-0.3381" y2="0.4801" layer="51"/>
 <rectangle x1="0.3302" y1="-0.4699" x2="0.8303" y2="0.4801" layer="51"/>
 <rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
-</package>
-<package name="SMC_D">
-<description>&lt;b&gt;Chip Capacitor &lt;/b&gt; Polar tantalum capacitors with solid electrolyte&lt;p&gt;
-Siemens Matsushita Components B 45 194, B 45 197, B 45 198&lt;br&gt;
-Source: www.farnell.com/datasheets/247.pdf</description>
-<wire x1="-3.5" y1="2.1" x2="3.5" y2="2.1" width="0.1016" layer="51"/>
-<wire x1="3.5" y1="2.1" x2="3.5" y2="-2.1" width="0.1016" layer="51"/>
-<wire x1="3.5" y1="-2.1" x2="-3.5" y2="-2.1" width="0.1016" layer="51"/>
-<wire x1="-3.5" y1="-2.1" x2="-3.5" y2="2.1" width="0.1016" layer="51"/>
-<smd name="+" x="-3.15" y="0" dx="2.4" dy="2.8" layer="1"/>
-<smd name="-" x="3.15" y="0" dx="2.4" dy="2.8" layer="1" rot="R180"/>
-<text x="-2.54" y="2.54" size="1.016" layer="25">&gt;NAME</text>
-<text x="-2.54" y="-3.81" size="1.016" layer="27">&gt;VALUE</text>
-<rectangle x1="-3.65" y1="-1.2" x2="-3.45" y2="1.2" layer="51"/>
-<rectangle x1="3.45" y1="-1.2" x2="3.65" y2="1.2" layer="51" rot="R180"/>
-<rectangle x1="-3.5" y1="-2.1" x2="-2.4" y2="2.1" layer="51"/>
 </package>
 <package name="C1812">
 <description>&lt;b&gt;CAPACITOR&lt;/b&gt;</description>
@@ -10512,6 +10496,22 @@ Source: www.farnell.com/datasheets/247.pdf</description>
 <rectangle x1="2.8" y1="-1.1" x2="3" y2="1.1" layer="51" rot="R180"/>
 <rectangle x1="-2.85" y1="-1.55" x2="-1.9" y2="1.55" layer="51"/>
 </package>
+<package name="SMC_D">
+<description>&lt;b&gt;Chip Capacitor &lt;/b&gt; Polar tantalum capacitors with solid electrolyte&lt;p&gt;
+Siemens Matsushita Components B 45 194, B 45 197, B 45 198&lt;br&gt;
+Source: www.farnell.com/datasheets/247.pdf</description>
+<wire x1="-3.5" y1="2.1" x2="3.5" y2="2.1" width="0.1016" layer="51"/>
+<wire x1="3.5" y1="2.1" x2="3.5" y2="-2.1" width="0.1016" layer="51"/>
+<wire x1="3.5" y1="-2.1" x2="-3.5" y2="-2.1" width="0.1016" layer="51"/>
+<wire x1="-3.5" y1="-2.1" x2="-3.5" y2="2.1" width="0.1016" layer="51"/>
+<smd name="+" x="-3.15" y="0" dx="2.4" dy="2.8" layer="1"/>
+<smd name="-" x="3.15" y="0" dx="2.4" dy="2.8" layer="1" rot="R180"/>
+<text x="-2.54" y="2.54" size="1.016" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-3.81" size="1.016" layer="27">&gt;VALUE</text>
+<rectangle x1="-3.65" y1="-1.2" x2="-3.45" y2="1.2" layer="51"/>
+<rectangle x1="3.45" y1="-1.2" x2="3.65" y2="1.2" layer="51" rot="R180"/>
+<rectangle x1="-3.5" y1="-2.1" x2="-2.4" y2="2.1" layer="51"/>
+</package>
 <package name="SMC_E">
 <description>&lt;b&gt;Chip Capacitor &lt;/b&gt; Polar tantalum capacitors with solid electrolyte&lt;p&gt;
 Siemens Matsushita Components B 45 194, B 45 197, B 45 198&lt;br&gt;
@@ -11347,7 +11347,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <technology name=""/>
 </technologies>
 </device>
-<device name="M0805" package="M0805@1">
+<device name="M0805" package="M0805">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
@@ -20787,12 +20787,10 @@ type RDH, grid 15 mm</description>
 <part name="FRAME3" library="frames" deviceset="A4L-LOC" device="" value="Sheet4"/>
 <part name="IC7" library="SparkFun-PowerIC" deviceset="TB6621FNG" device="" value="TB6612FNG"/>
 <part name="C15" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
-<part name="C13" library="rcl" deviceset="CPOL-EU" device="SMCD" value="10uF"/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="supply2" deviceset="+7V" device=""/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="C16" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
-<part name="C14" library="rcl" deviceset="CPOL-EU" device="SMCD" value="10uF"/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="+3V9" library="supply1" deviceset="+3V3" device=""/>
 <part name="D2" library="BEEP" deviceset="CNY70" device=""/>
@@ -20828,10 +20826,10 @@ type RDH, grid 15 mm</description>
 <part name="R16" library="resistor" deviceset="R-EU_" device="M0805"/>
 <part name="R17" library="resistor" deviceset="R-EU_" device="M0805"/>
 <part name="GND32" library="supply1" deviceset="GND" device=""/>
-<part name="R14" library="rcl" deviceset="R-EU_" device="R0603" value="390R"/>
+<part name="R14" library="resistor" deviceset="R-EU_" device="M0805" value="390R"/>
 <part name="LED2" library="led" deviceset="LED" device="CHIPLED_0603" value="RED"/>
 <part name="LED1" library="led" deviceset="LED" device="CHIPLED_0603" value="YELLOW"/>
-<part name="R13" library="rcl" deviceset="R-EU_" device="R0603" value="220R"/>
+<part name="R13" library="resistor" deviceset="R-EU_" device="M0805" value="220R"/>
 <part name="GND34" library="supply1" deviceset="GND" device=""/>
 <part name="IC9" library="BEEP" deviceset="RASPBERRY-PI" device=""/>
 <part name="GND33" library="supply1" deviceset="GND" device=""/>
@@ -20843,12 +20841,12 @@ type RDH, grid 15 mm</description>
 <part name="IC6" library="BEEP" deviceset="GY-81" device=""/>
 <part name="GND36" library="supply1" deviceset="GND" device=""/>
 <part name="+3V17" library="supply1" deviceset="+3V3" device=""/>
-<part name="R12" library="rcl" deviceset="R-EU_" device="R0603" value="10k"/>
-<part name="R10" library="rcl" deviceset="R-EU_" device="R0603" value="10k"/>
+<part name="R12" library="resistor" deviceset="R-EU_" device="M0805" value="10k"/>
+<part name="R10" library="resistor" deviceset="R-EU_" device="M0805" value="10k"/>
 <part name="+3V18" library="supply1" deviceset="+3V3" device=""/>
 <part name="+3V19" library="supply1" deviceset="+3V3" device=""/>
 <part name="+3V21" library="supply1" deviceset="+3V3" device=""/>
-<part name="R7" library="rcl" deviceset="R-EU_" device="R0603" value="10K"/>
+<part name="R7" library="resistor" deviceset="R-EU_" device="M0805" value="10K"/>
 <part name="FRAME4" library="frames" deviceset="A4L-LOC" device="" value="Sheet3"/>
 <part name="GND38" library="supply1" deviceset="GND" device=""/>
 <part name="IC3" library="BEEP" deviceset="ULN2803A" device="SOP18"/>
@@ -20865,7 +20863,7 @@ type RDH, grid 15 mm</description>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
 <part name="JP2" library="pinhead" deviceset="PINHD-1X2" device="" value="batt_conn"/>
 <part name="LED3" library="led" deviceset="LED" device="CHIPLED_0603" value="blue"/>
-<part name="R20" library="rcl" deviceset="R-EU_" device="R0603" value="1K"/>
+<part name="R20" library="resistor" deviceset="R-EU_" device="M0805" value="1K"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
 <part name="Q5" library="BEEP" deviceset="DMN2075U" device=""/>
@@ -20921,10 +20919,10 @@ type RDH, grid 15 mm</description>
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
 <part name="S1" library="switch-omron" deviceset="10-XX" device="" value="On / Off"/>
 <part name="Q7" library="BEEP" deviceset="DMC3028LSD" device=""/>
-<part name="R23" library="rcl" deviceset="R-EU_" device="R0603" value="10k"/>
-<part name="R24" library="rcl" deviceset="R-EU_" device="R0603" value="100k"/>
-<part name="R30" library="rcl" deviceset="R-EU_" device="R0603" value="10k"/>
-<part name="C17" library="rcl" deviceset="C-EU" device="C0603" value="1uF"/>
+<part name="R23" library="resistor" deviceset="R-EU_" device="M0805" value="10k"/>
+<part name="R24" library="resistor" deviceset="R-EU_" device="M0805" value="100k"/>
+<part name="R30" library="resistor" deviceset="R-EU_" device="M0805" value="10k"/>
+<part name="C17" library="resistor" deviceset="R-EU_" device="M0805" value="1uF"/>
 <part name="GND41" library="supply1" deviceset="GND" device=""/>
 <part name="GND42" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="+7V" device=""/>
@@ -20934,20 +20932,20 @@ type RDH, grid 15 mm</description>
 <part name="P+16" library="supply1" deviceset="+5V" device=""/>
 <part name="GND44" library="supply1" deviceset="GND" device=""/>
 <part name="GND45" library="supply1" deviceset="GND" device=""/>
-<part name="R19" library="rcl" deviceset="R-EU_" device="R0603" value="75k"/>
-<part name="R18" library="rcl" deviceset="R-EU_" device="R0603" value="3k"/>
+<part name="R19" library="resistor" deviceset="R-EU_" device="M0805" value="75k"/>
+<part name="R18" library="resistor" deviceset="R-EU_" device="M0805" value="3k"/>
 <part name="C11" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
-<part name="C12" library="rcl" deviceset="C-EU" device="C0603" value="1uF"/>
+<part name="C12" library="resistor" deviceset="R-EU_" device="M0805" value="1uF"/>
 <part name="X6" library="con-amp" deviceset="FSIDE-8" device="" value="Sens5"/>
 <part name="X5" library="con-ftop-orientation-hole" deviceset="FTOP-6" device="" value="PDI interface (ISP)"/>
 <part name="+3V8" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND46" library="supply1" deviceset="GND" device=""/>
 <part name="X10" library="con-ftop-orientation-hole" deviceset="FTOP-6" device="" value="exp header"/>
-<part name="Q4" library="crystal" deviceset="CRYSTAL" device="HC49S" value="32Mhz"/>
+<part name="Q4" library="crystal" deviceset="CRYSTAL" device="HC18U-V" value="32Mhz"/>
 <part name="C7" library="rcl" deviceset="C-EU" device="C0603" value="22pF"/>
 <part name="C8" library="rcl" deviceset="C-EU" device="C0603" value="22pF"/>
 <part name="GND37" library="supply1" deviceset="GND" device=""/>
-<part name="R27" library="rcl" deviceset="R-EU_" device="R0603" value="0R"/>
+<part name="R27" library="resistor" deviceset="R-EU_" device="M0805" value="0R"/>
 <part name="R11" library="rcl" deviceset="R-EU_" device="R0603" value="100R"/>
 <part name="X4" library="con-ftop-orientation-hole" deviceset="FTOP-8" device="" value="Sens3"/>
 <part name="X9" library="con-ftop-orientation-hole" deviceset="FTOP-8" device="" value="Sens7"/>
@@ -20956,6 +20954,8 @@ type RDH, grid 15 mm</description>
 <part name="X13" library="con-ftop-orientation-hole" deviceset="FTOP-4" device=""/>
 <part name="X12" library="con-ftop-orientation-hole" deviceset="FTOP-4" device=""/>
 <part name="X11" library="con-ftop-orientation-hole" deviceset="FTOP-10" device=""/>
+<part name="C13" library="rcl" deviceset="CPOL-EU" device="E2-5"/>
+<part name="C14" library="rcl" deviceset="CPOL-EU" device="E2-5"/>
 </parts>
 <sheets>
 <sheet>
@@ -21014,12 +21014,10 @@ XMega revisionen
 <instance part="FRAME3" gate="G$1" x="302.26" y="25.4"/>
 <instance part="IC7" gate="G$1" x="365.76" y="162.56"/>
 <instance part="C15" gate="G$1" x="416.56" y="160.02" rot="R180"/>
-<instance part="C13" gate="G$1" x="406.4" y="160.02" rot="R180"/>
 <instance part="GND18" gate="1" x="416.56" y="132.08"/>
 <instance part="SUPPLY1" gate="G$1" x="421.64" y="187.96"/>
 <instance part="GND19" gate="1" x="325.12" y="134.62"/>
 <instance part="C16" gate="G$1" x="421.64" y="142.24" rot="R180"/>
-<instance part="C14" gate="G$1" x="411.48" y="142.24" rot="R180"/>
 <instance part="GND20" gate="1" x="416.56" y="152.4"/>
 <instance part="+3V9" gate="G$1" x="416.56" y="175.26"/>
 <instance part="D2" gate="G$1" x="474.98" y="88.9"/>
@@ -21264,6 +21262,8 @@ XMega revisionen
 <instance part="X11" gate="-8" x="243.84" y="127" rot="MR180"/>
 <instance part="X11" gate="-9" x="243.84" y="129.54" rot="MR180"/>
 <instance part="X11" gate="-10" x="243.84" y="132.08" rot="MR180"/>
+<instance part="C13" gate="G$1" x="411.48" y="144.78"/>
+<instance part="C14" gate="G$1" x="406.4" y="162.56"/>
 </instances>
 <busses>
 </busses>
@@ -21325,23 +21325,23 @@ XMega revisionen
 <pinref part="IC7" gate="G$1" pin="GND"/>
 <wire x1="381" y1="160.02" x2="401.32" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="401.32" y1="160.02" x2="401.32" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="C13" gate="G$1" pin="+"/>
-<wire x1="401.32" y1="157.48" x2="406.4" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="C15" gate="G$1" pin="1"/>
-<wire x1="406.4" y1="157.48" x2="416.56" y2="157.48" width="0.1524" layer="91"/>
-<junction x="406.4" y="157.48"/>
+<wire x1="401.32" y1="157.48" x2="406.4" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="GND20" gate="1" pin="GND"/>
+<wire x1="406.4" y1="157.48" x2="416.56" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="416.56" y1="154.94" x2="416.56" y2="157.48" width="0.1524" layer="91"/>
 <junction x="416.56" y="157.48"/>
+<pinref part="C14" gate="G$1" pin="-"/>
+<junction x="406.4" y="157.48"/>
 </segment>
 <segment>
-<pinref part="C14" gate="G$1" pin="+"/>
 <pinref part="C16" gate="G$1" pin="1"/>
 <wire x1="421.64" y1="139.7" x2="416.56" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="GND18" gate="1" pin="GND"/>
 <wire x1="416.56" y1="139.7" x2="411.48" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="416.56" y1="134.62" x2="416.56" y2="139.7" width="0.1524" layer="91"/>
 <junction x="416.56" y="139.7"/>
+<pinref part="C13" gate="G$1" pin="-"/>
 </segment>
 <segment>
 <pinref part="GND23" gate="1" pin="GND"/>
@@ -21579,7 +21579,7 @@ XMega revisionen
 <segment>
 <pinref part="GND41" gate="1" pin="GND"/>
 <pinref part="C17" gate="G$1" pin="2"/>
-<wire x1="485.14" y1="264.16" x2="485.14" y2="266.7" width="0.1524" layer="91"/>
+<wire x1="485.14" y1="264.16" x2="490.22" y2="271.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND42" gate="1" pin="GND"/>
@@ -21600,7 +21600,7 @@ XMega revisionen
 <segment>
 <pinref part="C12" gate="G$1" pin="2"/>
 <pinref part="GND45" gate="1" pin="GND"/>
-<wire x1="353.06" y1="81.28" x2="353.06" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="358.14" y1="86.36" x2="353.06" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="365.76" y1="38.1" x2="375.92" y2="38.1" width="0.1524" layer="91"/>
@@ -21736,14 +21736,14 @@ XMega revisionen
 <net name="+3V3" class="0">
 <segment>
 <pinref part="C15" gate="G$1" pin="2"/>
-<pinref part="C13" gate="G$1" pin="-"/>
-<wire x1="416.56" y1="165.1" x2="406.4" y2="165.1" width="0.1524" layer="91"/>
 <pinref part="IC7" gate="G$1" pin="VCC"/>
+<wire x1="416.56" y1="165.1" x2="406.4" y2="165.1" width="0.1524" layer="91"/>
 <wire x1="406.4" y1="165.1" x2="381" y2="165.1" width="0.1524" layer="91"/>
-<junction x="406.4" y="165.1"/>
 <wire x1="416.56" y1="165.1" x2="416.56" y2="172.72" width="0.1524" layer="91"/>
 <junction x="416.56" y="165.1"/>
 <pinref part="+3V9" gate="G$1" pin="+3V3"/>
+<pinref part="C14" gate="G$1" pin="+"/>
+<junction x="406.4" y="165.1"/>
 </segment>
 <segment>
 <pinref part="D2" gate="G$1" pin="T_C"/>
@@ -21964,7 +21964,8 @@ XMega revisionen
 <wire x1="381" y1="149.86" x2="381" y2="147.32" width="0.1524" layer="91"/>
 <junction x="381" y="147.32"/>
 <pinref part="SUPPLY1" gate="G$1" pin="+7V"/>
-<wire x1="381" y1="147.32" x2="421.64" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="381" y1="147.32" x2="411.48" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="411.48" y1="147.32" x2="421.64" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="421.64" y1="147.32" x2="421.64" y2="177.8" width="0.1524" layer="91"/>
 <pinref part="IC7" gate="G$1" pin="VM1"/>
 <wire x1="421.64" y1="177.8" x2="421.64" y2="185.42" width="0.1524" layer="91"/>
@@ -21972,11 +21973,12 @@ XMega revisionen
 <wire x1="383.54" y1="175.26" x2="383.54" y2="177.8" width="0.1524" layer="91"/>
 <wire x1="383.54" y1="177.8" x2="421.64" y2="177.8" width="0.1524" layer="91"/>
 <junction x="421.64" y="177.8"/>
-<pinref part="C14" gate="G$1" pin="-"/>
 <junction x="421.64" y="147.32"/>
 <pinref part="C16" gate="G$1" pin="2"/>
 <wire x1="421.64" y1="147.32" x2="411.48" y2="147.32" width="0.1524" layer="91"/>
 <junction x="421.64" y="147.32"/>
+<pinref part="C13" gate="G$1" pin="+"/>
+<junction x="411.48" y="147.32"/>
 </segment>
 <segment>
 <pinref part="R16" gate="G$1" pin="1"/>
@@ -23105,8 +23107,8 @@ XMega revisionen
 <net name="N$16" class="0">
 <segment>
 <pinref part="R24" gate="G$1" pin="2"/>
-<wire x1="485.14" y1="276.86" x2="485.14" y2="274.32" width="0.1524" layer="91"/>
-<wire x1="485.14" y1="274.32" x2="497.84" y2="274.32" width="0.1524" layer="91"/>
+<wire x1="485.14" y1="276.86" x2="480.06" y2="271.78" width="0.1524" layer="91"/>
+<wire x1="480.06" y1="271.78" x2="497.84" y2="274.32" width="0.1524" layer="91"/>
 <wire x1="497.84" y1="274.32" x2="497.84" y2="266.7" width="0.1524" layer="91"/>
 <pinref part="S1" gate="1" pin="P1"/>
 <wire x1="497.84" y1="266.7" x2="510.54" y2="266.7" width="0.1524" layer="91"/>
@@ -23114,7 +23116,7 @@ XMega revisionen
 <wire x1="510.54" y1="266.7" x2="510.54" y2="269.24" width="0.1524" layer="91"/>
 <junction x="510.54" y="266.7"/>
 <pinref part="C17" gate="G$1" pin="1"/>
-<junction x="485.14" y="274.32"/>
+<junction x="480.06" y="271.78"/>
 </segment>
 </net>
 <net name="POWER_OFF" class="0">
@@ -23230,7 +23232,7 @@ XMega revisionen
 <wire x1="368.3" y1="83.82" x2="358.14" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="358.14" y1="83.82" x2="358.14" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="C12" gate="G$1" pin="1"/>
-<wire x1="358.14" y1="88.9" x2="353.06" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="358.14" y1="88.9" x2="347.98" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SPEAKER_O1" class="0">
@@ -23294,7 +23296,6 @@ XMega revisionen
 </sheet>
 </sheets>
 <errors>
-<approved hash="101,1,241.3,109.22,X11-1,S,,,,"/>
 <approved hash="101,1,223.52,63.5,X5-3,1,,,,"/>
 <approved hash="101,1,223.52,60.96,X5-4,1,,,,"/>
 <approved hash="101,1,241.3,86.36,X10-6,1,,,,"/>
@@ -23302,21 +23303,6 @@ XMega revisionen
 <approved hash="104,1,50.8,345.44,IC1,VCC,+3V3,,,"/>
 <approved hash="104,1,93.98,144.78,IC5,AVCC,+3V3,,,"/>
 <approved hash="104,1,93.98,149.86,IC5,VCC,+3V3,,,"/>
-<approved hash="115,1,76.2,366.755,R4,,,,,"/>
-<approved hash="115,1,76.2,364.215,R5,,,,,"/>
-<approved hash="115,1,76.2,361.675,R6,,,,,"/>
-<approved hash="115,1,456.205,73.66,R22,,,,,"/>
-<approved hash="115,1,494.305,99.06,R26,,,,,"/>
-<approved hash="115,1,504.465,76.2,R29,,,,,"/>
-<approved hash="115,1,542.565,101.6,R32,,,,,"/>
-<approved hash="115,1,456.205,134.62,R21,,,,,"/>
-<approved hash="115,1,494.305,160.02,R25,,,,,"/>
-<approved hash="115,1,504.465,137.16,R28,,,,,"/>
-<approved hash="115,1,542.565,162.56,R31,,,,,"/>
-<approved hash="115,1,343.895,360.68,R16,,,,,"/>
-<approved hash="115,1,343.895,342.9,R17,,,,,"/>
-<approved hash="115,1,176.255,154.94,R9,,,,,"/>
-<approved hash="115,1,176.255,165.1,R8,,,,,"/>
 </errors>
 </schematic>
 </drawing>
