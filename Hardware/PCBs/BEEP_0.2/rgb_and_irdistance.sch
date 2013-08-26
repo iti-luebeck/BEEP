@@ -3742,117 +3742,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="con-amp-micromatch">
-<description>AMP Connectors, Type  MicroMatch</description>
-<packages>
-<package name="MICROMATCH-8">
-<description>&lt;b&gt;MicroMaTch 8 &lt;/b&gt; 7-215464-8 / 0-215464-8&lt;p&gt;
-Drawing Number C-215464&lt;br&gt;
-DDEController.pdf</description>
-<wire x1="-6.1" y1="0.7" x2="-6.5" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="-6.5" y1="0.7" x2="-6.5" y2="-0.7" width="0.2032" layer="21"/>
-<wire x1="-6.5" y1="-0.7" x2="-6.1" y2="-0.7" width="0.2032" layer="21"/>
-<wire x1="-6.1" y1="-1.2" x2="-6.5" y2="-1.2" width="0.2032" layer="21"/>
-<wire x1="-6.5" y1="-1.2" x2="-6.5" y2="-1.6" width="0.2032" layer="21"/>
-<wire x1="-6.5" y1="-1.6" x2="-6.1" y2="-1.6" width="0.2032" layer="21"/>
-<wire x1="-6.1" y1="1.6" x2="-6.5" y2="1.6" width="0.2032" layer="21"/>
-<wire x1="-6.5" y1="1.6" x2="-6.5" y2="1.2" width="0.2032" layer="21"/>
-<wire x1="-6.5" y1="1.2" x2="-6.1" y2="1.2" width="0.2032" layer="21"/>
-<wire x1="-6" y1="2.4" x2="-6" y2="-2.4" width="0.2032" layer="21"/>
-<wire x1="-5.2" y1="2" x2="-5.2" y2="-2" width="0.2032" layer="21"/>
-<wire x1="5.9" y1="1.6" x2="5.6" y2="1.6" width="0.1016" layer="21"/>
-<wire x1="5.6" y1="1.6" x2="5.3" y2="1.6" width="0.1016" layer="21"/>
-<wire x1="5.9" y1="0" x2="5.6" y2="0" width="0.1016" layer="21"/>
-<wire x1="5.6" y1="0" x2="5.3" y2="0" width="0.1016" layer="21"/>
-<wire x1="5.6" y1="0" x2="5.3" y2="0.3" width="0.1016" layer="21"/>
-<wire x1="5.6" y1="1.6" x2="5.3" y2="1.3" width="0.1016" layer="21"/>
-<wire x1="5.5" y1="1.4" x2="5.6" y2="1.3" width="0.1016" layer="21"/>
-<wire x1="5.9" y1="1.3" x2="5.6" y2="1.3" width="0.1016" layer="21"/>
-<wire x1="5.6" y1="1.3" x2="5.6" y2="0.3" width="0.1016" layer="21"/>
-<wire x1="5.6" y1="0.3" x2="5.9" y2="0.3" width="0.1016" layer="21"/>
-<wire x1="5.5" y1="0.2" x2="5.6" y2="0.3" width="0.1016" layer="21"/>
-<wire x1="6.1" y1="-0.7" x2="6.5" y2="-0.7" width="0.2032" layer="21"/>
-<wire x1="6.5" y1="-0.7" x2="6.5" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="6.5" y1="0.7" x2="6.1" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="6.1" y1="1.2" x2="6.5" y2="1.2" width="0.2032" layer="21"/>
-<wire x1="6.5" y1="1.2" x2="6.5" y2="1.6" width="0.2032" layer="21"/>
-<wire x1="6.5" y1="1.6" x2="6.1" y2="1.6" width="0.2032" layer="21"/>
-<wire x1="6.1" y1="-1.6" x2="6.5" y2="-1.6" width="0.2032" layer="21"/>
-<wire x1="6.5" y1="-1.6" x2="6.5" y2="-1.2" width="0.2032" layer="21"/>
-<wire x1="6.5" y1="-1.2" x2="6.1" y2="-1.2" width="0.2032" layer="21"/>
-<wire x1="6" y1="-2.4" x2="6" y2="2.4" width="0.2032" layer="21"/>
-<wire x1="5.2" y1="2" x2="-5.2" y2="2" width="0.2032" layer="21"/>
-<wire x1="6" y1="2.4" x2="-6" y2="2.4" width="0.2032" layer="21"/>
-<wire x1="6" y1="-2.4" x2="-6" y2="-2.4" width="0.2032" layer="21"/>
-<wire x1="5.2" y1="-2" x2="5.2" y2="2" width="0.2032" layer="21"/>
-<wire x1="5.2" y1="-2" x2="-5.2" y2="-2" width="0.2032" layer="21"/>
-<pad name="1" x="4.445" y="1.27" drill="0.8128"/>
-<pad name="2" x="3.175" y="-1.27" drill="0.8128"/>
-<pad name="3" x="1.905" y="1.27" drill="0.8128"/>
-<pad name="4" x="0.635" y="-1.27" drill="0.8128"/>
-<pad name="5" x="-0.635" y="1.27" drill="0.8128"/>
-<pad name="6" x="-1.905" y="-1.27" drill="0.8128"/>
-<pad name="7" x="-3.175" y="1.27" drill="0.8128"/>
-<pad name="8" x="-4.445" y="-1.27" drill="0.8128"/>
-<text x="-4.445" y="2.54" size="1.27" layer="25">&gt;NAME</text>
-<text x="-4.445" y="-3.81" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="MV">
-<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
-<wire x1="0" y1="0" x2="1.27" y2="0" width="0.6096" layer="94"/>
-<text x="-0.508" y="0.889" size="1.778" layer="95" rot="R180">&gt;NAME</text>
-<text x="0" y="0.889" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="S" x="5.08" y="0" visible="off" length="short" direction="pas" rot="R180"/>
-</symbol>
-<symbol name="M">
-<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
-<wire x1="0" y1="0" x2="1.27" y2="0" width="0.6096" layer="94"/>
-<text x="-0.508" y="0.889" size="1.778" layer="95" rot="R180">&gt;NAME</text>
-<pin name="S" x="5.08" y="0" visible="off" length="short" direction="pas" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="MICROMATCH-8" prefix="X">
-<description>&lt;b&gt;MicroMaTch 8 &lt;/b&gt; 7-215464-8 / 0-215464-8&lt;p&gt;
-Drawing Number C-215464&lt;br&gt;
-DDEController.pdf</description>
-<gates>
-<gate name="-1" symbol="MV" x="0" y="7.62" addlevel="always" swaplevel="1"/>
-<gate name="-2" symbol="M" x="0" y="5.08" addlevel="always" swaplevel="1"/>
-<gate name="-3" symbol="M" x="0" y="2.54" addlevel="always" swaplevel="1"/>
-<gate name="-4" symbol="M" x="0" y="0" addlevel="always" swaplevel="1"/>
-<gate name="-5" symbol="M" x="0" y="-2.54" addlevel="always" swaplevel="1"/>
-<gate name="-6" symbol="M" x="0" y="-5.08" addlevel="always" swaplevel="1"/>
-<gate name="-7" symbol="M" x="0" y="-7.62" addlevel="always" swaplevel="1"/>
-<gate name="-8" symbol="M" x="0" y="-10.16" addlevel="always" swaplevel="1"/>
-</gates>
-<devices>
-<device name="" package="MICROMATCH-8">
-<connects>
-<connect gate="-1" pin="S" pad="1"/>
-<connect gate="-2" pin="S" pad="2"/>
-<connect gate="-3" pin="S" pad="3"/>
-<connect gate="-4" pin="S" pad="4"/>
-<connect gate="-5" pin="S" pad="5"/>
-<connect gate="-6" pin="S" pad="6"/>
-<connect gate="-7" pin="S" pad="7"/>
-<connect gate="-8" pin="S" pad="8"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="MF" value="FARNELL" constant="no"/>
-<attribute name="MPN" value="7-215464-8" constant="no"/>
-<attribute name="OC_FARNELL" value="3784642" constant="no"/>
-<attribute name="OC_NEWARK" value="26H0301" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="frames">
 <description>&lt;b&gt;Frames for Sheet and Layout&lt;/b&gt;</description>
 <packages>
@@ -3899,6 +3788,99 @@ DIN A4, landscape with location and doc. field</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="con-amp">
+<description>&lt;b&gt;AMP Connectors&lt;/b&gt;&lt;p&gt;
+RJ45 Jack connectors&lt;br&gt;
+ Based on the previous libraris:
+ &lt;ul&gt;
+ &lt;li&gt;amp.lbr
+ &lt;li&gt;amp-j.lbr
+ &lt;li&gt;amp-mta.lbr
+ &lt;li&gt;amp-nlok.lbr
+ &lt;li&gt;amp-sim.lbr
+ &lt;li&gt;amp-micro-match.lbr
+ &lt;/ul&gt;
+ Sources :
+ &lt;ul&gt;
+ &lt;li&gt;Catalog 82066 Revised 11-95 
+ &lt;li&gt;Product Guide 296785 Rev. 8-99
+ &lt;li&gt;Product Guide CD-ROM 1999
+ &lt;li&gt;www.amp.com
+ &lt;/ul&gt;
+ &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="FTOP-8">
+<description>&lt;b&gt;AMP connector&lt;/b&gt;</description>
+<wire x1="-5.98" y1="-2.45" x2="5.98" y2="-2.45" width="0.2032" layer="21"/>
+<wire x1="5.98" y1="-2.45" x2="5.98" y2="-1.778" width="0.2032" layer="21"/>
+<wire x1="5.98" y1="-1.778" x2="5.334" y2="-1.778" width="0.2032" layer="21"/>
+<wire x1="5.334" y1="-1.778" x2="5.334" y2="1.778" width="0.2032" layer="21"/>
+<wire x1="5.334" y1="1.778" x2="5.98" y2="1.778" width="0.2032" layer="21"/>
+<wire x1="5.98" y1="1.778" x2="5.98" y2="2.45" width="0.2032" layer="21"/>
+<wire x1="5.98" y1="2.45" x2="-5.98" y2="2.45" width="0.2032" layer="21"/>
+<wire x1="-5.98" y1="2.45" x2="-5.98" y2="-2.45" width="0.2032" layer="21"/>
+<pad name="1" x="-4.445" y="-1.27" drill="0.8128"/>
+<pad name="2" x="-3.175" y="1.27" drill="0.8128"/>
+<pad name="3" x="-1.905" y="-1.27" drill="0.8128"/>
+<pad name="4" x="-0.635" y="1.27" drill="0.8128"/>
+<pad name="5" x="0.635" y="-1.27" drill="0.8128"/>
+<pad name="6" x="1.905" y="1.27" drill="0.8128"/>
+<pad name="7" x="3.175" y="-1.27" drill="0.8128"/>
+<pad name="8" x="4.445" y="1.27" drill="0.8128"/>
+<text x="-5.842" y="2.794" size="1.27" layer="25">&gt;NAME</text>
+<text x="-6.096" y="-4.826" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="PIN-FV">
+<wire x1="1.016" y1="0.254" x2="0" y2="0.254" width="0.254" layer="94"/>
+<wire x1="0" y1="0.254" x2="0" y2="-0.254" width="0.254" layer="94"/>
+<wire x1="0" y1="-0.254" x2="1.016" y2="-0.254" width="0.254" layer="94"/>
+<text x="1.524" y="-0.762" size="1.778" layer="95">&gt;NAME</text>
+<text x="-1.27" y="1.27" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+<symbol name="PIN-F">
+<wire x1="1.016" y1="0.254" x2="0" y2="0.254" width="0.254" layer="94"/>
+<wire x1="0" y1="0.254" x2="0" y2="-0.254" width="0.254" layer="94"/>
+<wire x1="0" y1="-0.254" x2="1.016" y2="-0.254" width="0.254" layer="94"/>
+<text x="1.524" y="-0.762" size="1.778" layer="95">&gt;NAME</text>
+<pin name="1" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="FTOP-8" prefix="X" uservalue="yes">
+<description>&lt;b&gt;AMP connector&lt;/b&gt;</description>
+<gates>
+<gate name="-1" symbol="PIN-FV" x="0" y="25.4" addlevel="always" swaplevel="1"/>
+<gate name="-2" symbol="PIN-F" x="0" y="22.86" addlevel="always" swaplevel="1"/>
+<gate name="-3" symbol="PIN-F" x="0" y="20.32" addlevel="always" swaplevel="1"/>
+<gate name="-4" symbol="PIN-F" x="0" y="17.78" addlevel="always" swaplevel="1"/>
+<gate name="-5" symbol="PIN-F" x="0" y="15.24" addlevel="always" swaplevel="1"/>
+<gate name="-6" symbol="PIN-F" x="0" y="12.7" addlevel="always" swaplevel="1"/>
+<gate name="-7" symbol="PIN-F" x="0" y="10.16" addlevel="always" swaplevel="1"/>
+<gate name="-8" symbol="PIN-F" x="0" y="7.62" addlevel="always" swaplevel="1"/>
+</gates>
+<devices>
+<device name="" package="FTOP-8">
+<connects>
+<connect gate="-1" pin="1" pad="1"/>
+<connect gate="-2" pin="1" pad="2"/>
+<connect gate="-3" pin="1" pad="3"/>
+<connect gate="-4" pin="1" pad="4"/>
+<connect gate="-5" pin="1" pad="5"/>
+<connect gate="-6" pin="1" pad="6"/>
+<connect gate="-7" pin="1" pad="7"/>
+<connect gate="-8" pin="1" pad="8"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -3912,7 +3894,6 @@ DIN A4, landscape with location and doc. field</description>
 <part name="LED1" library="BEEP" deviceset="F50360" device="5050"/>
 <part name="R1" library="rcl" deviceset="R-EU_" device="R0603"/>
 <part name="R2" library="rcl" deviceset="R-EU_" device="R0603"/>
-<part name="X1" library="con-amp-micromatch" deviceset="MICROMATCH-8" device=""/>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
 <part name="IC1" library="BEEP" deviceset="HSDL-9100" device=""/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
@@ -3920,6 +3901,7 @@ DIN A4, landscape with location and doc. field</description>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
+<part name="X1" library="con-amp" deviceset="FTOP-8" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3929,14 +3911,6 @@ DIN A4, landscape with location and doc. field</description>
 <instance part="LED1" gate="G$1" x="55.88" y="88.9" rot="R90"/>
 <instance part="R1" gate="G$1" x="109.22" y="99.06" rot="R270"/>
 <instance part="R2" gate="G$1" x="142.24" y="78.74" rot="R90"/>
-<instance part="X1" gate="-1" x="236.22" y="78.74" rot="R180"/>
-<instance part="X1" gate="-2" x="236.22" y="81.28" rot="R180"/>
-<instance part="X1" gate="-3" x="236.22" y="83.82" rot="R180"/>
-<instance part="X1" gate="-4" x="236.22" y="86.36" rot="R180"/>
-<instance part="X1" gate="-5" x="236.22" y="88.9" rot="R180"/>
-<instance part="X1" gate="-6" x="236.22" y="91.44" rot="R180"/>
-<instance part="X1" gate="-7" x="236.22" y="93.98" rot="R180"/>
-<instance part="X1" gate="-8" x="236.22" y="96.52" rot="R180"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="IC1" gate="G$1" x="124.46" y="88.9"/>
 <instance part="P+1" gate="1" x="139.7" y="101.6"/>
@@ -3944,6 +3918,14 @@ DIN A4, landscape with location and doc. field</description>
 <instance part="P+3" gate="1" x="109.22" y="111.76"/>
 <instance part="GND1" gate="1" x="142.24" y="68.58"/>
 <instance part="GND2" gate="1" x="185.42" y="83.82"/>
+<instance part="X1" gate="-1" x="233.68" y="96.52"/>
+<instance part="X1" gate="-2" x="233.68" y="93.98"/>
+<instance part="X1" gate="-3" x="233.68" y="91.44"/>
+<instance part="X1" gate="-4" x="233.68" y="88.9"/>
+<instance part="X1" gate="-5" x="233.68" y="86.36"/>
+<instance part="X1" gate="-6" x="233.68" y="83.82"/>
+<instance part="X1" gate="-7" x="233.68" y="81.28"/>
+<instance part="X1" gate="-8" x="233.68" y="78.74"/>
 </instances>
 <busses>
 </busses>
@@ -3962,7 +3944,7 @@ DIN A4, landscape with location and doc. field</description>
 <segment>
 <wire x1="231.14" y1="86.36" x2="218.44" y2="86.36" width="0.1524" layer="91"/>
 <label x="218.44" y="86.36" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="X1" gate="-4" pin="S"/>
+<pinref part="X1" gate="-5" pin="1"/>
 </segment>
 </net>
 <net name="ADISTANCE" class="0">
@@ -3978,7 +3960,7 @@ DIN A4, landscape with location and doc. field</description>
 <segment>
 <wire x1="231.14" y1="93.98" x2="218.44" y2="93.98" width="0.1524" layer="91"/>
 <label x="218.44" y="93.98" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="X1" gate="-7" pin="S"/>
+<pinref part="X1" gate="-2" pin="1"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -3992,7 +3974,7 @@ DIN A4, landscape with location and doc. field</description>
 <segment>
 <wire x1="231.14" y1="78.74" x2="218.44" y2="78.74" width="0.1524" layer="91"/>
 <label x="218.44" y="78.74" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="X1" gate="-1" pin="S"/>
+<pinref part="X1" gate="-8" pin="1"/>
 </segment>
 <segment>
 <pinref part="LED1" gate="G$1" pin="BA"/>
@@ -4009,14 +3991,14 @@ DIN A4, landscape with location and doc. field</description>
 <segment>
 <wire x1="231.14" y1="83.82" x2="218.44" y2="83.82" width="0.1524" layer="91"/>
 <label x="218.44" y="83.82" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="X1" gate="-3" pin="S"/>
+<pinref part="X1" gate="-6" pin="1"/>
 </segment>
 </net>
 <net name="RGB_ANODE_3" class="0">
 <segment>
 <wire x1="231.14" y1="81.28" x2="218.44" y2="81.28" width="0.1524" layer="91"/>
 <label x="218.44" y="81.28" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="X1" gate="-2" pin="S"/>
+<pinref part="X1" gate="-7" pin="1"/>
 </segment>
 <segment>
 <pinref part="LED1" gate="G$1" pin="RA"/>
@@ -4032,9 +4014,9 @@ DIN A4, landscape with location and doc. field</description>
 <label x="106.68" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="X1" gate="-5" pin="S"/>
 <wire x1="231.14" y1="88.9" x2="218.44" y2="88.9" width="0.1524" layer="91"/>
 <label x="218.44" y="88.9" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="X1" gate="-4" pin="1"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -4051,8 +4033,8 @@ DIN A4, landscape with location and doc. field</description>
 <segment>
 <wire x1="231.14" y1="96.52" x2="223.52" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="223.52" y1="96.52" x2="223.52" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="X1" gate="-8" pin="S"/>
 <pinref part="P+2" gate="1" pin="+5V"/>
+<pinref part="X1" gate="-1" pin="1"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -4063,9 +4045,9 @@ DIN A4, landscape with location and doc. field</description>
 </segment>
 <segment>
 <pinref part="GND2" gate="1" pin="GND"/>
-<pinref part="X1" gate="-6" pin="S"/>
 <wire x1="231.14" y1="91.44" x2="185.42" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="185.42" y1="91.44" x2="185.42" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="X1" gate="-3" pin="1"/>
 </segment>
 </net>
 </nets>

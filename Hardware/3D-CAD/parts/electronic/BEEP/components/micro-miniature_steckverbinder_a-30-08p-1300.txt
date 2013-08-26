@@ -1,0 +1,10 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"10-23062010-095180";"";
+"TraceParts.ClassPath";"ASSMANN:/ROOT/C31/C31.T01/C31.T01.T02/10-23062010-095180";"";
+"TraceParts.InstanceId";"10-23062010-0951802B0GQIOCA4KE7PWSPG8BQE4DM";"";
+"REFERENCE";"A-30-08P-1300";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"SUPPLIER";"ASSMANN WSW components";"";
+"DESIGN";"Micro-Miniature Steckverbinder, Stecker, 8 polig, Raster 1,27mm, DIP";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartVersion";"1.1.1";"";
