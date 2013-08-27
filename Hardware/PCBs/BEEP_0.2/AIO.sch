@@ -22015,9 +22015,9 @@ XMega revisionen
 <label x="383.54" y="162.56" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<wire x1="129.54" y1="99.06" x2="134.62" y2="99.06" width="0.1524" layer="91"/>
-<label x="134.62" y="99.06" size="1.27" layer="95" xref="yes"/>
-<pinref part="IC5" gate="G$1" pin="PC6"/>
+<label x="139.7" y="144.78" size="1.27" layer="95" xref="yes"/>
+<wire x1="129.54" y1="144.78" x2="139.7" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="PA6"/>
 </segment>
 </net>
 <net name="MOTOR_A_OUT1" class="0">
@@ -22091,6 +22091,11 @@ XMega revisionen
 <junction x="457.2" y="81.28"/>
 <label x="467.36" y="81.28" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="IC5" gate="G$1" pin="PC4"/>
+<wire x1="129.54" y1="104.14" x2="134.62" y2="104.14" width="0.1524" layer="91"/>
+<label x="134.62" y="104.14" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="N$23" class="0">
 <segment>
@@ -22135,6 +22140,11 @@ XMega revisionen
 <junction x="505.46" y="83.82"/>
 <label x="515.62" y="83.82" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="IC5" gate="G$1" pin="PC5"/>
+<wire x1="129.54" y1="101.6" x2="134.62" y2="101.6" width="0.1524" layer="91"/>
+<label x="134.62" y="101.6" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="ENCODER_R1" class="0">
 <segment>
@@ -22147,6 +22157,11 @@ XMega revisionen
 <junction x="457.2" y="142.24"/>
 <label x="467.36" y="142.24" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="IC5" gate="G$1" pin="PC6"/>
+<wire x1="129.54" y1="99.06" x2="134.62" y2="99.06" width="0.1524" layer="91"/>
+<label x="134.62" y="99.06" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="ENCODER_R2" class="0">
 <segment>
@@ -22158,6 +22173,11 @@ XMega revisionen
 <wire x1="505.46" y1="144.78" x2="515.62" y2="144.78" width="0.1524" layer="91"/>
 <junction x="505.46" y="144.78"/>
 <label x="515.62" y="144.78" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="IC5" gate="G$1" pin="PC7"/>
+<wire x1="129.54" y1="96.52" x2="134.62" y2="96.52" width="0.1524" layer="91"/>
+<label x="134.62" y="96.52" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="BATT_VOLTAGE" class="0">
@@ -23135,9 +23155,9 @@ XMega revisionen
 <label x="530.86" y="281.94" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="IC5" gate="G$1" pin="PC7"/>
-<wire x1="129.54" y1="96.52" x2="134.62" y2="96.52" width="0.1524" layer="91"/>
-<label x="134.62" y="96.52" size="1.27" layer="95" xref="yes"/>
+<label x="139.7" y="142.24" size="1.27" layer="95" xref="yes"/>
+<wire x1="129.54" y1="142.24" x2="139.7" y2="142.24" width="0.1524" layer="91"/>
+<pinref part="IC5" gate="G$1" pin="PA7"/>
 </segment>
 </net>
 <net name="N$22" class="0">
