@@ -20951,11 +20951,11 @@ type RDH, grid 15 mm</description>
 <part name="X9" library="con-ftop-orientation-hole" deviceset="FTOP-8" device="" value="Sens7"/>
 <part name="X3" library="con-ftop-orientation-hole" deviceset="FTOP-8" device="" value="Sens0"/>
 <part name="X8" library="con-ftop-orientation-hole" deviceset="FTOP-8" device="" value="Sens4"/>
-<part name="X13" library="con-ftop-orientation-hole" deviceset="FTOP-4" device=""/>
-<part name="X12" library="con-ftop-orientation-hole" deviceset="FTOP-4" device=""/>
-<part name="X11" library="con-ftop-orientation-hole" deviceset="FTOP-10" device=""/>
-<part name="C13" library="rcl" deviceset="CPOL-EU" device="E2-5"/>
-<part name="C14" library="rcl" deviceset="CPOL-EU" device="E2-5"/>
+<part name="X13" library="con-ftop-orientation-hole" deviceset="FTOP-4" device="" value="audio"/>
+<part name="X12" library="con-ftop-orientation-hole" deviceset="FTOP-4" device="" value="motor"/>
+<part name="X11" library="con-ftop-orientation-hole" deviceset="FTOP-10" device="" value="line follow"/>
+<part name="C13" library="rcl" deviceset="CPOL-EU" device="E2-5" value="10uF"/>
+<part name="C14" library="rcl" deviceset="CPOL-EU" device="E2-5" value="10uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -21262,8 +21262,8 @@ XMega revisionen
 <instance part="X11" gate="-8" x="243.84" y="127" rot="MR180"/>
 <instance part="X11" gate="-9" x="243.84" y="129.54" rot="MR180"/>
 <instance part="X11" gate="-10" x="243.84" y="132.08" rot="MR180"/>
-<instance part="C13" gate="G$1" x="411.48" y="144.78"/>
-<instance part="C14" gate="G$1" x="406.4" y="162.56"/>
+<instance part="C13" gate="G$1" x="406.4" y="144.78"/>
+<instance part="C14" gate="G$1" x="403.86" y="162.56"/>
 </instances>
 <busses>
 </busses>
@@ -21326,19 +21326,19 @@ XMega revisionen
 <wire x1="381" y1="160.02" x2="401.32" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="401.32" y1="160.02" x2="401.32" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="C15" gate="G$1" pin="1"/>
-<wire x1="401.32" y1="157.48" x2="406.4" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="401.32" y1="157.48" x2="403.86" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="GND20" gate="1" pin="GND"/>
-<wire x1="406.4" y1="157.48" x2="416.56" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="403.86" y1="157.48" x2="416.56" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="416.56" y1="154.94" x2="416.56" y2="157.48" width="0.1524" layer="91"/>
 <junction x="416.56" y="157.48"/>
 <pinref part="C14" gate="G$1" pin="-"/>
-<junction x="406.4" y="157.48"/>
+<junction x="403.86" y="157.48"/>
 </segment>
 <segment>
 <pinref part="C16" gate="G$1" pin="1"/>
 <wire x1="421.64" y1="139.7" x2="416.56" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="GND18" gate="1" pin="GND"/>
-<wire x1="416.56" y1="139.7" x2="411.48" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="416.56" y1="139.7" x2="406.4" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="416.56" y1="134.62" x2="416.56" y2="139.7" width="0.1524" layer="91"/>
 <junction x="416.56" y="139.7"/>
 <pinref part="C13" gate="G$1" pin="-"/>
@@ -21736,13 +21736,13 @@ XMega revisionen
 <segment>
 <pinref part="C15" gate="G$1" pin="2"/>
 <pinref part="IC7" gate="G$1" pin="VCC"/>
-<wire x1="416.56" y1="165.1" x2="406.4" y2="165.1" width="0.1524" layer="91"/>
-<wire x1="406.4" y1="165.1" x2="381" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="416.56" y1="165.1" x2="403.86" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="403.86" y1="165.1" x2="381" y2="165.1" width="0.1524" layer="91"/>
 <wire x1="416.56" y1="165.1" x2="416.56" y2="172.72" width="0.1524" layer="91"/>
 <junction x="416.56" y="165.1"/>
 <pinref part="+3V9" gate="G$1" pin="+3V3"/>
 <pinref part="C14" gate="G$1" pin="+"/>
-<junction x="406.4" y="165.1"/>
+<junction x="403.86" y="165.1"/>
 </segment>
 <segment>
 <pinref part="D2" gate="G$1" pin="T_C"/>
@@ -21963,8 +21963,7 @@ XMega revisionen
 <wire x1="381" y1="149.86" x2="381" y2="147.32" width="0.1524" layer="91"/>
 <junction x="381" y="147.32"/>
 <pinref part="SUPPLY1" gate="G$1" pin="+7V"/>
-<wire x1="381" y1="147.32" x2="411.48" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="411.48" y1="147.32" x2="421.64" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="381" y1="147.32" x2="406.4" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="421.64" y1="147.32" x2="421.64" y2="177.8" width="0.1524" layer="91"/>
 <pinref part="IC7" gate="G$1" pin="VM1"/>
 <wire x1="421.64" y1="177.8" x2="421.64" y2="185.42" width="0.1524" layer="91"/>
@@ -21974,10 +21973,10 @@ XMega revisionen
 <junction x="421.64" y="177.8"/>
 <junction x="421.64" y="147.32"/>
 <pinref part="C16" gate="G$1" pin="2"/>
-<wire x1="421.64" y1="147.32" x2="411.48" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="421.64" y1="147.32" x2="406.4" y2="147.32" width="0.1524" layer="91"/>
 <junction x="421.64" y="147.32"/>
 <pinref part="C13" gate="G$1" pin="+"/>
-<junction x="411.48" y="147.32"/>
+<junction x="406.4" y="147.32"/>
 </segment>
 <segment>
 <pinref part="R16" gate="G$1" pin="1"/>
@@ -23316,10 +23315,26 @@ XMega revisionen
 <approved hash="101,1,223.52,63.5,X5-3,1,,,,"/>
 <approved hash="101,1,223.52,60.96,X5-4,1,,,,"/>
 <approved hash="101,1,241.3,86.36,X10-6,1,,,,"/>
+<approved hash="101,1,241.3,109.22,X11-1,1,,,,"/>
 <approved hash="104,1,53.34,294.64,IC2,VCC,+3V3,,,"/>
 <approved hash="104,1,50.8,345.44,IC1,VCC,+3V3,,,"/>
 <approved hash="104,1,93.98,144.78,IC5,AVCC,+3V3,,,"/>
 <approved hash="104,1,93.98,149.86,IC5,VCC,+3V3,,,"/>
+<approved hash="113,1,76.2,366.755,R4,,,,,"/>
+<approved hash="113,1,76.2,364.215,R5,,,,,"/>
+<approved hash="113,1,76.2,361.675,R6,,,,,"/>
+<approved hash="113,1,456.205,73.66,R22,,,,,"/>
+<approved hash="113,1,494.305,99.06,R26,,,,,"/>
+<approved hash="113,1,504.465,76.2,R29,,,,,"/>
+<approved hash="113,1,542.565,101.6,R32,,,,,"/>
+<approved hash="113,1,456.205,134.62,R21,,,,,"/>
+<approved hash="113,1,494.305,160.02,R25,,,,,"/>
+<approved hash="113,1,504.465,137.16,R28,,,,,"/>
+<approved hash="113,1,542.565,162.56,R31,,,,,"/>
+<approved hash="113,1,343.895,360.68,R16,,,,,"/>
+<approved hash="113,1,343.895,342.9,R17,,,,,"/>
+<approved hash="113,1,176.255,154.94,R9,,,,,"/>
+<approved hash="113,1,176.255,165.1,R8,,,,,"/>
 </errors>
 </schematic>
 </drawing>
