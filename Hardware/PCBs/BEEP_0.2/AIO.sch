@@ -21170,7 +21170,7 @@ XMega revisionen
 <instance part="R23" gate="G$1" x="485.14" y="297.18" rot="R270"/>
 <instance part="R24" gate="G$1" x="485.14" y="281.94" rot="R270"/>
 <instance part="R30" gate="G$1" x="525.78" y="297.18" rot="R270"/>
-<instance part="C17" gate="G$1" x="485.14" y="271.78"/>
+<instance part="C17" gate="G$1" x="485.14" y="269.24" rot="R270"/>
 <instance part="GND41" gate="1" x="485.14" y="261.62"/>
 <instance part="GND42" gate="1" x="502.92" y="274.32"/>
 <instance part="SUPPLY2" gate="G$1" x="543.56" y="309.88"/>
@@ -21179,11 +21179,11 @@ XMega revisionen
 <instance part="IC8" gate="G$1" x="381" y="78.74"/>
 <instance part="P+16" gate="1" x="401.32" y="88.9"/>
 <instance part="GND44" gate="1" x="403.86" y="73.66"/>
-<instance part="GND45" gate="1" x="353.06" y="66.04"/>
+<instance part="GND45" gate="1" x="350.52" y="66.04"/>
 <instance part="R19" gate="G$1" x="378.46" y="71.12" rot="R180"/>
 <instance part="R18" gate="G$1" x="342.9" y="78.74" rot="R180"/>
 <instance part="C11" gate="G$1" x="332.74" y="78.74" rot="R270"/>
-<instance part="C12" gate="G$1" x="353.06" y="86.36"/>
+<instance part="C12" gate="G$1" x="355.6" y="83.82" rot="R180"/>
 <instance part="X6" gate="-1" x="228.6" y="342.9"/>
 <instance part="X6" gate="-2" x="228.6" y="340.36"/>
 <instance part="X6" gate="-3" x="228.6" y="337.82"/>
@@ -21579,7 +21579,6 @@ XMega revisionen
 <segment>
 <pinref part="GND41" gate="1" pin="GND"/>
 <pinref part="C17" gate="G$1" pin="2"/>
-<wire x1="485.14" y1="264.16" x2="490.22" y2="271.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND42" gate="1" pin="GND"/>
@@ -21600,7 +21599,7 @@ XMega revisionen
 <segment>
 <pinref part="C12" gate="G$1" pin="2"/>
 <pinref part="GND45" gate="1" pin="GND"/>
-<wire x1="358.14" y1="86.36" x2="353.06" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="350.52" y1="83.82" x2="350.52" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="365.76" y1="38.1" x2="375.92" y2="38.1" width="0.1524" layer="91"/>
@@ -23107,8 +23106,8 @@ XMega revisionen
 <net name="N$16" class="0">
 <segment>
 <pinref part="R24" gate="G$1" pin="2"/>
-<wire x1="485.14" y1="276.86" x2="480.06" y2="271.78" width="0.1524" layer="91"/>
-<wire x1="480.06" y1="271.78" x2="497.84" y2="274.32" width="0.1524" layer="91"/>
+<wire x1="485.14" y1="276.86" x2="485.14" y2="274.32" width="0.1524" layer="91"/>
+<wire x1="485.14" y1="274.32" x2="497.84" y2="274.32" width="0.1524" layer="91"/>
 <wire x1="497.84" y1="274.32" x2="497.84" y2="266.7" width="0.1524" layer="91"/>
 <pinref part="S1" gate="1" pin="P1"/>
 <wire x1="497.84" y1="266.7" x2="510.54" y2="266.7" width="0.1524" layer="91"/>
@@ -23116,7 +23115,7 @@ XMega revisionen
 <wire x1="510.54" y1="266.7" x2="510.54" y2="269.24" width="0.1524" layer="91"/>
 <junction x="510.54" y="266.7"/>
 <pinref part="C17" gate="G$1" pin="1"/>
-<junction x="480.06" y="271.78"/>
+<junction x="485.14" y="274.32"/>
 </segment>
 </net>
 <net name="POWER_OFF" class="0">
@@ -23229,10 +23228,8 @@ XMega revisionen
 <net name="N$36" class="0">
 <segment>
 <pinref part="IC8" gate="G$1" pin="FC2"/>
-<wire x1="368.3" y1="83.82" x2="358.14" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="358.14" y1="83.82" x2="358.14" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="368.3" y1="83.82" x2="360.68" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="C12" gate="G$1" pin="1"/>
-<wire x1="358.14" y1="88.9" x2="347.98" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SPEAKER_O1" class="0">
