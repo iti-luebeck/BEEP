@@ -20922,7 +20922,7 @@ type RDH, grid 15 mm</description>
 <part name="R23" library="resistor" deviceset="R-EU_" device="M0805" value="10k"/>
 <part name="R24" library="resistor" deviceset="R-EU_" device="M0805" value="100k"/>
 <part name="R30" library="resistor" deviceset="R-EU_" device="M0805" value="10k"/>
-<part name="C17" library="resistor" deviceset="R-EU_" device="M0805" value="1uF"/>
+<part name="C17" library="resistor" deviceset="R-EU_" device="M0805" value="4,7uF"/>
 <part name="GND41" library="supply1" deviceset="GND" device=""/>
 <part name="GND42" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="+7V" device=""/>
