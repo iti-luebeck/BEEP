@@ -1,0 +1,10 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"10-16062010-082809";"";
+"TraceParts.ClassPath";"ASSMANN:/ROOT/10-16062010-082809";"";
+"TraceParts.InstanceId";"10-16062010-082809C5X08N8DVADMC5NSP0VJH1X5K";"";
+"REFERENCE";"A-31-08P-1300";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"SUPPLIER";"ASSMANN WSW components";"";
+"DESIGN";"Micro-Miniature Steckverbinder, 8 polig, Raster 1,27mm, IDC";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartVersion";"1.1.4";"";
