@@ -1,0 +1,4 @@
+#LTspice
+*.log
+*.raw
+*.net
