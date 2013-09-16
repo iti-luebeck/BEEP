@@ -81,9 +81,11 @@ typedef struct Command_Buffer{
 	}Command_Buffer_t;
 
 USART_data_t USART_data;
-uint32_t baudrate = 9600;
+uint32_t baudrate = 115200;
 uint8_t ir_data[8];
 volatile bool direct_send_adc_res = true;
+volatile uint8_t conv_left = 0;
+volatile uint8_t adc_channel; //used to measure multiple channels
 
 
 
@@ -124,8 +126,6 @@ void init_usart(void){
 	/* Enable both RX and TX. */
 	USART_Rx_Enable(USART_data.usart);
 	USART_Tx_Enable(USART_data.usart);
-
-
 }
 
 
@@ -147,8 +147,7 @@ inline void init_rgb_led(void){
 	PORTE.PIN1CTRL |= PORT_INVEN_bm;
 	PORTE.PIN2CTRL |= PORT_INVEN_bm;
 
-	
- 	TCE0.CTRLA = TC_CLKSEL_DIV1_gc; //prescaler: Clk/1
+	TCE0.CTRLB = PWM_RED_ENABLE_gc|PWM_GREEN_ENABLE_gc|PWM_BLUE_ENABLE_gc| TC_WGMODE_SS_gc; //enable pwm output, Single slope pwm
 	
 	TCE0.PER = 0xfff; //12 Bit resolution per period
 	
@@ -159,9 +158,12 @@ inline void init_rgb_led(void){
 
 inline void enable_rgb_leds(bool enable){
 	if (enable){
-		TCE0.CTRLB = PWM_RED_ENABLE_gc|PWM_GREEN_ENABLE_gc|PWM_BLUE_ENABLE_gc| TC_WGMODE_SS_gc; //enable pwm output, Single slope pwm
+		//reset counter
+		TCE0.CNT = 0x00;
+		//restart counter
+		TCE0.CTRLA = TC_CLKSEL_DIV1_gc;
 	}else{
-		TCE0.CTRLB = 0; // disable pwm output
+		TCE0.CTRLA = 0; // disable pwm output
 		PORTE.OUTCLR = PIN0_bm | PIN1_bm | PIN2_bm; // clear outputs
 	}
 }
@@ -171,42 +173,11 @@ const uint8_t rgb_led_lut[8] PROGMEM = {
 	0b000<<3, 0b100<<3 ,0b010<<3, 0b110<<3, 0b001<<3, 0b101<<3, 0b011<<3, 0b111<<3};
 
 
-ISR(TCE0_OVF_vect){
-	static uint8_t led_multiplex_counter = 0; //software prescale
-	static uint8_t led = 0; //next led number
-	if(led_multiplex_counter++ > 0x5){
-		led_multiplex_counter=0;
-		//disable LED OUTPUT
-
-		TCE0.CTRLA = 0; // disable timer
-		PORTE.OUTCLR = PIN0_bm | PIN1_bm | PIN2_bm; // clear outputs
-
-		//choose LED on multiplexer
-		PORTF.OUTCLR = (0b111 << 3);
-		PORTF.OUTSET = (pgm_read_word (&rgb_led_lut[led]));
-  			
-		//set pwm values
-		PWM_RED = pgm_read_word (&pwmtable_12[myColors[led].red]);
-		PWM_GREEN = pgm_read_word(&pwmtable_12[myColors[led].green]);
-		PWM_BLUE = pgm_read_word (&pwmtable_12[myColors[led].blue]);
-
-		//reset counter
-		TCE0.CNT = 0x00;
-		//restart counter
-		TCE0.CTRLA = TC_CLKSEL_DIV1_gc;
-
-		//select next LED
-		led++;
-		led &= 0b111;
-	}
-}
-
-
 
 
 void start_adc(uint8_t input){
 	//input between 0 and 15
-	ADCA.CH0.MUXCTRL = (input<<3) | ADC_CH_MUXNEG_PIN1_gc; //setup mux: input chanel | refference
+	ADCA.CH0.MUXCTRL = (input<<3) | ADC_CH_MUXNEG_PIN1_gc; //setup mux: input channel | refference voltage
 	ADCA.CH0.CTRL = ADC_CH_START_bm | ADC_CH_GAIN_1X_gc | ADC_CH_INPUTMODE_DIFF_gc; //start conv with 1x gain, diff mode
 }
 
@@ -229,7 +200,7 @@ void set_beepmotor_speed(motor_t motor, int8_t speed){
 	}else{
 		if(motor == motor_l){
 			op = motor_ccw;
-			}else if(motor == motor_r){
+		}else if(motor == motor_r){
 			op = motor_cw;
 		}
 	}
@@ -243,9 +214,7 @@ const uint8_t ir_led_lut[8] PROGMEM = {
 0b000,0b001,0b010,0b011,0b101,0b110,0b111,0b100};
 
 
-int main(void)
-{
-	static bool ready_for_RXdata = true;
+int main(void){
 	
 	init_enable_32mhz();
 	init_usart();
@@ -268,10 +237,10 @@ int main(void)
 	myColors[0].blue = 0x00;
 	
 	myColors[1].red = 0x00;
-	myColors[1].green = 0xff;
+	myColors[1].green = 0xaf;
 	myColors[1].blue = 0x00;
 	
-	myColors[2].red = 0xff;
+	myColors[2].red = 0xaf;
 	myColors[2].green = 0x00;
 	myColors[2].blue = 0x00;
 	
@@ -283,13 +252,13 @@ int main(void)
 	myColors[4].green = 0x00;
 	myColors[4].blue = 0x00;
 	
-	myColors[5].red = 0xff;
-	myColors[5].green = 0xff;
+	myColors[5].red = 0xaf;
+	myColors[5].green = 0xaf;
 	myColors[5].blue = 0x00;
 	
-	myColors[6].red = 0xff;
+	myColors[6].red = 0xaf;
 	myColors[6].green = 0x00;
-	myColors[6].blue = 0xff;
+	myColors[6].blue = 0xaf;
 	
 	myColors[7].red = 0x00;
 	myColors[7].green = 0x00;
@@ -311,8 +280,13 @@ int main(void)
 	PORTF.DIRSET = PIN0_bm | PIN1_bm | PIN2_bm;
 	PORTF.OUTSET = pgm_read_word(&ir_led_lut[2]);;
 	
+	set_motor_on(false);
+	set_beepmotor_speed(motor_r, 50);
+	set_beepmotor_speed(motor_l, -50);
+	
+	
     while(1){		
-		if(ready_for_RXdata){
+		if(conv_left == 0){
 			if(USART_RXBufferData_Available(&USART_data)){
 				uint8_t data = USART_RXBuffer_GetByte(&USART_data);
 				if(next_command.data_missing == -1){
@@ -333,13 +307,16 @@ int main(void)
 							set_motor_on(false);
 							//next_command.data_missing = -1;
 						}
-					}else if(next_command.device == beep_dev_ir){
-						ready_for_RXdata = false;
-						direct_send_adc_res = true;
+					}else if(next_command.device == beep_dev_ir){			
 						if(next_command.command <= 7){
+							conv_left = 1;
+							direct_send_adc_res = true;
 							start_adc(next_command.command);
-						}else if (next_command.command == beep_com_ir_all){
-							//TODO messe alle der reihe nach.
+						}else if (next_command.command == beep_com_ir_all){							
+							conv_left = 8;
+							direct_send_adc_res = true;
+							adc_channel = 0;
+							start_adc(adc_channel);
 						}
 					
 						//next_command.data_missing = -1;
@@ -385,20 +362,50 @@ int main(void)
 }
 
 
-ISR(USARTD0_RXC_vect)
-{
+ISR(USARTD0_RXC_vect){
 	USART_RXComplete(&USART_data);
 }
 
 
-ISR(USARTD0_DRE_vect)
-{
+ISR(USARTD0_DRE_vect){
 	USART_DataRegEmpty(&USART_data);
 }
 
 ISR(ADCA_CH0_vect){
 	if(direct_send_adc_res){
 		USART_TXBuffer_PutByte(&USART_data, ADCA.CH0.RES / (2047 / 255));
+		adc_channel += 1;
+		conv_left -= 1;
+		if (conv_left>0){
+			start_adc(adc_channel);
+		}
 	}
 }
 
+ISR(TCE0_OVF_vect){
+	static uint8_t led_multiplex_counter = 0; //software prescale
+	static uint8_t led = 0; //next led number
+	if(led_multiplex_counter++ > 0x5){
+		led_multiplex_counter=0;
+		//disable LED OUTPUT
+
+		enable_rgb_leds(false);
+
+		_delay_ms(1);
+		
+		//set pwm values
+		PWM_RED = pgm_read_word (&pwmtable_12[myColors[led].red]);
+		PWM_GREEN = pgm_read_word(&pwmtable_12[myColors[led].green]);
+		PWM_BLUE = pgm_read_word (&pwmtable_12[myColors[led].blue]);
+
+		//choose LED on multiplexer
+		PORTF.OUTCLR = (0b111 << 3);
+		PORTF.OUTSET = (pgm_read_word (&rgb_led_lut[led]));
+
+		enable_rgb_leds(true);
+
+		//select next LED
+		led++;
+		led &= 0b111;
+	}
+}

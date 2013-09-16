@@ -13,6 +13,7 @@ Allocating common symbols
 Common symbol       size              file
 
 myColors            0x18              BEEP_XMega.o
+adc_channel         0x1               BEEP_XMega.o
 ir_data             0x8               BEEP_XMega.o
 USART_data          0xf               BEEP_XMega.o
 
@@ -197,7 +198,7 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xb98
+.text           0x00000000      0xbfc
  *(.vectors)
  .vectors       0x00000000      0x1c8 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avrxmega4/crtx64d3.o
                 0x00000000                __vector_default
@@ -383,67 +384,67 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8
  .text.init_adc
                 0x000004e2       0x16 BEEP_XMega.o
                 0x000004e2                init_adc
- .text.__vector_47
-                0x000004f8       0xf0 BEEP_XMega.o
-                0x000004f8                __vector_47
  .text.start_adc
-                0x000005e8       0x16 BEEP_XMega.o
-                0x000005e8                start_adc
+                0x000004f8       0x16 BEEP_XMega.o
+                0x000004f8                start_adc
  .text.set_beepmotor_speed
-                0x000005fe       0x52 BEEP_XMega.o
-                0x000005fe                set_beepmotor_speed
- .text.main     0x00000650      0x270 BEEP_XMega.o
-                0x00000650                main
+                0x0000050e       0x52 BEEP_XMega.o
+                0x0000050e                set_beepmotor_speed
+ .text.main     0x00000560      0x2a4 BEEP_XMega.o
+                0x00000560                main
  .text.__vector_88
-                0x000008c0       0x54 BEEP_XMega.o
-                0x000008c0                __vector_88
+                0x00000804       0x54 BEEP_XMega.o
+                0x00000804                __vector_88
  .text.__vector_89
-                0x00000914       0x54 BEEP_XMega.o
-                0x00000914                __vector_89
+                0x00000858       0x54 BEEP_XMega.o
+                0x00000858                __vector_89
  .text.__vector_71
-                0x00000968       0x70 BEEP_XMega.o
-                0x00000968                __vector_71
+                0x000008ac       0x94 BEEP_XMega.o
+                0x000008ac                __vector_71
+ .text.__vector_47
+                0x00000940       0xfc BEEP_XMega.o
+                0x00000940                __vector_47
  .text.set_motor_operation_mode
-                0x000009d8       0x28 lib/motor_driver.o
-                0x000009d8                set_motor_operation_mode
+                0x00000a3c       0x28 lib/motor_driver.o
+                0x00000a3c                set_motor_operation_mode
  .text.init_motor
-                0x00000a00       0x2e lib/motor_driver.o
-                0x00000a00                init_motor
+                0x00000a64       0x2e lib/motor_driver.o
+                0x00000a64                init_motor
  .text.set_motor_speed
-                0x00000a2e       0x26 lib/motor_driver.o
-                0x00000a2e                set_motor_speed
+                0x00000a92       0x26 lib/motor_driver.o
+                0x00000a92                set_motor_speed
  .text.set_motor_on
-                0x00000a54       0x18 lib/motor_driver.o
-                0x00000a54                set_motor_on
+                0x00000ab8       0x18 lib/motor_driver.o
+                0x00000ab8                set_motor_on
  .text.USART_InterruptDriver_Initialize
-                0x00000a6c       0x12 lib/usart_driver.o
-                0x00000a6c                USART_InterruptDriver_Initialize
+                0x00000ad0       0x12 lib/usart_driver.o
+                0x00000ad0                USART_InterruptDriver_Initialize
  .text.USART_TXBuffer_FreeSpace
-                0x00000a7e       0x14 lib/usart_driver.o
-                0x00000a7e                USART_TXBuffer_FreeSpace
+                0x00000ae2       0x14 lib/usart_driver.o
+                0x00000ae2                USART_TXBuffer_FreeSpace
  .text.USART_TXBuffer_PutByte
-                0x00000a92       0x38 lib/usart_driver.o
-                0x00000a92                USART_TXBuffer_PutByte
+                0x00000af6       0x38 lib/usart_driver.o
+                0x00000af6                USART_TXBuffer_PutByte
  .text.USART_RXBufferData_Available
-                0x00000aca       0x10 lib/usart_driver.o
-                0x00000aca                USART_RXBufferData_Available
+                0x00000b2e       0x10 lib/usart_driver.o
+                0x00000b2e                USART_RXBufferData_Available
  .text.USART_RXBuffer_GetByte
-                0x00000ada       0x18 lib/usart_driver.o
-                0x00000ada                USART_RXBuffer_GetByte
+                0x00000b3e       0x18 lib/usart_driver.o
+                0x00000b3e                USART_RXBuffer_GetByte
  .text.USART_RXComplete
-                0x00000af2       0x2a lib/usart_driver.o
-                0x00000af2                USART_RXComplete
+                0x00000b56       0x2a lib/usart_driver.o
+                0x00000b56                USART_RXComplete
  .text.USART_DataRegEmpty
-                0x00000b1c       0x34 lib/usart_driver.o
-                0x00000b1c                USART_DataRegEmpty
+                0x00000b80       0x34 lib/usart_driver.o
+                0x00000b80                USART_DataRegEmpty
  .text.libgcc.div
-                0x00000b50       0x44 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avrxmega4\libgcc.a(_udivmodsi4.o)
-                0x00000b50                __udivmodsi4
-                0x00000b94                . = ALIGN (0x2)
+                0x00000bb4       0x44 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avrxmega4\libgcc.a(_udivmodsi4.o)
+                0x00000bb4                __udivmodsi4
+                0x00000bf8                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000b94        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avrxmega4\libgcc.a(_exit.o)
-                0x00000b94                _exit
-                0x00000b94                exit
+ .fini9         0x00000bf8        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avrxmega4\libgcc.a(_exit.o)
+                0x00000bf8                _exit
+                0x00000bf8                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -462,11 +463,11 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000b94        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avrxmega4\libgcc.a(_exit.o)
+ .fini0         0x00000bf8        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avrxmega4\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000b98                _etext = .
+                0x00000bfc                _etext = .
 
-.data           0x00802000        0x6 load address 0x00000b98
+.data           0x00802000        0x6 load address 0x00000bfc
                 0x00802000                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00802000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avrxmega4/crtx64d3.o
@@ -484,37 +485,40 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8
  .data.baudrate
                 0x00802001        0x4 BEEP_XMega.o
                 0x00802001                baudrate
- .data.ready_for_RXdata.3433
-                0x00802005        0x1 BEEP_XMega.o
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
                 0x00802006                . = ALIGN (0x2)
+ *fill*         0x00802005        0x1 
                 0x00802006                _edata = .
                 0x00802006                PROVIDE (__data_end, .)
 
-.bss            0x00802006       0x31
+.bss            0x00802006       0x33
                 0x00802006                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.led_multiplex_counter.3406
+ .bss.conv_left
                 0x00802006        0x1 BEEP_XMega.o
- .bss.led.3407  0x00802007        0x1 BEEP_XMega.o
+                0x00802006                conv_left
+ .bss.led_multiplex_counter.3442
+                0x00802007        0x1 BEEP_XMega.o
+ .bss.led.3443  0x00802008        0x1 BEEP_XMega.o
  *(COMMON)
- COMMON         0x00802008       0x2f BEEP_XMega.o
-                0x00802008                myColors
-                0x00802020                ir_data
-                0x00802028                USART_data
-                0x00802037                PROVIDE (__bss_end, .)
-                0x00000b98                __data_load_start = LOADADDR (.data)
-                0x00000b9e                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00802009       0x30 BEEP_XMega.o
+                0x00802009                myColors
+                0x00802021                adc_channel
+                0x00802022                ir_data
+                0x0080202a                USART_data
+                0x00802039                PROVIDE (__bss_end, .)
+                0x00000bfc                __data_load_start = LOADADDR (.data)
+                0x00000c02                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00802037        0x0
-                0x00802037                PROVIDE (__noinit_start, .)
+.noinit         0x00802039        0x0
+                0x00802039                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00802037                PROVIDE (__noinit_end, .)
-                0x00802037                _end = .
-                0x00802037                PROVIDE (__heap_start, .)
+                0x00802039                PROVIDE (__noinit_end, .)
+                0x00802039                _end = .
+                0x00802039                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -586,24 +590,24 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x2758
+.debug_info     0x00000000     0x289c
  *(.debug_info)
- .debug_info    0x00000000     0x1845 BEEP_XMega.o
- .debug_info    0x00001845      0x98d lib/motor_driver.o
- .debug_info    0x000021d2      0x586 lib/usart_driver.o
+ .debug_info    0x00000000     0x1989 BEEP_XMega.o
+ .debug_info    0x00001989      0x98d lib/motor_driver.o
+ .debug_info    0x00002316      0x586 lib/usart_driver.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x6d3
+.debug_abbrev   0x00000000      0x725
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x37d BEEP_XMega.o
- .debug_abbrev  0x0000037d      0x153 lib/motor_driver.o
- .debug_abbrev  0x000004d0      0x203 lib/usart_driver.o
+ .debug_abbrev  0x00000000      0x3cf BEEP_XMega.o
+ .debug_abbrev  0x000003cf      0x153 lib/motor_driver.o
+ .debug_abbrev  0x00000522      0x203 lib/usart_driver.o
 
-.debug_line     0x00000000      0x729
+.debug_line     0x00000000      0x7e7
  *(.debug_line)
- .debug_line    0x00000000      0x31d BEEP_XMega.o
- .debug_line    0x0000031d      0x1bf lib/motor_driver.o
- .debug_line    0x000004dc      0x24d lib/usart_driver.o
+ .debug_line    0x00000000      0x3db BEEP_XMega.o
+ .debug_line    0x000003db      0x1bf lib/motor_driver.o
+ .debug_line    0x0000059a      0x24d lib/usart_driver.o
 
 .debug_frame    0x00000000      0x310
  *(.debug_frame)
@@ -611,20 +615,20 @@ LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8
  .debug_frame   0x000001f8       0x54 lib/motor_driver.o
  .debug_frame   0x0000024c       0xc4 lib/usart_driver.o
 
-.debug_str      0x00000000     0x1271
+.debug_str      0x00000000     0x12c0
  *(.debug_str)
- .debug_str     0x00000000     0x1172 BEEP_XMega.o
-                               0x120e (size before relaxing)
- .debug_str     0x00001172       0x16 lib/motor_driver.o
+ .debug_str     0x00000000     0x11c1 BEEP_XMega.o
+                               0x125d (size before relaxing)
+ .debug_str     0x000011c1       0x16 lib/motor_driver.o
                                 0x6df (size before relaxing)
- .debug_str     0x00001188       0xe9 lib/usart_driver.o
+ .debug_str     0x000011d7       0xe9 lib/usart_driver.o
                                 0x3c1 (size before relaxing)
 
-.debug_loc      0x00000000      0xe4b
+.debug_loc      0x00000000      0xeb1
  *(.debug_loc)
- .debug_loc     0x00000000      0xa24 BEEP_XMega.o
- .debug_loc     0x00000a24       0x58 lib/motor_driver.o
- .debug_loc     0x00000a7c      0x3cf lib/usart_driver.o
+ .debug_loc     0x00000000      0xa8a BEEP_XMega.o
+ .debug_loc     0x00000a8a       0x58 lib/motor_driver.o
+ .debug_loc     0x00000ae2      0x3cf lib/usart_driver.o
 
 .debug_macinfo
  *(.debug_macinfo)

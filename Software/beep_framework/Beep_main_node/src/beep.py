@@ -17,7 +17,7 @@ devices = [ 0x00, #IR raw
 			0x50, #RGB-LED
 			0x60] #Battery LED
 
-port = serial.Serial("/dev/ttyAMA0", baudrate=115200, timeout=3.0)
+port = serial.Serial("/dev/ttyAMA0", baudrate=9600, timeout=3.0)
 
 # creating publisher for all sensors
 def talker():
@@ -78,6 +78,7 @@ def readLine(p):
 	while True:
 		ch = p.read()
 		if ch=='\r':
+			print rv #debug
 			return rv
 		if ch!='\n':
 			rv += ch
@@ -92,14 +93,14 @@ def cbMotorRight(msg):
 	port.write(chr(devices[4] | 0x02))
 	sendMotorSpeed(msg.data)
 
-#transmits the speedvalue in range from 0 to 200 as char to atxmega
+#transmits the speedvalue in range from -128 to 127 as char to atxmega
 def sendMotorSpeed(s):
-	if s > 100:
-		port.write(chr(200))
-	elif s < -100:
-		port.write(chr(0))
+	if s > 127:
+		port.write(chr(127))
+	elif s < -128:
+		port.write(chr(-128))
 	else:
-		port.write(chr(s+100))
+		port.write(chr(s))
 
 #Tell atxmega the color of a led
 def cbLeds(msg):
@@ -110,7 +111,7 @@ def cbLeds(msg):
 
 
 def listener():
-	#motor listeners waiting for speed in range of -100 to 100
+	#motor listeners waiting for speed in range of -128 to 127
 	rospy.Subscriber("motor_l", Int8, cbMotorLeft)
 	rospy.Subscriber("motor_r", Int8, cbMotorRight)
 	rospy.Subscriber("leds", Led, cbLeds)
@@ -120,5 +121,7 @@ if __name__ == '__main__':
 	rospy.init_node('Beep')
 	listener()
 	talker()
+	port.write(chr(devices[4] | 0x0e)) #enable motor driverhanse
+	
 	pass
 	
