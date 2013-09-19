@@ -3552,9 +3552,9 @@ type RDH, grid 15 mm</description>
 <label x="45.72" y="93.98" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<label x="218.44" y="81.28" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="U$1" gate="G$1" pin="7"/>
-<wire x1="218.44" y1="81.28" x2="246.38" y2="81.28" width="0.1524" layer="91"/>
+<label x="218.44" y="83.82" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U$1" gate="G$1" pin="6"/>
+<wire x1="218.44" y1="83.82" x2="246.38" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RGB_ANODE_2" class="0">
@@ -3564,9 +3564,9 @@ type RDH, grid 15 mm</description>
 <label x="45.72" y="88.9" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<label x="218.44" y="83.82" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="U$1" gate="G$1" pin="6"/>
-<wire x1="218.44" y1="83.82" x2="246.38" y2="83.82" width="0.1524" layer="91"/>
+<label x="218.44" y="81.28" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U$1" gate="G$1" pin="7"/>
+<wire x1="218.44" y1="81.28" x2="246.38" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RGB_ANODE_3" class="0">
