@@ -8202,7 +8202,7 @@ at 27/07/2012 14:02:49</description>
 <part name="U1" library="Texas Instruments_By_element14_Batch_1" deviceset="LM239AMDREP" device=""/>
 <part name="D1" library="BEEP" deviceset="CNY70" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="R12" library="rcl" deviceset="R-EU_" device="M0805"/>
+<part name="R12" library="rcl" deviceset="R-EU_" device="R0805"/>
 <part name="R13" library="rcl" deviceset="R-EU_" device="M0805"/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
