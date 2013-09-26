@@ -12,7 +12,7 @@ class Color_sensors(genpy.Message):
   _type = "beep_msgs/Color_sensors"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """Header header
-Color[3] sensors
+MyColor[3] sensors
 
 ================================================================================
 MSG: std_msgs/Header
@@ -33,7 +33,7 @@ time stamp
 string frame_id
 
 ================================================================================
-MSG: beep_msgs/Color
+MSG: beep_msgs/MyColor
 uint8 r
 uint8 g
 uint8 b
@@ -41,7 +41,7 @@ uint8 w
 
 """
   __slots__ = ['header','sensors']
-  _slot_types = ['std_msgs/Header','beep_msgs/Color[3]']
+  _slot_types = ['std_msgs/Header','beep_msgs/MyColor[3]']
 
   def __init__(self, *args, **kwds):
     """
@@ -63,10 +63,10 @@ uint8 w
       if self.header is None:
         self.header = std_msgs.msg.Header()
       if self.sensors is None:
-        self.sensors = [beep_msgs.msg.Color(),beep_msgs.msg.Color(),beep_msgs.msg.Color()]
+        self.sensors = [beep_msgs.msg.MyColor(),beep_msgs.msg.MyColor(),beep_msgs.msg.MyColor()]
     else:
       self.header = std_msgs.msg.Header()
-      self.sensors = [beep_msgs.msg.Color(),beep_msgs.msg.Color(),beep_msgs.msg.Color()]
+      self.sensors = [beep_msgs.msg.MyColor(),beep_msgs.msg.MyColor(),beep_msgs.msg.MyColor()]
 
   def _get_types(self):
     """
@@ -120,7 +120,7 @@ uint8 w
         self.header.frame_id = str[start:end]
       self.sensors = []
       for i in range(0, 3):
-        val1 = beep_msgs.msg.Color()
+        val1 = beep_msgs.msg.MyColor()
         _x = val1
         start = end
         end += 4
@@ -179,7 +179,7 @@ uint8 w
         self.header.frame_id = str[start:end]
       self.sensors = []
       for i in range(0, 3):
-        val1 = beep_msgs.msg.Color()
+        val1 = beep_msgs.msg.MyColor()
         _x = val1
         start = end
         end += 4

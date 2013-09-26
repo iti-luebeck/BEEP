@@ -1,2 +1,2 @@
 Header header
-Color[3] sensors
+MyColor[3] sensors
