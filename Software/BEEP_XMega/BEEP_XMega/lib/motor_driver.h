@@ -8,8 +8,8 @@
  *
  */
 typedef enum motor_enum{
-	motor_l = 4, //first pin of motor control
-	motor_r = 6, //first pin of motor control
+	motor_l = 6, //first pin of motor control
+	motor_r = 4, //first pin of motor control
 } motor_t;
 
 /*! \brief Operation mode of the motor
