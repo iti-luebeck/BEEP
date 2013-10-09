@@ -21,7 +21,7 @@ devices = [ 0x00, #IR raw
 			0x50, #RGB-LED
 			0x60] #Battery LED
 
-port = serial.Serial("/dev/ttyAMA0", baudrate=38400, timeout=0.01)
+port = serial.Serial("/dev/ttyAMA0", baudrate=76800, timeout=0.01)
 USART_TIMEOUT = 0.1
 
 writing = Lock() #Lock object for blocking usart
@@ -37,6 +37,7 @@ def talker():
 	while not rospy.is_shutdown():
 		#get and publish IR raw data
 		ir = IR()
+
 		port.write(chr(devices[0] | 0x0f))
 		for i in range(0, 8):
 			ir.ir[i] = readByte(port)
