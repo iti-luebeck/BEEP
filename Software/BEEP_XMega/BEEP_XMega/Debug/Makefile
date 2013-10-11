@@ -38,8 +38,10 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../BEEP_XMega.c \
+../lib/ir_driver.c \
 ../lib/motor_driver.c \
-../lib/usart_driver.c
+../lib/usart_driver.c \
+../lib/xmega_freq_cntr.c
 
 
 PREPROCESSING_SRCS += 
@@ -50,23 +52,31 @@ ASM_SRCS +=
 
 OBJS +=  \
 BEEP_XMega.o \
+lib/ir_driver.o \
 lib/motor_driver.o \
-lib/usart_driver.o
+lib/usart_driver.o \
+lib/xmega_freq_cntr.o
 
 OBJS_AS_ARGS +=  \
 BEEP_XMega.o \
+lib/ir_driver.o \
 lib/motor_driver.o \
-lib/usart_driver.o
+lib/usart_driver.o \
+lib/xmega_freq_cntr.o
 
 C_DEPS +=  \
 BEEP_XMega.d \
+lib/ir_driver.d \
 lib/motor_driver.d \
-lib/usart_driver.d
+lib/usart_driver.d \
+lib/xmega_freq_cntr.d
 
 C_DEPS_AS_ARGS +=  \
 BEEP_XMega.d \
+lib/ir_driver.d \
 lib/motor_driver.d \
-lib/usart_driver.d
+lib/usart_driver.d \
+lib/xmega_freq_cntr.d
 
 OUTPUT_FILE_PATH +=BEEP_XMega.elf
 
@@ -86,17 +96,21 @@ LIB_DEP+=
 
 
 
+
+
+
+
 ./%.o: .././%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 3.4.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.2.939\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -funsigned-char -funsigned-bitfields -DDEBUG  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atxmega64d3 -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<"
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.2.939\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=32000000UL  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -Wextra -mmcu=atxmega64d3 -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<"
 	@echo Finished building: $<
 	
 
 lib/%.o: ../lib/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 3.4.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.2.939\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -funsigned-char -funsigned-bitfields -DDEBUG  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atxmega64d3 -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<"
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.2.939\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=32000000UL  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -Wextra -mmcu=atxmega64d3 -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<"
 	@echo Finished building: $<
 	
 
