@@ -7664,7 +7664,7 @@ at 27/07/2012 14:02:49</description>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="+3V8" library="supply1" deviceset="+3V3" device=""/>
 <part name="+3V9" library="supply1" deviceset="+3V3" device=""/>
-<part name="C1" library="rcl" deviceset="C-EU" device="C0603"/>
+<part name="C1" library="rcl" deviceset="C-EU" device="C0603" value="100n"/>
 <part name="C2" library="rcl" deviceset="C-EU" device="C0603"/>
 <part name="C3" library="rcl" deviceset="C-EU" device="C0603"/>
 <part name="SUPPLY2" library="supply2" deviceset="+7V" device=""/>
@@ -7762,7 +7762,7 @@ at 27/07/2012 14:02:49</description>
 <instance part="R35" gate="G$1" x="147.32" y="271.78" rot="MR90"/>
 <instance part="GND23" gate="1" x="147.32" y="246.38" rot="MR0"/>
 <instance part="SUPPLY1" gate="G$1" x="147.32" y="281.94"/>
-<instance part="JP1" gate="A" x="119.38" y="233.68"/>
+<instance part="JP1" gate="A" x="121.92" y="228.6"/>
 <instance part="U2" gate="A" x="119.38" y="297.18"/>
 <instance part="R36" gate="G$1" x="157.48" y="269.24" rot="MR90"/>
 <instance part="X1" gate="-1" x="370.84" y="96.52" rot="MR180"/>
@@ -7800,8 +7800,8 @@ at 27/07/2012 14:02:49</description>
 <instance part="SUPPLY2" gate="G$1" x="175.26" y="355.6"/>
 <instance part="+3V10" gate="G$1" x="495.3" y="317.5"/>
 <instance part="GND17" gate="1" x="495.3" y="299.72" rot="MR0"/>
-<instance part="+3V11" gate="G$1" x="134.62" y="243.84"/>
-<instance part="GND18" gate="1" x="134.62" y="226.06" rot="MR0"/>
+<instance part="+3V11" gate="G$1" x="137.16" y="238.76"/>
+<instance part="GND18" gate="1" x="137.16" y="220.98" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -7928,9 +7928,9 @@ at 27/07/2012 14:02:49</description>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="6"/>
-<wire x1="124.46" y1="231.14" x2="134.62" y2="231.14" width="0.1524" layer="91"/>
+<wire x1="127" y1="226.06" x2="137.16" y2="226.06" width="0.1524" layer="91"/>
 <pinref part="GND18" gate="1" pin="GND"/>
-<wire x1="134.62" y1="231.14" x2="134.62" y2="228.6" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="226.06" x2="137.16" y2="223.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -8432,9 +8432,9 @@ at 27/07/2012 14:02:49</description>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="2"/>
-<wire x1="124.46" y1="236.22" x2="134.62" y2="236.22" width="0.1524" layer="91"/>
+<wire x1="127" y1="231.14" x2="137.16" y2="231.14" width="0.1524" layer="91"/>
 <pinref part="+3V11" gate="G$1" pin="+3V3"/>
-<wire x1="134.62" y1="236.22" x2="134.62" y2="241.3" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="231.14" x2="137.16" y2="236.22" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="U_REF" class="0">
@@ -8553,22 +8553,22 @@ at 27/07/2012 14:02:49</description>
 <net name="TPIDATA" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="1"/>
-<wire x1="116.84" y1="236.22" x2="109.22" y2="236.22" width="0.1524" layer="91"/>
-<label x="109.22" y="236.22" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="119.38" y1="231.14" x2="111.76" y2="231.14" width="0.1524" layer="91"/>
+<label x="111.76" y="231.14" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="TPICLK" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="3"/>
-<wire x1="116.84" y1="233.68" x2="109.22" y2="233.68" width="0.1524" layer="91"/>
-<label x="109.22" y="233.68" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="119.38" y1="228.6" x2="111.76" y2="228.6" width="0.1524" layer="91"/>
+<label x="111.76" y="228.6" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="RESET" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="5"/>
-<wire x1="116.84" y1="231.14" x2="109.22" y2="231.14" width="0.1524" layer="91"/>
-<label x="109.22" y="231.14" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="119.38" y1="226.06" x2="111.76" y2="226.06" width="0.1524" layer="91"/>
+<label x="111.76" y="226.06" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <label x="170.18" y="264.16" size="1.27" layer="95" xref="yes"/>

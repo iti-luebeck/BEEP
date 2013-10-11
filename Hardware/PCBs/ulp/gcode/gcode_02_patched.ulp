@@ -1,0 +1,531 @@
+#usage "<h3><br>Export G-code data for CNC software </h3><br>"
+"<br>"
+"- Bottom layer will be mirrored by Y AXIS<br>"
+"- It uses only G00, G01 and G02, even for drilling (G82 it's not backlash compensated in KCam)<br>"
+"- If you want holes with complicated shapes in board, use a polygon in dimension layer, with width of drill used to cut the board.<br>"
+"- If Drill is checked, all holes will be drilled.<br>"
+"- If Cut is checked, all holes (from pads, vias etc.) larger than cut_tool will be milled.<br>"
+"<br>- If you do not have a file called gcode.set next to this ulp, at first run, comment #include gcode.set and uncomment folowing definitions.<br>"
+"<br>"
+"<b>Author</b>: eSilviu & jopl<br>"
+
+//include ... or uncomment code below (only at first run)
+#include "gcode.set"
+/*
+int 	mill_on	=1;
+int	fill_on	=1;
+real 	mill_tool = 0.5;
+real 	mill_down = 0.2;
+real 	mill_up	= 0.2;
+real	mill_speed = 200;
+
+int 	drill_on = 1;
+real 	drill_down = 0.2;
+real 	drill_up = 0.2;
+real	drill_speed = 200;
+
+int 	cut_on = 1;
+
+// jopl modification
+int     tool_comp_on = 1;
+// end of jopl modification
+
+real 	cut_depth = 2.5;
+int 	cut_steps = 2;
+real 	cut_gap = 3;
+real	cut_speed = 100;
+real	cut_tool = 1;
+real	cut_up = 1;
+
+real	tool_up	=30;
+int	layer = -1;
+*/
+
+int tool_counter = 0;
+
+string Layers[] = {"Top","Bottom"};
+int Selected_layer;
+if (layer==1) Selected_layer = 0;
+if (layer==-1) Selected_layer = 1;
+
+string Steps[] = { "1", "2", "3", "4" };
+int Sel_Cut;
+Sel_Cut = cut_steps - 1;
+
+int step_ulp = 1;
+string fileName;
+string OutlinesSignalName = "_OUTLINES_";
+string final_cmd;
+
+// jopl modification
+real HoleX[];
+real HoleY[];
+real HoleR[];
+int Index[];
+int HoleCount = 0;
+
+int WireX1[];
+int WireY1[];
+int WireX2[];
+int WireY2[];
+int WireCount = 0;
+int Delta;
+int DeltaActual;
+//real Delta;
+//real DeltaActual;
+string StatusText;
+int Progress;
+
+if (board) board(B) {fileName = filesetext(B.name, ".gcode");}
+// end of jopl modification
+
+else {dlgMessageBox("\n    Start this ULP in a Board    \n"); exit (0);}
+
+//parameters passed to ulp at second run
+if (argv[1])
+	{if (argv[2])
+		{mill_tool = strtod(argv[2]);
+		if (argv[3])
+			{layer = strtol(argv[3]);
+			if (argv[4])
+				{fileName = argv[4];
+					if(argv[5])
+						{step_ulp = 2;
+}}}}}			
+
+//*************************** Functions body ***************************
+  
+void write_real_param(string name, real value) 
+{  printf("real %s = %f;\n", name, value); } 
+  
+void write_int_param(string name, int value)
+{  printf("int %s = %d;\n", name, value); }  
+
+//error message if exist a signal named  _OUTLINES_
+void Fatal(string Message, string Details)
+{ dlgMessageBox(usage + "<hr><b>ERROR: " + Message + "</b><p>\n" + Details); exit(1); }
+
+//Z->up; stop; Z->0.00 (calibrate Z axis) Z->0.50, ready for start
+void DeviceChangeBit(void)
+{output(fileName, "at") 
+{printf ("\nG00 Z%2.3f\n",tool_up);
+printf ("G00 X0.000 Y0.000\n");
+printf ("M00\n");
+printf ("G00 Z0.000\n");
+printf ("M00\n");
+// jopl modification
+printf ("G00 Z%2.3f\n",tool_up);
+// end of jopl modification
+printf ("\n(Bit changed, zero set.)\n");}}
+
+//create file for gcode output, write first lines
+ void DeviceInit(void)
+{output(fileName, "wt") 
+{printf ("(%s)\n(%s)\n(%s)\n", fileName, Layers[Selected_layer], t2string(time()));
+if (layer==-1) printf ("(X/Y/Z home should be at upper left corner of the board, with the tip just touching board)\n");
+else printf ("(X/Y/Z home should be at lower left corner of the board, with the tip just touching board)\n");
+printf ("(Mm, Absolute mode, lift cutter above work, rapid to X/Y home, spindle on.)\n");
+printf ("G21\n");
+printf ("G90\n");}}  
+
+//write the necessary stuff for machine STOP
+void DeviceEnd(void)
+{output(fileName, "at")
+{printf("(Finished.)\n");
+printf("G00 Z%.3f\n",tool_up);
+printf("M05\n");
+printf("G00 X0 Y0\n");
+printf("M30\n");}}
+
+void CutDrillHole(real h_x, real h_y, real h_d, real tool, real cut_depth)
+{real raza=(h_d-tool)/2;
+real cut_down=0;
+for (int i = 0; i<cut_steps; ++i)
+	{cut_down=cut_down+cut_depth/cut_steps;
+	if (h_d > tool) 
+		{printf("G00 X%.3f Y%.3f\n", h_x, (h_y+raza)*layer);
+		printf("G01 Z-%.3f F%.1f\n",cut_down, cut_speed);
+		printf("G02 X%.3f Y%.3f R%3f F%.1f\n", h_x+raza*layer, h_y*layer, raza, cut_speed);
+		printf("G02 X%.3f Y%.3f R%3f F%.1f\n", h_x, (h_y-raza)*layer, raza, cut_speed);
+		printf("G02 X%.3f Y%.3f R%3f F%.1f\n", h_x-raza*layer, h_y*layer, raza, cut_speed);
+		printf("G02 X%.3f Y%.3f R%3f F%.1f\n", h_x, (h_y+raza)*layer, raza, cut_speed);
+		printf("G00 Z%.3f\n\n", cut_up);}}}
+
+//add a hole to the output file
+// jopl modification
+void AddHole(int x, int y, int r)
+{HoleX[HoleCount] = u2mm(x);
+HoleY[HoleCount] = u2mm(y);
+HoleR[HoleCount] = u2mm(r);
+++HoleCount;}	
+
+void PrintHole(int HIndex)	
+{printf("G00 X%.3f Y%.3f\n", HoleX[HIndex], HoleY[HIndex]*layer);
+printf("G01 Z-%.3f F%.1f\n", drill_down, drill_speed);
+// end of jopl modification
+printf("G00 Z%.3f\n\n", drill_up);}
+
+//cut the board, as the wires in DIMENSION layer says; gap is used to keep board in place until end
+void DeviceCut(void)
+// jopl modification
+{real a, b, c, d, X1, X2, Y1, Y2, toolcomp, gap1, gap2, cut_down, x_old=REAL_EPSILON, y_old=REAL_EPSILON;
+toolcomp = cut_tool / 2;
+// end of jopl modification
+gap1=(50-cut_gap/2)/100;
+gap2=(50+cut_gap/2)/100;
+cut_down=0;
+output(fileName, "at")
+{printf("(Start cutting holes)\n");
+board(B)
+	{B.holes(H)  CutDrillHole(u2mm(H.x), u2mm(H.y), u2mm(H.drill), cut_tool, cut_depth);
+	B.signals(S) S.vias(V) CutDrillHole(u2mm(V.x),u2mm(V.y),u2mm(V.drill),cut_tool, cut_depth);
+	B.elements(E)
+		{E.package.contacts(C) if (C.pad) CutDrillHole(u2mm(C.pad.x),u2mm(C.pad.y),u2mm(C.pad.drill),cut_tool, cut_depth);
+		E.package.holes(H) CutDrillHole(u2mm(H.x),u2mm(H.y),u2mm(H.drill),cut_tool, cut_depth);}
+	printf("(Start cutting polygons)\n");	
+	for (int i = 0; i<cut_steps; ++i)
+		{cut_down=cut_down+cut_depth/cut_steps;
+		B.polygons(P)
+			{int x_0, y_0, first_p = 1;
+			P.contours(W)
+				{if (W.layer == LAYER_MILLING)
+					{if (first_p)
+						{x_0 = W.x1; y_0 = W.y1;  
+						printf("G00 X%.3f Y%.3f\n", u2mm(x_0), layer*u2mm(y_0));
+						printf("G01 Z-%.3f F%.1f\n",cut_down, cut_speed);
+						first_p = 0;}
+					printf("G01 X%.3f Y%.3f F%.1f\n", u2mm(W.x1), layer*u2mm(W.y1), cut_speed);
+					if (W.x2 == x_0 && W.y2 == y_0) 
+						{first_p = 1; 
+						printf("G01 X%.3f Y%.3f F%.1f\n", u2mm(W.x2), layer*u2mm(W.y2), cut_speed);
+						printf("G00 Z%.3f\n\n", cut_up);
+			}}}} 
+		printf("(Start cutting wires)\n");
+		B.wires(W)
+			{if (W.layer == LAYER_MILLING)
+			{
+					// jopl modification
+				toolcomp = cut_tool / 2;
+				X1 = u2mm(W.x1);
+				X2 = u2mm(W.x2);
+				Y1 = u2mm(W.y1);
+				Y2 = u2mm(W.y2);
+				if (tool_comp_on==1)
+					{if (X1 <= 0) {X1 = X1 - toolcomp;}
+					else {X1 = X1 + toolcomp;}; 
+					if (Y1 <= 0) {Y1 = Y1 - toolcomp;}
+       					else {Y1 = Y1 + toolcomp;};
+					if (X2 <= 0) {X2 = X2 - toolcomp;}
+       					else {X2 = X2 + toolcomp;};
+					if (Y2 <= 0) {Y2 = Y2 - toolcomp;}
+					else {Y2 = Y2 + toolcomp;};};
+				if ((pow(abs(X1-x_old),2)+pow(abs(Y1-y_old),2))>=(pow(abs(X2-x_old),2)+pow(abs(Y2-y_old),2)))
+					{a=X2; b=Y2; c=X1; d=Y1;}
+				else {a=X1; b=Y1; c=X2; d=Y2;};
+				// end of jopl modification
+         
+				printf("(x_old=%.3f; X=%.3f; y_old=%.3f; Y=%.3f)",x_old, a, y_old, b);
+				if ((x_old==a)&&(y_old==b))
+					{printf("G01 Z-%.3f F%.1f\n",cut_down, cut_speed);}
+				else {printf("G00 Z%.3f\n\n", cut_up);
+					printf("G00 X%.3f Y%.3f\n", a, b*layer);
+					printf("G01 Z-%.3f F%.1f\n",cut_down, cut_speed);};
+				if (abs(a-c)>=10 || abs(b-d)>=10)
+					{printf("G01 X%.3f Y%.3f F%.1f\n", a+(c-a)*gap1, (b+(d-b)*gap1)*layer, cut_speed);
+					printf("G00 Z%.3f\n", cut_up);
+					printf("G00 X%.3f Y%.3f\n", a+(c-a)*gap2, (b+(d-b)*gap2)*layer);
+					printf("G01 Z-%.3f F%.1f\n",cut_down, cut_speed);}
+				printf("G01 X%.3f Y%.3f F%.1f\n", c, d*layer, cut_speed);
+				x_old=c; y_old=d;
+				}}
+				printf("G00 Z%.3f\n\n", cut_up);}}}}
+
+//function that reads drill positions and call AddHole() function
+void DeviceDrill(void)
+	// jopl modification
+	{real HoleActual = 0;
+	// end of jopl modification
+	output(fileName, "at")
+	{printf("(Start drilling)\n");
+	board(B)
+		{printf("G00 Z%.3f\n", drill_up);
+// jopl modification
+		B.holes(H) AddHole(H.x, H.y, H.drill);
+		B.signals(S) S.vias(V) AddHole(V.x, V.y, V.drill);
+// end of jopl modification
+		B.elements(E)
+			{E.package.contacts(C)
+// jopl modification
+				{if (C.pad) AddHole(C.pad.x, C.pad.y, C.pad.drill);}
+			E.package.holes(H) AddHole(H.x, H.y, H.drill);}}
+	sort(HoleCount, Index, HoleR, HoleX, HoleY);
+	for (int i = 0; i < HoleCount; ++i)
+		{if (HoleActual != HoleR[Index[i]])
+		{HoleActual = HoleR[Index[i]]; 
+		tool_counter++;
+		printf ("\nG00 Z%2.3f\n",tool_up);
+		printf ("G00 X0.000 Y0.000\n");
+		printf ("(Change bit for %.3f mm !)\n", HoleActual);
+		printf ("M00\n");
+		printf ("G00 Z0.000\n");
+		printf ("M00\n");
+		printf ("T%d\n", tool_counter);
+		printf ("M6\n");
+		printf ("G00 Z%2.3f\n",tool_up);}
+		PrintHole(Index[i]);}}}
+// end of jopl modification
+
+//function that create a single polygon on selected layer
+void GenerateOutlines(void)
+{board(B)
+	{real f = 0.1, x1 = u2mm(B.area.x1) - f, y1 = u2mm(B.area.y1) - f, x2 = u2mm(B.area.x2) + f, y2 = u2mm(B.area.y2) + f;
+	B.signals(S)
+		{if (S.name == OutlinesSignalName)
+			Fatal("There is already a signal named " + OutlinesSignalName + " in this board!", "Please make sure that there is no such signal in this board.");}
+	step_ulp = 2; 
+	string Cmd;
+	int displ_;
+	if (layer == 1) displ_ = 1;
+	if (layer == -1) displ_ = 16;
+	sprintf(Cmd, "grid mm;\n"
+       		"window fit;\n"
+       		"change isolate 0;\n"
+       		"change rank 6;\n"
+               	"change pour solid;\n"
+               	"change orphans on;\n"
+		"SET WIRE_BEND 2;\n"
+               	"layer %d;\n"
+		"polygon %s %f (%f %f) (%f %f) (%f %f) (%f %f) (%f %f);\n"
+       		"ratsnest;\n"
+       		"run '%s' argv[1] '%f' '%d' '%s' '%d';", displ_, OutlinesSignalName, mill_tool, x1, y1, x2, y1, x2, y2, x1, y2, x1, y1, argv[0],  mill_tool, layer, fileName, step_ulp);	 
+		exit(Cmd);}}
+
+//function that write outlines in output file 
+void DeviceDraw(int x1, int y1, int x2, int y2, int state_mill)
+{if (state_mill == 0)
+	{printf("G00 Z%.3f\n\n",mill_up);
+	printf("G00 X%.3f Y%.3f\n",u2mm(x1),layer*u2mm(y1));
+// jopl modification
+	printf("G01 Z-%f F%.1f\n",mill_down, mill_speed);
+	printf("G01 X%.3f Y%.3f F%.1f\n",u2mm(x2), layer*u2mm(y2), mill_speed);}
+else printf("G01 X%.3f Y%.3f F%.1f\n", u2mm(x2), layer*u2mm(y2), mill_speed);}
+// end of jopl modification
+
+//function that generate coordinates for outlines (it will be executed right after second run of the ulp)
+void WriteOutlines(void)
+{output(fileName, "at")
+// jopl modification
+	{int x1 = INT_MAX, y1 = INT_MAX, x2 = INT_MIN, y2 = INT_MIN;
+	int x0, y0, first = 1;
+	int FrameWire;
+	int State;
+// end of jopl modification
+	board(B){
+		B.signals(S)
+		{if (S.name == OutlinesSignalName)
+			{S.polygons(P)
+				{P.wires(W)
+					{x1 = min(x1, W.x1);
+					x2 = max(x2, W.x1);
+					y1 = min(y1, W.y1);
+					y2 = max(y2, W.y1);}
+	       			P.contours(W)
+// jopl modification
+					{WireX1[WireCount] = W.x1;
+					WireY1[WireCount] = W.y1;
+					WireX2[WireCount] = W.x2;
+					WireY2[WireCount] = W.y2;
+					++WireCount;}}
+			break;}}}
+//sprintf(StatusText, "Wires' count: %d", (WireCount-1));
+//status(StatusText);
+for (int j = 1; j < WireCount; ++j)
+	{Delta = abs((WireX1[j] - WireX2[j-1])) + abs((WireY1[j] - WireY2[j-1]));
+//	{Delta = pow((WireX1[j] - WireX2[j-1]),2) + pow((WireY1[j] - WireY2[j-1]),2);
+	Progress = j * 100 / (WireCount-1);
+	sprintf(StatusText, "Progress: %d / %d wires, %d %% finished.", j, (WireCount-1), Progress);
+	status(StatusText);        	        
+	for (int k = j + 1; k < WireCount; ++k)
+		{DeltaActual = abs((WireX1[k] - WireX2[j-1])) + abs((WireY1[k] - WireY2[j-1]));
+//		{DeltaActual = pow((WireX1[k] - WireX2[j-1]),2) + pow((WireY1[k] - WireY2[j-1]),2);
+		if (DeltaActual < Delta) {
+			Delta = DeltaActual;
+			WireX1[WireCount] = WireX1[j];
+			WireY1[WireCount] = WireY1[j];
+			WireX2[WireCount] = WireX2[j];
+			WireY2[WireCount] = WireY2[j];
+			WireX1[j] = WireX1[k];
+			WireY1[j] = WireY1[k];
+			WireX2[j] = WireX2[k];
+			WireY2[j] = WireY2[k];
+			WireX1[k] = WireX1[WireCount];
+			WireY1[k] = WireY1[WireCount];
+			WireX2[k] = WireX2[WireCount];
+			WireY2[k] = WireY2[WireCount];}}}
+for (int l = 0; l < WireCount; ++l)
+	{if (first)
+		{x0 = WireX1[l];
+		y0 = WireY1[l];
+		FrameWire = (x1 == x0 || x2 == x0) && (y1 == y0 || y2 == y0);
+		State = 0;
+		first = 0;}
+	else if (WireX2[l] == x0 && WireY2[l] == y0) {
+		State = 2;
+		first = 1;}
+		else State = 1;
+	if (!FrameWire)
+		DeviceDraw(WireX1[l], WireY1[l], WireX2[l], WireY2[l], State);}
+	sprintf(final_cmd, "delete (%f %f) (%f %f); window fit;\n", u2mm(x1), u2mm(y1), u2mm(x2), u2mm(y2));}}
+// end of jopl modification
+
+void Fill(void)
+{real old_x=REAL_EPSILON, old_y=REAL_EPSILON, a, b, c, d;
+output(fileName, "at")
+	{board(B)
+		{B.signals(S)
+			{if (S.name == OutlinesSignalName)
+				{S.polygons(P)
+					{int x1 = INT_MAX, y1 = INT_MAX, x2 = INT_MIN, y2 = INT_MIN;
+						P.wires(W)
+							{x1 = min(x1, W.x1);
+							x2 = max(x2, W.x1);
+							y1 = min(y1, W.y1);
+							y2 = max(y2, W.y1);}
+						printf("\n(Start filling empty spaces)\n");
+						P.fillings(W)
+							{if ((pow(abs(W.x1-old_x),2)+pow(abs(W.y1-old_y),2))>=(pow(abs(W.x2-old_x),2)+pow(abs(W.y2-old_y),2)))
+								{a=W.x2; b=W.y2; c=W.x1; d=W.y1;}
+							else {a=W.x1; b=W.y1; c=W.x2; d=W.y2;}				
+							DeviceDraw(a, b, c, d, 0);
+							old_x=c; old_y=d;}
+						if (!mill_on) sprintf(final_cmd, "delete (%f %f) (%f %f); window fit;\n", u2mm(x1), u2mm(y1), u2mm(x2), u2mm(y2));}}}}}}
+
+//--------------------------------- GRAPHICAL INTERFACE, will appear only at first run of the ulp ----------------------------------------------
+if (step_ulp==1)
+	{int Result = dlgDialog("Select Parameters")
+		{dlgHBoxLayout
+			{dlgLabel("Layer: ");
+			dlgComboBox(Layers, Selected_layer) {if (Selected_layer==0) layer=1; if (Selected_layer==1) layer=-1;};
+			dlgStretch(1);}
+			dlgHBoxLayout
+				{dlgGroup("Mill")
+					{dlgGridLayout
+						{dlgCell(0, 0) dlgCheckBox("&Active", mill_on);
+						dlgCell(0, 1) dlgCheckBox("Clear unused area", fill_on);}
+					dlgGridLayout
+						{dlgCell(0, 0) dlgLabel("&Tool");
+						dlgCell(0, 1) dlgRealEdit(mill_tool, 0.1, 50);
+						dlgCell(1, 0) dlgLabel("&Depth");
+						dlgCell(1, 1) dlgRealEdit(mill_down, 0, 50);
+						dlgCell(2, 0) dlgLabel("&Z up");
+						dlgCell(2, 1) dlgRealEdit(mill_up, 0, 50);
+						dlgCell(3, 0) dlgLabel(" ");
+						dlgCell(4, 0) dlgLabel("&Speed");
+// jopl modification
+						dlgCell(4, 1) dlgRealEdit(mill_speed, 0, 5000);}}
+// end of jopl modification
+				dlgVBoxLayout
+					{dlgGroup("Drill")
+						{dlgCheckBox("&Active", drill_on);
+						dlgGridLayout
+							{dlgCell(0, 0) dlgLabel("&Depth");
+							dlgCell(0, 1) dlgRealEdit(drill_down, 0, 50);					
+							dlgCell(1, 0) dlgLabel("&Z up");
+							dlgCell(1, 1) dlgRealEdit(drill_up, 0, 50);
+							dlgCell(2, 0) dlgLabel("&Speed");
+// jopl modification
+							dlgCell(2, 1) dlgRealEdit(drill_speed, 0, 5000);}}
+// end of jopl modification
+					dlgGroup("Misc")
+						{dlgGridLayout
+							{dlgCell(0, 1) dlgLabel("&Tool up");
+							dlgCell(0, 2) dlgRealEdit(tool_up, 0, 50);
+							dlgCell(0, 3) dlgStretch(500);}}}
+				dlgGroup("Cut")
+					{dlgCheckBox("&Active", cut_on);
+// jopl modification
+					dlgCheckBox("Dimensions tool compensation\n(d <= 0 ... -, d > 0 ... +)", tool_comp_on);
+// end of jopl modification
+ 					dlgGridLayout
+						{dlgCell(0, 0) dlgLabel("&Tool");
+						dlgCell(0, 1) dlgRealEdit(cut_tool, 0.1, 50);
+						dlgCell(1, 0) dlgLabel("&Depth");
+						dlgCell(1, 1) dlgRealEdit(cut_depth, 0, 50);
+						dlgCell(2, 0) dlgLabel("&Steps");
+						dlgCell(2, 1) dlgComboBox(Steps, Sel_Cut) {cut_steps = Sel_Cut+1;}; 
+						dlgCell(3, 0) dlgLabel("&Gap [%]");
+						dlgCell(3, 1) dlgRealEdit(cut_gap, 0, 50);						
+						dlgCell(4, 0) dlgLabel("&Z up");
+						dlgCell(4, 1) dlgRealEdit(cut_up, 0, 50);
+						dlgCell(5, 0) dlgLabel("&Speed");
+// jopl modification
+						dlgCell(5, 1) dlgRealEdit(cut_speed, 0, 5000);}}}
+// end of jopl modification
+			dlgHBoxLayout
+				{dlgLabel("Output file:");
+				dlgStringEdit(fileName);
+				dlgPushButton("Bro&wse") {string fn = dlgFileSave("Save Output file", fileName);if (fn) fileName = fn;}}
+		dlgSpacing(10);
+		dlgHBoxLayout
+// jopl modification
+			{dlgLabel("Note: All dimensions are in milimeters. Speed is in mm/min.");
+// end of jopl modification
+			dlgStretch(1);
+			dlgPushButton("+OK") dlgAccept(1);
+			dlgPushButton("Cancel")
+				{dlgReject(0);
+				exit(1);}}};
+//save parameters in gcode.set file
+	if (Result==1)
+		{fileerror();
+// jopl modification
+		output(filedir(argv[0]) + "gcode.set", "wt")
+// end of jopl modification
+			{printf("//List of usual parameters:\n");
+			write_int_param("mill_on", mill_on);
+			write_int_param("fill_on", fill_on);
+			write_real_param("mill_tool", mill_tool);			
+			write_real_param("mill_down", mill_down);
+			write_real_param("mill_up", mill_up);
+			write_real_param("mill_speed", mill_speed);
+			write_int_param("drill_on", drill_on);
+			write_real_param("drill_down", drill_down);
+			write_real_param("drill_up", drill_up);
+			write_real_param("drill_speed", drill_speed);
+			write_int_param("cut_on", cut_on);
+// jopl modification
+			write_int_param("tool_comp_on", tool_comp_on);
+// end of jopl modification
+			write_real_param("cut_depth", cut_depth);
+			write_int_param("cut_steps", cut_steps);
+			write_real_param("cut_tool", cut_tool);
+			write_real_param("cut_up", cut_up);
+			write_real_param("cut_gap", cut_gap);
+			write_real_param("cut_speed", cut_speed);
+			write_real_param("tool_up", tool_up);		
+			write_int_param("layer", layer);}
+		if (fileerror()) {dlgMessageBox("Save param. error"); exit(1);};}}
+//milling part require two run of the ulp    
+if (mill_on==1 || fill_on==1)
+	{if (step_ulp==1)
+		{DeviceInit();
+		GenerateOutlines();}
+	if (step_ulp==2)
+		{if (mill_on) {DeviceChangeBit(); WriteOutlines();}
+		if (fill_on) {DeviceChangeBit(); Fill();}
+		if (drill_on==1) {DeviceDrill();}
+		if (cut_on==1) {DeviceChangeBit(); DeviceCut();}
+		DeviceEnd();
+// jopl modification
+		dlgMessageBox(";G-code has been created successfully !");
+// end of jopl modification
+		exit(final_cmd);}}
+//if no mill is necessary, ulp will run only once
+if (mill_on==0)
+	{DeviceInit();
+	if (drill_on==1) {DeviceChangeBit(); DeviceDrill();}
+	if (cut_on==1) {DeviceChangeBit(); DeviceCut();}
+	DeviceEnd();
+// jopl modification
+	dlgMessageBox(";G-code has been created successfully !");}
+// end of jopl modification

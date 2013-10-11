@@ -1,0 +1,3 @@
+* tool change kommando hinzugefügt (erlaub einfacheres simulieren in openscad)
+* benutze milling layer statt dimension layer (als workaround fürnicht funktionierende tool Korrektur, einfach in tool durchmesser auf milling layer zeichnen)
+* change extension to .gcode
