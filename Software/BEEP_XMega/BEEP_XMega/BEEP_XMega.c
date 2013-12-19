@@ -38,12 +38,12 @@
 #define MAX_COMMAND_DATA 4
 #define USART_BAUDRATE 38400UL
 
-#define PWM_GREEN TCE0.CCA
-#define PWM_BLUE TCE0.CCB
-#define PWM_RED TCE0.CCC
-#define PWM_GREEN_ENABLE_gc TC0_CCAEN_bm
-#define PWM_BLUE_ENABLE_gc TC0_CCBEN_bm
-#define PWM_RED_ENABLE_gc TC0_CCCEN_bm
+#define PWM_CH2 TCE0.CCC
+#define PWM_CH1 TCE0.CCB
+#define PWM_CH0 TCE0.CCA
+#define PWM_CH2_ENABLE_gc TC0_CCCEN_bm
+#define PWM_CH1_ENABLE_gc TC0_CCBEN_bm
+#define PWM_CH0_ENABLE_gc TC0_CCAEN_bm
 
 typedef struct RGB {
 	uint8_t red;
@@ -59,6 +59,22 @@ const uint16_t pwmtable_12[256] PROGMEM = {
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 11, 11, 11, 12, 12, 13, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 19, 19, 20, 21, 21, 22, 23, 23, 24, 25, 26, 27, 27, 28, 29, 30, 31, 32, 33, 35, 36, 37, 38, 39, 41, 42, 43, 45, 46, 48, 49, 51, 53, 54, 56, 58, 60, 62, 64, 66, 68, 71, 73, 75, 78, 80, 83, 86, 89, 91, 95, 98, 101, 104, 108, 111, 115, 119, 123, 127, 131, 135, 140, 144, 149, 154, 159, 164, 170, 175, 181, 187, 193, 200, 206, 213, 220, 227, 235, 242, 250, 259, 267, 276, 285, 295, 304, 314, 325, 336, 347, 358, 370, 382, 395, 408, 421, 435, 450, 464, 480, 496, 512, 529, 546, 564, 583, 602, 622, 643, 664, 686, 708, 732, 756, 781, 807, 833, 861, 889, 919, 949, 980, 1013, 1046, 1081, 1116, 1153, 1191, 1231, 1271, 1313, 1357, 1402, 1448, 1496, 1545, 1596, 1649, 1703, 1759, 1818, 1878, 1940, 2004, 2070, 2138, 2209, 2282, 2357, 2435, 2515, 2598, 2684, 2773, 2864, 2959, 3057, 3158, 3262, 3370, 3481, 3596, 3715, 3837, 3964, 4095
 };
 
+
+const volatile uint16_t* const red_channel_lut[] PROGMEM = 
+	{&PWM_CH1,&PWM_CH0,&PWM_CH0,&PWM_CH1,&PWM_CH1,&PWM_CH0,&PWM_CH0,&PWM_CH1};
+const volatile uint8_t PWM_red_ENABLE_gc_lut[] PROGMEM = 
+	{PWM_CH1_ENABLE_gc,PWM_CH0_ENABLE_gc,PWM_CH0_ENABLE_gc,PWM_CH1_ENABLE_gc,PWM_CH1_ENABLE_gc,PWM_CH0_ENABLE_gc,PWM_CH0_ENABLE_gc,PWM_CH1_ENABLE_gc};
+
+const volatile uint16_t* const blue_channel_lut[] PROGMEM  =
+{&PWM_CH0, &PWM_CH1, &PWM_CH1, &PWM_CH0, &PWM_CH0, &PWM_CH1, &PWM_CH1, &PWM_CH2};
+const volatile uint8_t PWM_blue_ENABLE_gc_lut[] PROGMEM =
+	{PWM_CH0_ENABLE_gc,PWM_CH1_ENABLE_gc,PWM_CH1_ENABLE_gc,PWM_CH0_ENABLE_gc,PWM_CH0_ENABLE_gc,PWM_CH1_ENABLE_gc,PWM_CH1_ENABLE_gc,PWM_CH2_ENABLE_gc};
+		
+const volatile uint16_t* const green_channel_lut[] PROGMEM  =
+	{&PWM_CH2, &PWM_CH2, &PWM_CH2, &PWM_CH2, &PWM_CH2, &PWM_CH2, &PWM_CH2, &PWM_CH0};
+const volatile uint8_t PWM_green_ENABLE_gc_lut[] PROGMEM =
+	{PWM_CH2_ENABLE_gc,PWM_CH2_ENABLE_gc,PWM_CH2_ENABLE_gc,PWM_CH2_ENABLE_gc,PWM_CH2_ENABLE_gc,PWM_CH2_ENABLE_gc,PWM_CH2_ENABLE_gc,PWM_CH0_ENABLE_gc};
+	
 
 //startup colors
 volatile RGB myColors[8];
@@ -127,7 +143,7 @@ void init_rgb_led(void){
 	//PORTE.PIN1CTRL = PORT_INVEN_bm;
 	//PORTE.PIN2CTRL = PORT_INVEN_bm;
 
-	TCE0.CTRLB = PWM_RED_ENABLE_gc|PWM_GREEN_ENABLE_gc|PWM_BLUE_ENABLE_gc| TC_WGMODE_SS_gc; //enable pwm output, Single slope pwm
+	TCE0.CTRLB = PWM_CH0_ENABLE_gc|PWM_CH2_ENABLE_gc|PWM_CH1_ENABLE_gc| TC_WGMODE_SS_gc; //enable pwm output, Single slope pwm
 	
 	TCE0.PER = 0xfff; //12 Bit resolution per period
 	
@@ -192,6 +208,7 @@ void set_beepmotor_speed(motor_t motor, int8_t speed){
 	
 }
 
+
 inline uint8_t sconvert_to_uint8_t(float in);
 inline uint8_t sconvert_to_uint8_t(float in){
 	if(in > UINT8_MAX){
@@ -220,36 +237,36 @@ int main(void){
 	sei();
 
 	// set some colors
-	myColors[0].red = 0xff;
-	myColors[0].green = 0x00;
+	myColors[0].red = 0x00;
+	myColors[0].green = 0xFF;
 	myColors[0].blue = 0x00;
 	
-	myColors[1].red = 0xFF;
+	myColors[1].red = 0x00;
 	myColors[1].green = 0xFF;
-	myColors[1].blue = 0xFF;	
+	myColors[1].blue = 0x00;	
 	
-	myColors[2].red = 0x7F;
-	myColors[2].green = 0x7F;
+	myColors[2].red = 0x00;
+	myColors[2].green = 0xFF;
 	myColors[2].blue = 0x00;
 	
 	myColors[3].red = 0x00;
-	myColors[3].green = 0x00;
-	myColors[3].blue = 0xFF;
+	myColors[3].green = 0xFF;
+	myColors[3].blue = 0x00;
 	
 	myColors[4].red = 0x00;
-	myColors[4].green = 0x00;
+	myColors[4].green = 0xFF;
 	myColors[4].blue = 0x00;
 	
 	myColors[5].red = 0x00;
-	myColors[5].green = 0x00;
+	myColors[5].green = 0xFF;
 	myColors[5].blue = 0x00;
 	
 	myColors[6].red = 0x00;
-	myColors[6].green = 0x00;
+	myColors[6].green = 0xFF;
 	myColors[6].blue = 0x00;
 	
 	myColors[7].red = 0x00;
-	myColors[7].green = 0x00;
+	myColors[7].green = 0xFF;
 	myColors[7].blue = 0x00;
 	
 		
@@ -280,12 +297,14 @@ int main(void){
 	
 
 
+
     while(1){
 		//temp
 		//enable audio amplifier
 		PORTF.DIRSET = PIN6_bm;
 		PORTF.OUTCLR = PIN6_bm;
 		
+		/* temp color reading
 		//temp
 		float color_correction_matrix [3][3] = {
 			{ 0.0970121,  -0.0324089,  -0.0426333},
@@ -339,10 +358,10 @@ int main(void){
  		myColors[1].green = green;
  		myColors[1].blue = blue;
 		//temp end
-		
+		*/
 		
 		if(ir_driver_is_measuring() == false){
-			//TODO delet workaround when hardware fixed
+			//TODO delete workaround when hardware fixed
 			led_swich_workaround++;
 			led_swich_workaround &= 8;
 			
@@ -459,18 +478,23 @@ ISR(TCE0_OVF_vect){
 		
 		//set pwm values
 		if(pgm_read_word (&pwmtable_12[myColors[led].red])){
-			PWM_RED = pgm_read_word (&pwmtable_12[myColors[led].red]);
-			TCE0.CTRLB |= PWM_RED_ENABLE_gc;
+			//TODO finish to implement LUT
+			//uint16_t
+			volatile uint16_t* adress = (uint16_t*) pgm_read_word(&red_channel_lut[led]);
+			*adress = pgm_read_word(&pwmtable_12[myColors[led].red]);
+			TCE0.CTRLB |= pgm_read_byte(&PWM_red_ENABLE_gc_lut[led]);
 		}
-		
+
 		if(pgm_read_word(&pwmtable_12[myColors[led].blue])){
-			PWM_BLUE = pgm_read_word(&pwmtable_12[myColors[led].blue]);
-			TCE0.CTRLB |= PWM_BLUE_ENABLE_gc;
+			volatile uint16_t* adress = (uint16_t*) pgm_read_word(&blue_channel_lut[led]);
+			*adress = pgm_read_word(&pwmtable_12[myColors[led].blue]);
+			TCE0.CTRLB |= pgm_read_byte(&PWM_blue_ENABLE_gc_lut[led]);
 		}
 		
 		if(pgm_read_word (&pwmtable_12[myColors[led].green])){
-			PWM_GREEN = pgm_read_word (&pwmtable_12[myColors[led].green]);
-			TCE0.CTRLB |= PWM_GREEN_ENABLE_gc;
+			volatile uint16_t* adress = (uint16_t*) pgm_read_word(&green_channel_lut[led]);
+			*adress = pgm_read_word(&pwmtable_12[myColors[led].green]);
+			TCE0.CTRLB |= pgm_read_byte(&PWM_green_ENABLE_gc_lut[led]);
 		}
 
 		//reset counter, start counter

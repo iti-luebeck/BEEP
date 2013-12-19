@@ -24,16 +24,16 @@ void set_motor_speed(motor_t motor, uint8_t speed){
 	}
 	
 	if(motor == motor_l){
-		TCC0.CCD = speed;
-	} else if(motor == motor_r){
 		TCC0.CCC = speed;
+	} else if(motor == motor_r){
+		TCC0.CCD = speed;
 	}
 }
 
 void set_motor_on(bool b){
 	if(b){
 		PORTA.OUTSET = PIN6_bm;
-		}else{
+	}else{
 		PORTA.OUTCLR = PIN6_bm;
 	}
 }
