@@ -24,12 +24,12 @@ pub_led = rospy.Publisher('/leds', Led)
 pub_MOTOR1 = rospy.Publisher('/motor_l', Int8)
 
 
-class Vorwaerts(smach.State):
+class LinksDrift(smach.State):
 	def __init__(self):
-		smach.State.__init__(self, outcomes=['T1'])
+		smach.State.__init__(self, outcomes=['T1','T4','T7','T12'])
 
 	def execute(self, userdata):
-		rospy.loginfo('Executing state Vorwaerts')
+		rospy.loginfo('Executing state LinksDrift')
 		global ir
 		global colorSensor
 		global t_timer
@@ -39,26 +39,32 @@ class Vorwaerts(smach.State):
 		global pub_MOTOR2
 		global pub_BEEP
 		MOTOR1 = Int8()
-		MOTOR1.data = 0
+		MOTOR1.data = 45
 		pub_MOTOR1.publish(MOTOR1)
 		MOTOR2 = Int8()
-		MOTOR2.data = -20
+		MOTOR2.data = 65
 		pub_MOTOR2.publish(MOTOR2)
 		BEEP = Int8()
 		BEEP.data = 0
 		pub_BEEP.publish(BEEP)
 
 		while not rospy.is_shutdown():
-			if(ir[6]>100):
+			if(ir[7]<200):
 				return 'T1'
+			if(ir[6]>165):
+				return 'T4'
+			if(ir[7]<160):
+				return 'T7'
+			if(ir[5]>165):
+				return 'T12'
 			rospy.sleep(0.01)
 
-class Drehen(smach.State):
+class RechtsDrift(smach.State):
 	def __init__(self):
-		smach.State.__init__(self, outcomes=['T2'])
+		smach.State.__init__(self, outcomes=['T2','T31','T6','T11'])
 
 	def execute(self, userdata):
-		rospy.loginfo('Executing state Drehen')
+		rospy.loginfo('Executing state RechtsDrift')
 		global ir
 		global colorSensor
 		global t_timer
@@ -68,7 +74,71 @@ class Drehen(smach.State):
 		global pub_MOTOR2
 		global pub_BEEP
 		MOTOR1 = Int8()
-		MOTOR1.data = 0
+		MOTOR1.data = 70
+		pub_MOTOR1.publish(MOTOR1)
+		MOTOR2 = Int8()
+		MOTOR2.data = 45
+		pub_MOTOR2.publish(MOTOR2)
+		BEEP = Int8()
+		BEEP.data = 0
+		pub_BEEP.publish(BEEP)
+
+		while not rospy.is_shutdown():
+			if(ir[7]>200):
+				return 'T2'
+			if(ir[6]>165):
+				return 'T31'
+			if(ir[7]<160):
+				return 'T6'
+			if(ir[5]>165):
+				return 'T11'
+			rospy.sleep(0.01)
+
+class LinksKurve(smach.State):
+	def __init__(self):
+		smach.State.__init__(self, outcomes=['T5'])
+
+	def execute(self, userdata):
+		rospy.loginfo('Executing state LinksKurve')
+		global ir
+		global colorSensor
+		global t_timer
+		t_timer = time.time()
+		global pub_led
+		global pub_MOTOR1
+		global pub_MOTOR2
+		global pub_BEEP
+		MOTOR1 = Int8()
+		MOTOR1.data = -40
+		pub_MOTOR1.publish(MOTOR1)
+		MOTOR2 = Int8()
+		MOTOR2.data = 40
+		pub_MOTOR2.publish(MOTOR2)
+		BEEP = Int8()
+		BEEP.data = 0
+		pub_BEEP.publish(BEEP)
+
+		while not rospy.is_shutdown():
+			if(ir[6]<165):
+				return 'T5'
+			rospy.sleep(0.01)
+
+class RechtsKurve(smach.State):
+	def __init__(self):
+		smach.State.__init__(self, outcomes=['T8','T9','T10'])
+
+	def execute(self, userdata):
+		rospy.loginfo('Executing state RechtsKurve')
+		global ir
+		global colorSensor
+		global t_timer
+		t_timer = time.time()
+		global pub_led
+		global pub_MOTOR1
+		global pub_MOTOR2
+		global pub_BEEP
+		MOTOR1 = Int8()
+		MOTOR1.data = 60
 		pub_MOTOR1.publish(MOTOR1)
 		MOTOR2 = Int8()
 		MOTOR2.data = 0
@@ -78,8 +148,12 @@ class Drehen(smach.State):
 		pub_BEEP.publish(BEEP)
 
 		while not rospy.is_shutdown():
-			if(ir[6]<50):
-				return 'T2'
+			if(ir[7]>160):
+				return 'T8'
+			if(ir[6]>165):
+				return 'T9'
+			if(ir[5]>165):
+				return 'T10'
 			rospy.sleep(0.01)
 
 
@@ -102,8 +176,10 @@ if __name__ == '__main__':
 
 		sm = smach.StateMachine(outcomes=[])
 		with sm:
-			smach.StateMachine.add('Vorwaerts', Vorwaerts(), transitions={'T1':'Drehen'})
-			smach.StateMachine.add('Drehen', Drehen(), transitions={'T2':'Vorwaerts'})
+			smach.StateMachine.add('LinksDrift', LinksDrift(), transitions={'T1':'RechtsDrift','T4':'LinksKurve','T7':'RechtsKurve','T12':'LinksKurve'})
+			smach.StateMachine.add('RechtsDrift', RechtsDrift(), transitions={'T2':'LinksDrift','T31':'LinksKurve','T6':'RechtsKurve','T11':'LinksKurve'})
+			smach.StateMachine.add('LinksKurve', LinksKurve(), transitions={'T5':'LinksDrift'})
+			smach.StateMachine.add('RechtsKurve', RechtsKurve(), transitions={'T8':'LinksDrift','T9':'LinksKurve','T10':'LinksKurve'})
 		sis = smach_ros.IntrospectionServer('Beep_State_Server', sm, '/SM_ROOT')
 		sis.start()
 		sm.execute()
